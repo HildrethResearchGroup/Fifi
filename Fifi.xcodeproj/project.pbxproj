@@ -19,6 +19,7 @@
 		5AAF5024267BD389002A58B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AAF5023267BD389002A58B5 /* Preview Assets.xcassets */; };
 		5AAF502E267BD389002A58B5 /* FifiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF502D267BD389002A58B5 /* FifiTests.swift */; };
 		5AAF5038267BD389002A58B5 /* FifiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF5037267BD389002A58B5 /* FifiUITests.swift */; };
+		5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5837726A9F8B00056108F /* ManualControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		5AAF502D267BD389002A58B5 /* FifiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiTests.swift; sourceTree = "<group>"; };
 		5AAF5033267BD389002A58B5 /* FifiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FifiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AAF5037267BD389002A58B5 /* FifiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiUITests.swift; sourceTree = "<group>"; };
+		5AD5837726A9F8B00056108F /* ManualControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */,
 				5A5E830826A9363200FE37AD /* LogView.swift */,
 				5AAF501E267BD388002A58B5 /* ContentView.swift */,
+				5AD5837626A9F89E0056108F /* Manual Control */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +179,14 @@
 				5AAF5037267BD389002A58B5 /* FifiUITests.swift */,
 			);
 			path = FifiUITests;
+			sourceTree = "<group>";
+		};
+		5AD5837626A9F89E0056108F /* Manual Control */ = {
+			isa = PBXGroup;
+			children = (
+				5AD5837726A9F8B00056108F /* ManualControlView.swift */,
+			);
+			path = "Manual Control";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +332,7 @@
 				5A5B23F726A8C1230079D7F9 /* PreferencesView.swift in Sources */,
 				5A1B639226A8EF2F004C5348 /* InstrumentState.swift in Sources */,
 				5AAF501D267BD388002A58B5 /* FifiApp.swift in Sources */,
+				5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

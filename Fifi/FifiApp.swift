@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import PrinterController
 
 @main
 struct FifiApp: App {
+  let printerController = PrinterController()
+  
   var body: some Scene {
     WindowGroup {
       ContentView()
+        .environmentObject(printerController)
         .onReceive(
           NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification)
         ) { _ in

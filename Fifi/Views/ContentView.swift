@@ -10,7 +10,7 @@ import SeeayaUI
 import PrinterController
 
 struct ContentView: View {
-  @StateObject private var printerController = PrinterController()
+  @EnvironmentObject private var printerController: PrinterController
   
   @AppStorage("waveformAddress") private var waveformAddress = "0.0.0.0"
   @AppStorage("waveformPort") private var waveformPort = 0
@@ -21,11 +21,16 @@ struct ContentView: View {
   
   var body: some View {
     VStack(spacing: 0) {
-      Text("Hello, world!")
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-      
-      Spacer()
+      HStack {
+        Spacer()
+        Divider()
+        
+        VStack {
+          ManualControlView()
+            .padding()
+          Spacer()
+        }
+      }
       
       Divider()
       
@@ -69,18 +74,7 @@ private extension ContentView {
   @ViewBuilder
   var toolbarContent: some View {
     Button {
-      if printerController.waveformState == .notConnected {
-        Task {
-          logger.info("Connecting to waveform generator at \(waveformAddress)::\(waveformPort)")
-          let configuration = WaveformConfiguration(address: waveformAddress, port: waveformPort)
-          await logger.tryOrError {
-            try await printerController.connectToWaveform(configuration: configuration)
-            logger.info("Connected to waveform generator at \(waveformAddress)::\(waveformPort)")
-          } errorString: { error in
-            "Could not connect to waveform generator: \(error)"
-          }
-        }
-      }
+      waveformAction()
     } label: {
       Image(systemName: "waveform")
         .foregroundColor(printerController.waveformState.color)
@@ -88,18 +82,7 @@ private extension ContentView {
     .help(helpForInstrument(named: "Waveform generator", state: printerController.waveformState))
     
     Button {
-      if printerController.xpsq8State == .notConnected {
-        Task {
-          logger.info("Connecting to XPS-Q8 at \(xpsq8Address)::\(xpsq8Port)")
-          let configuration = XPSQ8Configuration(address: xpsq8Address, port: xpsq8Port)
-          await logger.tryOrError {
-            try await printerController.connectToXPSQ8(configuration: configuration)
-            logger.info("Connected to XPS-Q8 at \(xpsq8Address)::\(xpsq8Port)")
-          } errorString: { error in
-            "Could not connect to XPS-Q8: \(error)"
-          }
-        }
-      }
+      xpsq8Action()
     } label: {
       Image(systemName: "move.3d")
         .foregroundColor(printerController.xpsq8State.color)
@@ -111,6 +94,8 @@ private extension ContentView {
     switch state {
     case .notConnected:
       return "\(name) not connected – press to connect"
+    case .notInitialized:
+      return "\(name) not initialized – press to initialize"
     case .connecting:
       return "\(name) connecting"
     case .busy:
@@ -119,6 +104,65 @@ private extension ContentView {
       return "\(name) ready"
     case .blocked:
       return "\(name) blocked – this instrument is not in use but is blocked by an ongoing operation"
+    }
+  }
+}
+
+// MARK: - Helpers
+private extension ContentView {
+  func waveformAction() {
+    switch printerController.waveformState {
+    case .notConnected:
+      Task {
+        logger.info("Connecting to waveform generator at \(waveformAddress)::\(waveformPort)")
+        let configuration = WaveformConfiguration(address: waveformAddress, port: waveformPort)
+        await logger.tryOrError {
+          try await printerController.connectToWaveform(configuration: configuration)
+          logger.info("Connected to waveform generator at \(waveformAddress)::\(waveformPort)")
+        } errorString: { error in
+          "Could not connect to waveform generator: \(error)"
+        }
+      }
+    case .notInitialized:
+      Task {
+        logger.info("Initializing waveform generator")
+        await logger.tryOrError {
+          try await printerController.initializeWaveform()
+          logger.info("Initialized waveform generator")
+        } errorString: { error in
+          "Could not initialized waveform generator: \(error)"
+        }
+      }
+    default:
+      break
+    }
+  }
+  
+  func xpsq8Action() {
+    switch printerController.xpsq8State {
+    case .notConnected:
+      Task {
+        logger.info("Connecting to XPS-Q8 at \(xpsq8Address)::\(xpsq8Port)")
+        let configuration = XPSQ8Configuration(address: xpsq8Address, port: xpsq8Port)
+        await logger.tryOrError {
+          try await printerController.connectToXPSQ8(configuration: configuration)
+          logger.info("Connected to XPS-Q8 at \(xpsq8Address)::\(xpsq8Port)")
+        } errorString: { error in
+          "Could not connect to XPS-Q8: \(error)"
+        }
+      }
+    case .notInitialized:
+      Task {
+        logger.info("Initializing XPS-Q8")
+        await logger.tryOrError {
+          try await printerController.initializeXPSQ8()
+          logger.info("Initialized XPS-Q8")
+        } errorString: { error in
+          "Could not initialized XPSQ8: \(error)"
+        }
+      }
+    default:
+      break
     }
   }
 }

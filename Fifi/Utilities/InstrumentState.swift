@@ -14,6 +14,8 @@ extension InstrumentState {
     switch self {
     case .notConnected:
       return .red
+    case .notInitialized:
+      return .purple
     case .connecting:
       return .orange
     case .busy:
