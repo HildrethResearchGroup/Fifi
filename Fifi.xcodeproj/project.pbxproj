@@ -41,12 +41,12 @@
 
 /* Begin PBXFileReference section */
 		5A1B639126A8EF2F004C5348 /* InstrumentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentState.swift; sourceTree = "<group>"; };
+		5A446CE126AA36CD003A7DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A5B23F326A8C08B0079D7F9 /* PrinterController */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PrinterController; path = ../PrinterController; sourceTree = "<group>"; };
 		5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		5A5E830326A91F4800FE37AD /* Fifi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fifi.entitlements; sourceTree = "<group>"; };
 		5A5E830626A9240600FE37AD /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
 		5A5E830826A9363200FE37AD /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
-		5A5E830A26A93E0E00FE37AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5AAF5019267BD388002A58B5 /* Fifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AAF501C267BD388002A58B5 /* FifiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiApp.swift; sourceTree = "<group>"; };
 		5AAF501E267BD388002A58B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		5AAF501B267BD388002A58B5 /* Fifi */ = {
 			isa = PBXGroup;
 			children = (
-				5A5E830A26A93E0E00FE37AD /* Info.plist */,
+				5A446CE126AA36CD003A7DC5 /* Info.plist */,
 				5A5E830326A91F4800FE37AD /* Fifi.entitlements */,
 				5AAF501C267BD388002A58B5 /* FifiApp.swift */,
 				5A5E830526A923F700FE37AD /* Utilities */,

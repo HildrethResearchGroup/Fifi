@@ -130,7 +130,7 @@ private extension ContentView {
           try await printerController.initializeWaveform()
           logger.info("Initialized waveform generator")
         } errorString: { error in
-          "Could not initialized waveform generator: \(error)"
+          "Could not initialize waveform generator: \(error)"
         }
       }
     default:
@@ -158,7 +158,7 @@ private extension ContentView {
           try await printerController.initializeXPSQ8()
           logger.info("Initialized XPS-Q8")
         } errorString: { error in
-          "Could not initialized XPSQ8: \(error)"
+          "Could not initialize XPSQ8: \(error)"
         }
       }
     default:
