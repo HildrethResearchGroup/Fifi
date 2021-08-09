@@ -30,13 +30,9 @@ struct ManualControlView: View {
   
   var body: some View {
     VStack {
-      HStack {
-        Text("\(printerController.xpsq8State.groupStatus?.rawValue.description ?? "?")")
-        Spacer()
-        Text("Manual Stage Control")
-          .font(.title3)
-        Spacer()
-      }
+      Text("Manual Stage Control")
+        .font(.title3)
+      Text(stageStatusString)
       
       ForEach(PrinterController.Dimension.allCases, id: \.rawValue) { dimension in
         stageView(for: dimension)
@@ -127,12 +123,29 @@ private extension ManualControlView {
       .multilineTextAlignment(.trailing)
       .frame(width: 80)
 
+      Menu(displacementMode(for: dimension).wrappedValue?.description ?? "") {
+        ForEach(DisplacementMode.allCases, id: \.description) { mode in
+          Button(mode.description) {
+            displacementMode(for: dimension).wrappedValue = mode
+          }
+        }
+      }
+      .frame(width: 120)
+      .id(UUID())
     }
   }
 }
 
 // MARK: Helpers
 private extension ManualControlView {
+  var stageStatusString: String {
+    if let status = printerController.xpsq8State.groupStatus {
+      return "\(status) (\(status.rawValue))"
+    } else {
+      return "?"
+    }
+  }
+  
   func position(for dimension: PrinterController.Dimension) -> Double? {
     switch dimension {
     case .x:
@@ -171,6 +184,17 @@ private extension ManualControlView {
       return $yMoveLocation
     case .z:
       return $zMoveLocation
+    }
+  }
+  
+  func displacementMode(for dimension: PrinterController.Dimension) -> Binding<DisplacementMode?> {
+    switch dimension {
+    case .x:
+      return $printerController.xpsq8State.xDisplacementMode
+    case .y:
+      return $printerController.xpsq8State.yDisplacementMode
+    case .z:
+      return $printerController.xpsq8State.zDisplacementMode
     }
   }
 }
