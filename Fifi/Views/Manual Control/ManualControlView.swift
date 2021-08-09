@@ -72,7 +72,7 @@ private extension ManualControlView {
       // The button style should be .automatic, but SwiftUI 3 beta is having horrible performance with it
       .buttonStyle(.plain)
       .foregroundColor(.accentColor)
-      .disabled(![CommunicationState.ready, .reading].contains(printerController.xpsq8ConnectionState))
+      .disabled(!canMove)
       
       ValidatingTextField(
         "\(dimension.rawValue) position",
@@ -106,7 +106,7 @@ private extension ManualControlView {
       // The button style should be .automatic, but SwiftUI 3 beta is having horrible performance with it
       .buttonStyle(.plain)
       .foregroundColor(.accentColor)
-      .disabled(![CommunicationState.ready, .reading].contains(printerController.xpsq8ConnectionState))
+      .disabled(!canMove)
       
       ValidatingTextField(
         "\(dimension.rawValue) position",
@@ -138,6 +138,11 @@ private extension ManualControlView {
 
 // MARK: Helpers
 private extension ManualControlView {
+  var canMove: Bool {
+    [.ready, .reading].contains(printerController.xpsq8ConnectionState)
+    && ![nil, .moving].contains(printerController.xpsq8State.groupStatus)
+  }
+  
   var stageStatusString: String {
     if let status = printerController.xpsq8State.groupStatus {
       return "\(status) (\(status.rawValue))"
