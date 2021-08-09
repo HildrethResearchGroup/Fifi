@@ -77,20 +77,20 @@ private extension ContentView {
       waveformAction()
     } label: {
       Image(systemName: "waveform")
-        .foregroundColor(printerController.waveformState.color)
+        .foregroundColor(printerController.waveformConnectionState.color)
     }
-    .help(helpForInstrument(named: "Waveform generator", state: printerController.waveformState))
+    .help(helpForInstrument(named: "Waveform generator", state: printerController.waveformConnectionState))
     
     Button {
       xpsq8Action()
     } label: {
       Image(systemName: "move.3d")
-        .foregroundColor(printerController.xpsq8State.color)
+        .foregroundColor(printerController.xpsq8ConnectionState.color)
     }
-    .help(helpForInstrument(named: "XPS-Q8", state: printerController.xpsq8State))
+    .help(helpForInstrument(named: "XPS-Q8", state: printerController.xpsq8ConnectionState))
   }
   
-  func helpForInstrument(named name: String, state: InstrumentState) -> String {
+  func helpForInstrument(named name: String, state: CommunicationState) -> String {
     switch state {
     case .notConnected:
       return "\(name) not connected – press to connect"
@@ -100,7 +100,7 @@ private extension ContentView {
       return "\(name) connecting"
     case .busy:
       return "\(name) busy"
-    case .ready:
+    case .ready, .reading:
       return "\(name) ready"
     case .blocked:
       return "\(name) blocked – this instrument is not in use but is blocked by an ongoing operation"
@@ -111,7 +111,7 @@ private extension ContentView {
 // MARK: - Helpers
 private extension ContentView {
   func waveformAction() {
-    switch printerController.waveformState {
+    switch printerController.waveformConnectionState {
     case .notConnected:
       Task {
         logger.info("Connecting to waveform generator at \(waveformAddress)::\(waveformPort)")
@@ -139,7 +139,7 @@ private extension ContentView {
   }
   
   func xpsq8Action() {
-    switch printerController.xpsq8State {
+    switch printerController.xpsq8ConnectionState {
     case .notConnected:
       Task {
         logger.info("Connecting to XPS-Q8 at \(xpsq8Address)::\(xpsq8Port)")

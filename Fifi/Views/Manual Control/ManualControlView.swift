@@ -12,10 +12,6 @@ import SeeayaUI
 struct ManualControlView: View {
   @EnvironmentObject private var printerController: PrinterController
   
-  @State private var xPosition: Double?
-  @State private var yPosition: Double?
-  @State private var zPosition: Double?
-  
   @State private var xJogLocation = 0.0
   @State private var yJogLocation = 0.0
   @State private var zJogLocation = 0.0
@@ -34,8 +30,14 @@ struct ManualControlView: View {
   
   var body: some View {
     VStack {
-      Text("Manual Stage Control")
-        .font(.title3)
+      HStack {
+        Text("\(printerController.xpsq8State.groupStatus?.rawValue.description ?? "?")")
+        Spacer()
+        Text("Manual Stage Control")
+          .font(.title3)
+        Spacer()
+      }
+      
       ForEach(PrinterController.Dimension.allCases, id: \.rawValue) { dimension in
         stageView(for: dimension)
       }
@@ -56,20 +58,6 @@ private extension ManualControlView {
           .font(.body.monospacedDigit())
       }
       .frame(width: 75)
-      .task {
-        while !Task.isCancelled {
-          if printerController.xpsq8State == .ready {
-            do {
-              let position = try await printerController.position(in: dimension)
-              self.position(for: dimension).wrappedValue = position
-            } catch {
-              logger.warning("Could not get \(dimension.rawValue) position: \(error)")
-            }
-          }
-          
-          await Task.yield()
-        }
-      }
       
       Spacer()
         .frame(width: 20)
@@ -88,7 +76,7 @@ private extension ManualControlView {
       // The button style should be .automatic, but SwiftUI 3 beta is having horrible performance with it
       .buttonStyle(.plain)
       .foregroundColor(.accentColor)
-      .disabled(printerController.xpsq8State != .ready)
+      .disabled(![CommunicationState.ready, .reading].contains(printerController.xpsq8ConnectionState))
       
       ValidatingTextField(
         "\(dimension.rawValue) position",
@@ -122,7 +110,7 @@ private extension ManualControlView {
       // The button style should be .automatic, but SwiftUI 3 beta is having horrible performance with it
       .buttonStyle(.plain)
       .foregroundColor(.accentColor)
-      .disabled(printerController.xpsq8State != .ready)
+      .disabled(![CommunicationState.ready, .reading].contains(printerController.xpsq8ConnectionState))
       
       ValidatingTextField(
         "\(dimension.rawValue) position",
@@ -145,19 +133,19 @@ private extension ManualControlView {
 
 // MARK: Helpers
 private extension ManualControlView {
-  func position(for dimension: PrinterController.Dimension) -> Binding<Double?> {
+  func position(for dimension: PrinterController.Dimension) -> Double? {
     switch dimension {
     case .x:
-      return $xPosition
+      return printerController.xpsq8State.xPosition
     case .y:
-      return $yPosition
+      return printerController.xpsq8State.yPosition
     case .z:
-      return $zPosition
+      return printerController.xpsq8State.zPosition
     }
   }
   
   func positionText(for dimension: PrinterController.Dimension) -> Text {
-    if let position = position(for: dimension).wrappedValue {
+    if let position = position(for: dimension) {
       return Text("\(position, format: .number.precision(.fractionLength(3)))")
     } else {
       return Text("?")

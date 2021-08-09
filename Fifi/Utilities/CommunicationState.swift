@@ -9,7 +9,7 @@ import SwiftUI
 import PrinterController
 
 // MARK: - Color
-extension InstrumentState {
+extension CommunicationState {
   var color: Color {
     switch self {
     case .notConnected:
@@ -20,7 +20,7 @@ extension InstrumentState {
       return .orange
     case .busy:
       return .yellow
-    case .ready:
+    case .ready, .reading:
       return .green
     case .blocked:
       return .brown

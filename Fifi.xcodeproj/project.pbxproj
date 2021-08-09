@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A1B639226A8EF2F004C5348 /* InstrumentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B639126A8EF2F004C5348 /* InstrumentState.swift */; };
+		5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B639126A8EF2F004C5348 /* CommunicationState.swift */; };
 		5A1B639526A8FE90004C5348 /* PrinterController in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1B639426A8FE90004C5348 /* PrinterController */; };
 		5A5B23F726A8C1230079D7F9 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */; };
 		5A5B23FA26A8C2270079D7F9 /* SeeayaUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5B23F926A8C2270079D7F9 /* SeeayaUI */; };
@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A1B639126A8EF2F004C5348 /* InstrumentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentState.swift; sourceTree = "<group>"; };
+		5A1B639126A8EF2F004C5348 /* CommunicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationState.swift; sourceTree = "<group>"; };
 		5A446CE126AA36CD003A7DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A5B23F326A8C08B0079D7F9 /* PrinterController */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PrinterController; path = ../PrinterController; sourceTree = "<group>"; };
 		5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		5A5E830526A923F700FE37AD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				5A1B639126A8EF2F004C5348 /* InstrumentState.swift */,
+				5A1B639126A8EF2F004C5348 /* CommunicationState.swift */,
 				5A5E830626A9240600FE37AD /* ErrorLogger.swift */,
 			);
 			path = Utilities;
@@ -330,7 +330,7 @@
 				5A5E830926A9363200FE37AD /* LogView.swift in Sources */,
 				5AAF501F267BD388002A58B5 /* ContentView.swift in Sources */,
 				5A5B23F726A8C1230079D7F9 /* PreferencesView.swift in Sources */,
-				5A1B639226A8EF2F004C5348 /* InstrumentState.swift in Sources */,
+				5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */,
 				5AAF501D267BD388002A58B5 /* FifiApp.swift in Sources */,
 				5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */,
 			);
