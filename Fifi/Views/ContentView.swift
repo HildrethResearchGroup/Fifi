@@ -27,6 +27,7 @@ struct ContentView: View {
         
         VStack {
           ManualControlView()
+            .frame(width: 500)
             .padding()
           Spacer()
         }

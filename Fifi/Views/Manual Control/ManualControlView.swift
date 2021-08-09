@@ -15,7 +15,7 @@ struct ManualControlView: View {
   @State private var xJogLocation = 0.0
   @State private var yJogLocation = 0.0
   @State private var zJogLocation = 0.0
-
+  
   @State private var xMoveLocation = 0.0
   @State private var yMoveLocation = 0.0
   @State private var zMoveLocation = 0.0
@@ -30,8 +30,24 @@ struct ManualControlView: View {
   
   var body: some View {
     VStack {
-      Text("Manual Stage Control")
-        .font(.title3)
+      ZStack {
+        Text("Manual Stage Control")
+          .font(.title3)
+        
+        HStack {
+          Spacer()
+          Button("Abort Move") {
+            Task {
+              // FIXME: This throws error -27 (Invalid stage name)
+              try await printerController.abortAllMoves()
+            }
+          }
+          // The button style should be .automatic, but SwiftUI 3 beta is having horrible performance with it
+          .buttonStyle(.plain)
+          .foregroundColor(.accentColor)
+          .disabled(printerController.xpsq8State.groupStatus != .moving)
+        }
+      }
       Text(stageStatusString)
       
       ForEach(PrinterController.Dimension.allCases, id: \.rawValue) { dimension in
@@ -87,7 +103,6 @@ private extension ManualControlView {
       }
       .font(.body.monospacedDigit())
       .multilineTextAlignment(.trailing)
-      .frame(width: 80)
       
       Spacer()
         .frame(width: 20)
@@ -121,8 +136,7 @@ private extension ManualControlView {
       }
       .font(.body.monospacedDigit())
       .multilineTextAlignment(.trailing)
-      .frame(width: 80)
-
+      
       Menu(displacementMode(for: dimension).wrappedValue?.description ?? "") {
         ForEach(DisplacementMode.allCases, id: \.description) { mode in
           Button(mode.description) {
@@ -130,7 +144,7 @@ private extension ManualControlView {
           }
         }
       }
-      .frame(width: 120)
+//      .menuStyle(.borderlessButton)
       .id(UUID())
     }
   }
