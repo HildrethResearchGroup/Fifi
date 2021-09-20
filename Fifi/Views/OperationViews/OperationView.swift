@@ -32,6 +32,8 @@ private extension PrinterOperationView {
     switch operation.operationType {
     case .voltageToggle:
       VoltageToggleOperationView(configuration: $operation.voltageConfiguration)
+    case .waveformSettings:
+      WaveformSettingsOperationView(configuration: $operation.waveformConfiguration)
     }
   }
   

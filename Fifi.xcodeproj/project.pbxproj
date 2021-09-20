@@ -12,6 +12,7 @@
 		5A1B639526A8FE90004C5348 /* PrinterController in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1B639426A8FE90004C5348 /* PrinterController */; };
 		5A2351C126AA2621004C7374 /* CoordinateTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2351C026AA2621004C7374 /* CoordinateTransformer.swift */; };
 		5A2351C326AA2BD7004C7374 /* CoordinateTransformationEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2351C226AA2BD7004C7374 /* CoordinateTransformationEditor.swift */; };
+		5A2EF44326F8FEFD00CFF342 /* WaveformSettingsOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2EF44226F8FEFD00CFF342 /* WaveformSettingsOperationView.swift */; };
 		5A4D3BD526E92C5500664B46 /* VoltageToggleOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D3BD426E92C5500664B46 /* VoltageToggleOperationView.swift */; };
 		5A4D3BD726E92DDC00664B46 /* OperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D3BD626E92DDC00664B46 /* OperationView.swift */; };
 		5A4D3BDD26E930D200664B46 /* OperationQueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D3BDC26E930D200664B46 /* OperationQueueView.swift */; };
@@ -50,6 +51,7 @@
 		5A1B639126A8EF2F004C5348 /* CommunicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationState.swift; sourceTree = "<group>"; };
 		5A2351C026AA2621004C7374 /* CoordinateTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTransformer.swift; sourceTree = "<group>"; };
 		5A2351C226AA2BD7004C7374 /* CoordinateTransformationEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTransformationEditor.swift; sourceTree = "<group>"; };
+		5A2EF44226F8FEFD00CFF342 /* WaveformSettingsOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformSettingsOperationView.swift; sourceTree = "<group>"; };
 		5A446CE126AA36CD003A7DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A4D3BD426E92C5500664B46 /* VoltageToggleOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltageToggleOperationView.swift; sourceTree = "<group>"; };
 		5A4D3BD626E92DDC00664B46 /* OperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				5A4D3BD426E92C5500664B46 /* VoltageToggleOperationView.swift */,
+				5A2EF44226F8FEFD00CFF342 /* WaveformSettingsOperationView.swift */,
 				5A4D3BD626E92DDC00664B46 /* OperationView.swift */,
 			);
 			path = OperationViews;
@@ -358,6 +361,7 @@
 				5A2351C326AA2BD7004C7374 /* CoordinateTransformationEditor.swift in Sources */,
 				5AAF501F267BD388002A58B5 /* ContentView.swift in Sources */,
 				5A5B23F726A8C1230079D7F9 /* PreferencesView.swift in Sources */,
+				5A2EF44326F8FEFD00CFF342 /* WaveformSettingsOperationView.swift in Sources */,
 				5A4D3BD726E92DDC00664B46 /* OperationView.swift in Sources */,
 				5A4D3BDD26E930D200664B46 /* OperationQueueView.swift in Sources */,
 				5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */,
