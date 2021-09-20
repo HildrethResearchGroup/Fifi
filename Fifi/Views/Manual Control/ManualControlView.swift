@@ -53,6 +53,11 @@ struct ManualControlView: View {
       ForEach(PrinterController.Dimension.allCases, id: \.rawValue) { dimension in
         stageView(for: dimension)
       }
+      
+      Text("Manual Voltage Control")
+        .font(.title3)
+      
+      ManualVoltageControlView()
     }
   }
 }
@@ -223,5 +228,6 @@ struct ManualControlView_Previews: PreviewProvider {
   static var previews: some View {
     ManualControlView()
       .padding()
+      .environmentObject(PrinterController())
   }
 }

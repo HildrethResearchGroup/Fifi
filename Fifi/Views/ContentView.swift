@@ -10,6 +10,7 @@ import SeeayaUI
 import PrinterController
 
 struct ContentView: View {
+  @State private var queue: [PrinterOperation] = []
   @EnvironmentObject private var printerController: PrinterController
   
   @AppStorage("waveformAddress") private var waveformAddress = "0.0.0.0"
@@ -22,7 +23,9 @@ struct ContentView: View {
   var body: some View {
     VStack(spacing: 0) {
       HStack {
-        Spacer()
+        OperationQueueView(operationQueue: $queue)
+          .padding()
+        
         Divider()
         
         VStack {
@@ -172,5 +175,6 @@ private extension ContentView {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+      .environmentObject(PrinterController())
   }
 }

@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A13DA2526CB041700D8ED3F /* ManualVoltageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13DA2426CB041700D8ED3F /* ManualVoltageControlView.swift */; };
 		5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B639126A8EF2F004C5348 /* CommunicationState.swift */; };
 		5A1B639526A8FE90004C5348 /* PrinterController in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1B639426A8FE90004C5348 /* PrinterController */; };
 		5A2351C126AA2621004C7374 /* CoordinateTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2351C026AA2621004C7374 /* CoordinateTransformer.swift */; };
 		5A2351C326AA2BD7004C7374 /* CoordinateTransformationEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2351C226AA2BD7004C7374 /* CoordinateTransformationEditor.swift */; };
+		5A4D3BD526E92C5500664B46 /* VoltageToggleOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D3BD426E92C5500664B46 /* VoltageToggleOperationView.swift */; };
+		5A4D3BD726E92DDC00664B46 /* OperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D3BD626E92DDC00664B46 /* OperationView.swift */; };
+		5A4D3BDD26E930D200664B46 /* OperationQueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D3BDC26E930D200664B46 /* OperationQueueView.swift */; };
 		5A5B23F726A8C1230079D7F9 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */; };
 		5A5B23FA26A8C2270079D7F9 /* SeeayaUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5B23F926A8C2270079D7F9 /* SeeayaUI */; };
 		5A5E830726A9240600FE37AD /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E830626A9240600FE37AD /* ErrorLogger.swift */; };
@@ -42,10 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A13DA2426CB041700D8ED3F /* ManualVoltageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualVoltageControlView.swift; sourceTree = "<group>"; };
 		5A1B639126A8EF2F004C5348 /* CommunicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationState.swift; sourceTree = "<group>"; };
 		5A2351C026AA2621004C7374 /* CoordinateTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTransformer.swift; sourceTree = "<group>"; };
 		5A2351C226AA2BD7004C7374 /* CoordinateTransformationEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTransformationEditor.swift; sourceTree = "<group>"; };
 		5A446CE126AA36CD003A7DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5A4D3BD426E92C5500664B46 /* VoltageToggleOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltageToggleOperationView.swift; sourceTree = "<group>"; };
+		5A4D3BD626E92DDC00664B46 /* OperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationView.swift; sourceTree = "<group>"; };
+		5A4D3BDC26E930D200664B46 /* OperationQueueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueView.swift; sourceTree = "<group>"; };
 		5A5B23F326A8C08B0079D7F9 /* PrinterController */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PrinterController; path = ../PrinterController; sourceTree = "<group>"; };
 		5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		5A5E830326A91F4800FE37AD /* Fifi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fifi.entitlements; sourceTree = "<group>"; };
@@ -97,6 +105,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5A4D3BD326E92C2E00664B46 /* OperationViews */ = {
+			isa = PBXGroup;
+			children = (
+				5A4D3BD426E92C5500664B46 /* VoltageToggleOperationView.swift */,
+				5A4D3BD626E92DDC00664B46 /* OperationView.swift */,
+			);
+			path = OperationViews;
+			sourceTree = "<group>";
+		};
 		5A5B23F226A8C08B0079D7F9 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,9 +125,11 @@
 		5A5E830426A923ED00FE37AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A4D3BD326E92C2E00664B46 /* OperationViews */,
 				5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */,
 				5A5E830826A9363200FE37AD /* LogView.swift */,
 				5AAF501E267BD388002A58B5 /* ContentView.swift */,
+				5A4D3BDC26E930D200664B46 /* OperationQueueView.swift */,
 				5A2351C226AA2BD7004C7374 /* CoordinateTransformationEditor.swift */,
 				5AD5837626A9F89E0056108F /* Manual Control */,
 			);
@@ -191,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				5AD5837726A9F8B00056108F /* ManualControlView.swift */,
+				5A13DA2426CB041700D8ED3F /* ManualVoltageControlView.swift */,
 			);
 			path = "Manual Control";
 			sourceTree = "<group>";
@@ -338,9 +358,13 @@
 				5A2351C326AA2BD7004C7374 /* CoordinateTransformationEditor.swift in Sources */,
 				5AAF501F267BD388002A58B5 /* ContentView.swift in Sources */,
 				5A5B23F726A8C1230079D7F9 /* PreferencesView.swift in Sources */,
+				5A4D3BD726E92DDC00664B46 /* OperationView.swift in Sources */,
+				5A4D3BDD26E930D200664B46 /* OperationQueueView.swift in Sources */,
 				5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */,
 				5AAF501D267BD388002A58B5 /* FifiApp.swift in Sources */,
 				5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */,
+				5A4D3BD526E92C5500664B46 /* VoltageToggleOperationView.swift in Sources */,
+				5A13DA2526CB041700D8ED3F /* ManualVoltageControlView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
