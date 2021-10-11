@@ -9,8 +9,8 @@ import SwiftUI
 import PrinterController
 
 struct PrinterOperationView: View {
+  @EnvironmentObject private var printerController: PrinterController
   @State private var showingConfiguration = true
-  @Binding var queue: [PrinterOperation]
   @Binding var operation: PrinterOperation
   var operationIndex: Int
   
@@ -34,6 +34,8 @@ private extension PrinterOperationView {
       VoltageToggleOperationView(configuration: $operation.voltageConfiguration)
     case .waveformSettings:
       WaveformSettingsOperationView(configuration: $operation.waveformConfiguration)
+    case .comment:
+      CommentOperationView(configuration: $operation.commentConfiguration)
     }
   }
   
@@ -45,19 +47,35 @@ private extension PrinterOperationView {
       } label: {
         Image(systemName: showingConfiguration ? "chevron.down" : "chevron.right")
       }
+      .frame(width: 20, height: 24)
       
       Spacer()
         .frame(width: 8)
       
+      Toggle(" ", isOn: $operation.isEnabled)
       Label(operation.operationType.name,
             systemImage: operation.operationType.thumbnailImageName)
-        .foregroundColor(.primary)
+        .foregroundColor(statusColor)
       
       Spacer()
       
+
+      Image(systemName: "line.3.horizontal")
+      .frame(width: 20, height: 20)
+      .onDrag {
+        NSItemProvider(object: NSURL(string: "fifi:operationReorder?index=\(operationIndex)")!)
+      } preview: {
+        Label(operation.operationType.name,
+              systemImage: operation.operationType.thumbnailImageName)
+          .foregroundColor(.primary)
+          .frame(minWidth: 400)
+      }
+
       Button {
-        queue.move(fromOffsets: IndexSet(integer: operationIndex),
-                   toOffset: operationIndex - 1)
+        printerController.printerQueueState.queue.move(
+          fromOffsets: IndexSet(integer: operationIndex),
+          toOffset: operationIndex - 1
+        )
       } label: {
         Image(systemName: "arrow.up")
       }
@@ -65,16 +83,18 @@ private extension PrinterOperationView {
       .disabled(operationIndex == 0)
       
       Button {
-        queue.move(fromOffsets: IndexSet(integer: operationIndex),
-                   toOffset: operationIndex + 2)
+        printerController.printerQueueState.queue.move(
+          fromOffsets: IndexSet(integer: operationIndex),
+          toOffset: operationIndex + 2
+        )
       } label: {
         Image(systemName: "arrow.down")
       }
       .frame(width: 20, height: 20)
-      .disabled(operationIndex == queue.count - 1)
+      .disabled(operationIndex == printerController.printerQueueState.queue.count - 1)
       
       Button {
-        queue.remove(at: operationIndex)
+        printerController.printerQueueState.queue.remove(at: operationIndex)
       } label: {
         Image(systemName: "trash")
       }
@@ -84,19 +104,34 @@ private extension PrinterOperationView {
   }
 }
 
+// MARK: - Helpers
+private extension PrinterOperationView {
+  var statusColor: Color {
+    guard operation.isEnabled else { return .secondary }
+    guard let runningOperationIndex = printerController.printerQueueState.operationIndex else {
+      return .primary
+    }
+    
+    if runningOperationIndex > operationIndex {
+      return .green
+    } else if runningOperationIndex < operationIndex {
+      return .primary
+    } else {
+      return .blue
+    }
+  }
+}
+
 // MARK: Previews
 struct PrinterOperationView_Previews: PreviewProvider {
   static var previews: some View {
     PrinterOperationView(
-      queue: .constant(
-        .init(repeating: PrinterOperation(operationType: .voltageToggle(.init())),
-              count: 3)
-      ),
       operation: .constant(
         PrinterOperation(operationType: .voltageToggle(.init()))
       ),
       operationIndex: 1
     )
+      .environmentObject(PrinterController())
       .padding()
       .frame(maxWidth: .infinity, maxHeight: .infinity)
   }

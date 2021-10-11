@@ -22,8 +22,7 @@ struct ContentView: View {
   var body: some View {
     VStack(spacing: 0) {
       HStack {
-        OperationQueueView(operationQueue: $printerController.printerQueueState.queue)
-          .disabled(printerController.printerQueueState.isRunning)
+        OperationQueueView()
           .padding()
         
         Divider()
@@ -77,6 +76,16 @@ private extension ContentView {
 private extension ContentView {
   @ViewBuilder
   var toolbarContent: some View {
+    Button {
+      Task {
+        await printerController.resumeQueue()
+      }
+    } label: {
+      Image(systemName: "play.fill")
+    }
+    
+    Spacer()
+    
     Button {
       waveformAction()
     } label: {

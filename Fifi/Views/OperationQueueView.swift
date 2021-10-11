@@ -9,19 +9,28 @@ import SwiftUI
 import PrinterController
 
 struct OperationQueueView: View {
-  @Binding var operationQueue: [PrinterOperation]
+  @EnvironmentObject private var printerController: PrinterController
   
   var body: some View {
     VStack {
       heading
       
-      List($operationQueue) { $operation in
-        PrinterOperationView(queue: $operationQueue,
-                             operation: $operation,
-                             operationIndex: operationQueue.firstIndex(of: operation)!)
+      List(queueState.queue) { $operation in
+        PrinterOperationView(
+          operation: $operation,
+          operationIndex: queueState.queue.wrappedValue.firstIndex(of: operation)!
+        )
+          
       }
       .listStyle(.plain)
     }
+  }
+}
+
+// MARK: - Helpers
+private extension OperationQueueView {
+  var queueState: Binding<PrinterQueueState> {
+    $printerController.printerQueueState
   }
 }
 
@@ -37,7 +46,7 @@ private extension OperationQueueView {
           let templateOperation = PrinterOperation.allEmptyOperations[index]
           
           Button() {
-            operationQueue.append(templateOperation)
+            queueState.queue.wrappedValue.append(templateOperation)
           } label: {
             HStack {
               Image(systemName: templateOperation.operationType.thumbnailImageName)
@@ -57,13 +66,8 @@ private extension OperationQueueView {
 // MARK: - Previews
 struct OperationQueueView_Previews: PreviewProvider {
   static var previews: some View {
-    OperationQueueView(operationQueue: .constant([
-      .init(operationType: .voltageToggle(.init())),
-      .init(operationType: .voltageToggle(.init())),
-      .init(operationType: .voltageToggle(.init())),
-      .init(operationType: .voltageToggle(.init())),
-      .init(operationType: .voltageToggle(.init()))
-    ]))
+    OperationQueueView()
+      .environmentObject(PrinterController())
       .padding()
   }
 }

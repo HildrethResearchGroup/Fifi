@@ -26,6 +26,7 @@
 		5AAF5024267BD389002A58B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AAF5023267BD389002A58B5 /* Preview Assets.xcassets */; };
 		5AAF502E267BD389002A58B5 /* FifiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF502D267BD389002A58B5 /* FifiTests.swift */; };
 		5AAF5038267BD389002A58B5 /* FifiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF5037267BD389002A58B5 /* FifiUITests.swift */; };
+		5ABFD55727140E2200FADA22 /* CommentOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABFD55627140E2200FADA22 /* CommentOperationView.swift */; };
 		5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5837726A9F8B00056108F /* ManualControlView.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		5AAF502D267BD389002A58B5 /* FifiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiTests.swift; sourceTree = "<group>"; };
 		5AAF5033267BD389002A58B5 /* FifiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FifiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AAF5037267BD389002A58B5 /* FifiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiUITests.swift; sourceTree = "<group>"; };
+		5ABFD55627140E2200FADA22 /* CommentOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentOperationView.swift; sourceTree = "<group>"; };
 		5AD5837726A9F8B00056108F /* ManualControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				5A4D3BD426E92C5500664B46 /* VoltageToggleOperationView.swift */,
 				5A2EF44226F8FEFD00CFF342 /* WaveformSettingsOperationView.swift */,
 				5A4D3BD626E92DDC00664B46 /* OperationView.swift */,
+				5ABFD55627140E2200FADA22 /* CommentOperationView.swift */,
 			);
 			path = OperationViews;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				5A5B23F726A8C1230079D7F9 /* PreferencesView.swift in Sources */,
 				5A2EF44326F8FEFD00CFF342 /* WaveformSettingsOperationView.swift in Sources */,
 				5A4D3BD726E92DDC00664B46 /* OperationView.swift in Sources */,
+				5ABFD55727140E2200FADA22 /* CommentOperationView.swift in Sources */,
 				5A4D3BDD26E930D200664B46 /* OperationQueueView.swift in Sources */,
 				5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */,
 				5AAF501D267BD388002A58B5 /* FifiApp.swift in Sources */,
