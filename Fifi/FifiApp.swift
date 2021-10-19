@@ -10,6 +10,23 @@ import PrinterController
 
 @main
 struct FifiApp: App {
+  init() {
+    AnyPrinterOperation.DynamicDispatch.shared
+      .register(
+        kind: .comment,
+        operation: .commentOperation(body: CommentOperationView.init)
+      )
+      .register(
+        kind: .voltageToggle,
+        operation: .voltageToggleOperation(body: VoltageToggleOperationView.init)
+      )
+      .register(
+        kind: .waveformSettings,
+        operation: .waveformSettingsOperation(body: WaveformSettingsOperationView.init)
+      )
+      .finalize()
+  }
+  
   let printerController = PrinterController()
   
   var body: some Scene {

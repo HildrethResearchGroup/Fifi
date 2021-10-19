@@ -42,15 +42,15 @@ private extension OperationQueueView {
         .font(.title3)
       Spacer()
       Menu {
-        ForEach(0..<PrinterOperation.allEmptyOperations.count) { index in
-          let templateOperation = PrinterOperation.allEmptyOperations[index]
+        ForEach(0..<AnyPrinterOperation.allEmptyOperations.count) { index in
+          let templateOperation = AnyPrinterOperation.allEmptyOperations[index]
           
           Button() {
             queueState.queue.wrappedValue.append(templateOperation)
           } label: {
             HStack {
-              Image(systemName: templateOperation.operationType.thumbnailImageName)
-              Text(templateOperation.operationType.name)
+              Image(systemName: templateOperation.thumbnailName)
+              Text(templateOperation.name)
             }
           }
         }

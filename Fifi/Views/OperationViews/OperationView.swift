@@ -11,7 +11,7 @@ import PrinterController
 struct PrinterOperationView: View {
   @EnvironmentObject private var printerController: PrinterController
   @State private var showingConfiguration = true
-  @Binding var operation: PrinterOperation
+  @Binding var operation: AnyPrinterOperation
   var operationIndex: Int
   
   var body: some View {
@@ -29,14 +29,15 @@ struct PrinterOperationView: View {
 private extension PrinterOperationView {
   @ViewBuilder
   var configurationView: some View {
-    switch operation.operationType {
-    case .voltageToggle:
-      VoltageToggleOperationView(configuration: $operation.voltageConfiguration)
-    case .waveformSettings:
-      WaveformSettingsOperationView(configuration: $operation.waveformConfiguration)
-    case .comment:
-      CommentOperationView(configuration: $operation.commentConfiguration)
-    }
+//    switch operation.operationType {
+//    case .voltageToggle:
+//      VoltageToggleOperationView(configuration: $operation.voltageConfiguration)
+//    case .waveformSettings:
+//      WaveformSettingsOperationView(configuration: $operation.waveformConfiguration)
+//    case .comment:
+//      CommentOperationView(configuration: $operation.commentConfiguration)
+//    }
+    operation.body(configuration: $operation.configuration)
   }
   
   @ViewBuilder
@@ -53,8 +54,7 @@ private extension PrinterOperationView {
         .frame(width: 8)
       
       Toggle(" ", isOn: $operation.isEnabled)
-      Label(operation.operationType.name,
-            systemImage: operation.operationType.thumbnailImageName)
+      Label(operation.name, systemImage: operation.thumbnailName)
         .foregroundColor(statusColor)
       
       Spacer()
@@ -65,8 +65,7 @@ private extension PrinterOperationView {
       .onDrag {
         NSItemProvider(object: NSURL(string: "fifi:operationReorder?index=\(operationIndex)")!)
       } preview: {
-        Label(operation.operationType.name,
-              systemImage: operation.operationType.thumbnailImageName)
+        Label(operation.name, systemImage: operation.thumbnailName)
           .foregroundColor(.primary)
           .frame(minWidth: 400)
       }
@@ -127,7 +126,9 @@ struct PrinterOperationView_Previews: PreviewProvider {
   static var previews: some View {
     PrinterOperationView(
       operation: .constant(
-        PrinterOperation(operationType: .voltageToggle(.init()))
+        AnyPrinterOperation(
+          .voltageToggleOperation(body: VoltageToggleOperationView.init)
+        )
       ),
       operationIndex: 1
     )
