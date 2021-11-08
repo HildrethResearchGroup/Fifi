@@ -20,6 +20,7 @@
 		5A5B23FA26A8C2270079D7F9 /* SeeayaUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5B23F926A8C2270079D7F9 /* SeeayaUI */; };
 		5A5E830726A9240600FE37AD /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E830626A9240600FE37AD /* ErrorLogger.swift */; };
 		5A5E830926A9363200FE37AD /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E830826A9363200FE37AD /* LogView.swift */; };
+		5AAB74462738FD5B00240FEB /* FifiApp+Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB74452738FD5B00240FEB /* FifiApp+Commands.swift */; };
 		5AAF501D267BD388002A58B5 /* FifiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF501C267BD388002A58B5 /* FifiApp.swift */; };
 		5AAF501F267BD388002A58B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF501E267BD388002A58B5 /* ContentView.swift */; };
 		5AAF5021267BD389002A58B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AAF5020267BD389002A58B5 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		5A5E830326A91F4800FE37AD /* Fifi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fifi.entitlements; sourceTree = "<group>"; };
 		5A5E830626A9240600FE37AD /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
 		5A5E830826A9363200FE37AD /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		5AAB74452738FD5B00240FEB /* FifiApp+Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FifiApp+Commands.swift"; sourceTree = "<group>"; };
 		5AAF5019267BD388002A58B5 /* Fifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AAF501C267BD388002A58B5 /* FifiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiApp.swift; sourceTree = "<group>"; };
 		5AAF501E267BD388002A58B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				5A446CE126AA36CD003A7DC5 /* Info.plist */,
 				5A5E830326A91F4800FE37AD /* Fifi.entitlements */,
 				5AAF501C267BD388002A58B5 /* FifiApp.swift */,
+				5AAB74452738FD5B00240FEB /* FifiApp+Commands.swift */,
 				5A5E830526A923F700FE37AD /* Utilities */,
 				5A5E830426A923ED00FE37AD /* Views */,
 				5AAF5020267BD389002A58B5 /* Assets.xcassets */,
@@ -371,6 +374,7 @@
 				5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */,
 				5AAF501D267BD388002A58B5 /* FifiApp.swift in Sources */,
 				5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */,
+				5AAB74462738FD5B00240FEB /* FifiApp+Commands.swift in Sources */,
 				5A4D3BD526E92C5500664B46 /* VoltageToggleOperationView.swift in Sources */,
 				5A13DA2526CB041700D8ED3F /* ManualVoltageControlView.swift in Sources */,
 			);
