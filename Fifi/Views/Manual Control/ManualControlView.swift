@@ -228,6 +228,6 @@ struct ManualControlView_Previews: PreviewProvider {
   static var previews: some View {
     ManualControlView()
       .padding()
-      .environmentObject(PrinterController())
+			.environmentObject(PrinterController.staticPreview)
   }
 }

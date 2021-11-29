@@ -78,10 +78,73 @@
             filePath = "Fifi/Views/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "toolbarContent"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5DE73A24-2DDE-4D72-82BA-EAECEAB185F9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../PrinterController/Sources/PrinterController/PrinterController/PrinterController+Queue.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "waitForModal(withComment:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5DE73A24-2DDE-4D72-82BA-EAECEAB185F9 - 10295748702d2252"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for PrinterController.PrinterController.waitForModal(withComment: Swift.String) async throws -&gt; ()"
+                  moduleName = "Fifi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/connorbarnes/Documents/Development/Swift/Work/PrinterController/Sources/PrinterController/PrinterController/PrinterController+Queue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "54">
+               </Location>
+               <Location
+                  uuid = "5DE73A24-2DDE-4D72-82BA-EAECEAB185F9 - 3ded52cb61d0c593"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) suspend resume partial function for PrinterController.PrinterController.waitForModal(withComment: Swift.String) async throws -&gt; ()"
+                  moduleName = "Fifi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/connorbarnes/Documents/Development/Swift/Work/PrinterController/Sources/PrinterController/PrinterController/PrinterController+Queue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "5DE73A24-2DDE-4D72-82BA-EAECEAB185F9 - dea1507653c7e7d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for PrinterController.PrinterController.waitForModal(withComment: Swift.String) async throws -&gt; ()"
+                  moduleName = "Fifi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/connorbarnes/Documents/Development/Swift/Work/PrinterController/Sources/PrinterController/PrinterController/PrinterController+Queue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -44,7 +44,7 @@ extension FifiApp {
 				open()
 			}
 			.keyboardShortcut(KeyboardShortcut(KeyEquivalent("o"), modifiers: [.command]))
-			.disabled(printerController.printerQueueState.isRunning)
+			.disabled(model.printerController?.printerQueueState.isRunning == true)
 			
 			Divider()
 			
@@ -60,6 +60,8 @@ extension FifiApp {
 extension FifiApp {
 	@MainActor
 	func save() {
+		guard let printerController = model.printerController else { return }
+		
 		let panel = NSSavePanel()
 		panel.allowedContentTypes = [.json]
 		panel.canCreateDirectories = true
@@ -79,6 +81,8 @@ extension FifiApp {
 	
 	@MainActor
 	func open() {
+		guard let printerController = model.printerController else { return }
+		
 		let panel = NSOpenPanel()
 		panel.allowedContentTypes = [.json]
 		panel.allowsMultipleSelection = false

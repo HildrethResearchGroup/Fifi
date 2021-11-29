@@ -24,25 +24,55 @@ struct FifiApp: App {
         kind: .waveformSettings,
         operation: .waveformSettingsOperation(body: WaveformSettingsOperationView.init)
       )
+			.register(
+				kind: .home,
+				operation: .homeOperation(body: HomeOperationView.init)
+			)
+			.register(
+				kind: .alert,
+				operation: .alertOperation(body: AlertOperationView.init)
+			)
+			.register(
+				kind: .wait,
+				operation: .waitOperation(body: WaitOperationView.init)
+			)
+			.register(
+				kind: .move,
+				operation: .moveOperation(body: MoveOperationView.init)
+			)
       .finalize()
+		
+		Task { [self] in
+			await setModel(printerController: PrinterController())
+		}
   }
   
-  let printerController = PrinterController()
+	func setModel(printerController: PrinterController) async {
+		model.printerController = printerController
+	}
+	
+	var model = Model()
   
   var body: some Scene {
     WindowGroup {
-      ContentView()
-        .environmentObject(printerController)
-        .onReceive(
-          NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification)
-        ) { _ in
-          for window in NSApplication.shared.windows {
-            if window.title == OpenWindows.mainWindow.title {
-              window.standardWindowButton(NSWindow.ButtonType.closeButton)?.isEnabled = false
-              break
-            }
-          }
-        }
+			if let printerController = model.printerController {
+				ContentView()
+					.environmentObject(printerController)
+					.onReceive(
+						NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification)
+					) { _ in
+						for window in NSApplication.shared.windows {
+							if window.title == OpenWindows.mainWindow.title {
+								window.standardWindowButton(NSWindow.ButtonType.closeButton)?.isEnabled = false
+								break
+							}
+						}
+					}
+			} else {
+				ProgressView()
+					.padding()
+					.frame(maxWidth: .infinity, maxHeight: .infinity)
+			}
     }
     .commands {
       commands()

@@ -19,7 +19,7 @@ struct PrinterOperationView: View {
       header
       if showingConfiguration {
         configurationView
-          .transition(.move(edge: .top).combined(with: .opacity))
+//          .transition(.move(edge: .top).combined(with: .opacity))
       }
     }
   }
@@ -29,14 +29,6 @@ struct PrinterOperationView: View {
 private extension PrinterOperationView {
   @ViewBuilder
   var configurationView: some View {
-//    switch operation.operationType {
-//    case .voltageToggle:
-//      VoltageToggleOperationView(configuration: $operation.voltageConfiguration)
-//    case .waveformSettings:
-//      WaveformSettingsOperationView(configuration: $operation.waveformConfiguration)
-//    case .comment:
-//      CommentOperationView(configuration: $operation.commentConfiguration)
-//    }
     operation.body(configuration: $operation.configuration)
   }
   
@@ -132,7 +124,7 @@ struct PrinterOperationView_Previews: PreviewProvider {
       ),
       operationIndex: 1
     )
-      .environmentObject(PrinterController())
+			.environmentObject(PrinterController.staticPreview)
       .padding()
       .frame(maxWidth: .infinity, maxHeight: .infinity)
   }

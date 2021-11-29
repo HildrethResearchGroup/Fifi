@@ -42,7 +42,29 @@ struct ContentView: View {
     .toolbar {
       toolbarContent
     }
-  }
+		.alert("Alert", isPresented: alertShown) {
+			Button("Continue") {
+				alertShown.wrappedValue = false
+			}
+		} message: {
+			Text(printerController.printerQueueState.modalComment ?? "nil")
+		}
+		.sheet(isPresented: timerShown) {
+			timerShown.wrappedValue = false
+		} content: {
+			VStack(spacing: 16) {
+				Label("Waiting…", systemImage: "clock")
+					.font(.title)
+				
+				let timeRemaining = printerController.printerQueueState.waitingTimeRemaining ?? 0.0
+				Text("Time remaining: \(timeRemaining, specifier: "%.2f") seconds")
+					.padding(.horizontal)
+					.font(.monospacedDigit(.body)())
+			}
+			.padding()
+			.frame(maxWidth: .infinity, maxHeight: .infinity)
+		}
+	}
 }
 
 // MARK: - Subviews
@@ -123,6 +145,30 @@ private extension ContentView {
 
 // MARK: - Helpers
 private extension ContentView {
+	var alertShown: Binding<Bool> {
+		Binding {
+			printerController.printerQueueState.modalComment != nil
+		} set: { newValue in
+			if newValue {
+				printerController.printerQueueState.modalComment = "Unknown Alert"
+			} else {
+				printerController.printerQueueState.modalComment = nil
+			}
+		}
+	}
+	
+	var timerShown: Binding<Bool> {
+		Binding {
+			printerController.printerQueueState.waitingTimeRemaining != nil
+		} set: { newValue in
+			if newValue {
+				printerController.printerQueueState.waitingTimeRemaining = 10.0
+			} else {
+				printerController.printerQueueState.waitingTimeRemaining = nil
+			}
+		}
+	}
+	
   func waveformAction() {
     switch printerController.waveformConnectionState {
     case .notConnected:
@@ -184,6 +230,6 @@ private extension ContentView {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
-      .environmentObject(PrinterController())
+			.environmentObject(PrinterController.staticPreview)
   }
 }

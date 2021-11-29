@@ -14,13 +14,18 @@ struct OperationQueueView: View {
   var body: some View {
     VStack {
       heading
+			
+//			List(queueState.queue.indices, id: \.self) { index in
+//				PrinterOperationView(operation: queueState.queue[index], operationIndex: index)
+//			}
+//			.listStyle(.plain)
       
       List(queueState.queue) { $operation in
         PrinterOperationView(
           operation: $operation,
           operationIndex: queueState.queue.wrappedValue.firstIndex(of: operation)!
         )
-          
+					.textFieldStyle(.automatic)
       }
       .listStyle(.plain)
     }
@@ -67,7 +72,7 @@ private extension OperationQueueView {
 struct OperationQueueView_Previews: PreviewProvider {
   static var previews: some View {
     OperationQueueView()
-      .environmentObject(PrinterController())
+			.environmentObject(PrinterController.staticPreview)
       .padding()
   }
 }

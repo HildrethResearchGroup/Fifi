@@ -29,6 +29,11 @@
 		5AAF5038267BD389002A58B5 /* FifiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF5037267BD389002A58B5 /* FifiUITests.swift */; };
 		5ABFD55727140E2200FADA22 /* CommentOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABFD55627140E2200FADA22 /* CommentOperationView.swift */; };
 		5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5837726A9F8B00056108F /* ManualControlView.swift */; };
+		5ADE4FE62754991700AC4505 /* HomeOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FE52754991700AC4505 /* HomeOperationView.swift */; };
+		5ADE4FE8275499F300AC4505 /* AlertOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FE7275499F300AC4505 /* AlertOperationView.swift */; };
+		5ADE4FEA27549A5100AC4505 /* WaitOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FE927549A5100AC4505 /* WaitOperationView.swift */; };
+		5ADE4FEC27549AD100AC4505 /* MoveOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FEB27549AD100AC4505 /* MoveOperationView.swift */; };
+		5ADE4FF02754A14000AC4505 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FEF2754A14000AC4505 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +80,11 @@
 		5AAF5037267BD389002A58B5 /* FifiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiUITests.swift; sourceTree = "<group>"; };
 		5ABFD55627140E2200FADA22 /* CommentOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentOperationView.swift; sourceTree = "<group>"; };
 		5AD5837726A9F8B00056108F /* ManualControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualControlView.swift; sourceTree = "<group>"; };
+		5ADE4FE52754991700AC4505 /* HomeOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOperationView.swift; sourceTree = "<group>"; };
+		5ADE4FE7275499F300AC4505 /* AlertOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOperationView.swift; sourceTree = "<group>"; };
+		5ADE4FE927549A5100AC4505 /* WaitOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitOperationView.swift; sourceTree = "<group>"; };
+		5ADE4FEB27549AD100AC4505 /* MoveOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveOperationView.swift; sourceTree = "<group>"; };
+		5ADE4FEF2754A14000AC4505 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +126,11 @@
 			children = (
 				5A4D3BD426E92C5500664B46 /* VoltageToggleOperationView.swift */,
 				5A2EF44226F8FEFD00CFF342 /* WaveformSettingsOperationView.swift */,
+				5ADE4FE52754991700AC4505 /* HomeOperationView.swift */,
+				5ADE4FE7275499F300AC4505 /* AlertOperationView.swift */,
+				5ADE4FE927549A5100AC4505 /* WaitOperationView.swift */,
 				5A4D3BD626E92DDC00664B46 /* OperationView.swift */,
+				5ADE4FEB27549AD100AC4505 /* MoveOperationView.swift */,
 				5ABFD55627140E2200FADA22 /* CommentOperationView.swift */,
 			);
 			path = OperationViews;
@@ -150,6 +164,7 @@
 				5A2351C026AA2621004C7374 /* CoordinateTransformer.swift */,
 				5A1B639126A8EF2F004C5348 /* CommunicationState.swift */,
 				5A5E830626A9240600FE37AD /* ErrorLogger.swift */,
+				5ADE4FEF2754A14000AC4505 /* Model.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -361,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ADE4FF02754A14000AC4505 /* Model.swift in Sources */,
 				5A5E830726A9240600FE37AD /* ErrorLogger.swift in Sources */,
 				5A2351C126AA2621004C7374 /* CoordinateTransformer.swift in Sources */,
 				5A5E830926A9363200FE37AD /* LogView.swift in Sources */,
@@ -370,10 +386,14 @@
 				5A2EF44326F8FEFD00CFF342 /* WaveformSettingsOperationView.swift in Sources */,
 				5A4D3BD726E92DDC00664B46 /* OperationView.swift in Sources */,
 				5ABFD55727140E2200FADA22 /* CommentOperationView.swift in Sources */,
+				5ADE4FEA27549A5100AC4505 /* WaitOperationView.swift in Sources */,
+				5ADE4FEC27549AD100AC4505 /* MoveOperationView.swift in Sources */,
 				5A4D3BDD26E930D200664B46 /* OperationQueueView.swift in Sources */,
 				5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */,
+				5ADE4FE62754991700AC4505 /* HomeOperationView.swift in Sources */,
 				5AAF501D267BD388002A58B5 /* FifiApp.swift in Sources */,
 				5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */,
+				5ADE4FE8275499F300AC4505 /* AlertOperationView.swift in Sources */,
 				5AAB74462738FD5B00240FEB /* FifiApp+Commands.swift in Sources */,
 				5A4D3BD526E92C5500664B46 /* VoltageToggleOperationView.swift in Sources */,
 				5A13DA2526CB041700D8ED3F /* ManualVoltageControlView.swift in Sources */,

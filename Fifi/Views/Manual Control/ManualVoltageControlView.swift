@@ -161,6 +161,6 @@ extension ManualVoltageControlView {
 struct ManualVoltageControlView_Previews: PreviewProvider {
   static var previews: some View {
     ManualVoltageControlView()
-      .environmentObject(PrinterController())
+			.environmentObject(PrinterController.staticPreview)
   }
 }
