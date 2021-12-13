@@ -16,6 +16,8 @@ struct ContentView: View {
   @AppStorage("waveformPort") private var waveformPort = 0
   @AppStorage("xpsq8Address") private var xpsq8Address = "0.0.0.0"
   @AppStorage("xpsq8Port") private var xpsq8Port = 0
+	@AppStorage("multimeterAddress") private var multimeterAddress = "0.0.0.0"
+	@AppStorage("multimeterPort") private var multimeterPort = 0
   
   @ObservedObject private var logger = Fifi.logger
   
@@ -107,6 +109,15 @@ private extension ContentView {
     }
     
     Spacer()
+		
+		Button {
+			multimeterAction()
+		} label: {
+			Image(systemName: "bolt.fill")
+				.foregroundColor(printerController.multimeterConnectionState.color)
+		}
+		.help(helpForInstrument(named: "Multimeter",
+														state: printerController.multimeterConnectionState))
     
     Button {
       waveformAction()
@@ -114,7 +125,8 @@ private extension ContentView {
       Image(systemName: "waveform")
         .foregroundColor(printerController.waveformConnectionState.color)
     }
-    .help(helpForInstrument(named: "Waveform generator", state: printerController.waveformConnectionState))
+    .help(helpForInstrument(named: "Waveform generator",
+														state: printerController.waveformConnectionState))
     
     Button {
       xpsq8Action()
@@ -122,7 +134,8 @@ private extension ContentView {
       Image(systemName: "move.3d")
         .foregroundColor(printerController.xpsq8ConnectionState.color)
     }
-    .help(helpForInstrument(named: "XPS-Q8", state: printerController.xpsq8ConnectionState))
+    .help(helpForInstrument(named: "XPS-Q8",
+														state: printerController.xpsq8ConnectionState))
   }
   
   func helpForInstrument(named name: String, state: CommunicationState) -> String {
@@ -174,7 +187,7 @@ private extension ContentView {
     case .notConnected:
       Task {
         logger.info("Connecting to waveform generator at \(waveformAddress)::\(waveformPort)")
-        let configuration = WaveformConfiguration(address: waveformAddress, port: waveformPort)
+        let configuration = VISAEthernetConfiguration(address: waveformAddress, port: waveformPort)
         await logger.tryOrError {
           try await printerController.connectToWaveform(configuration: configuration)
           logger.info("Connected to waveform generator at \(waveformAddress)::\(waveformPort)")
@@ -224,6 +237,34 @@ private extension ContentView {
       break
     }
   }
+	
+	func multimeterAction() {
+		switch printerController.multimeterConnectionState {
+		case .notConnected:
+			Task {
+				logger.info("Connecting to multimeter at \(multimeterAddress)::\(multimeterPort)")
+				let configuration = VISAEthernetConfiguration(address: multimeterAddress, port: multimeterPort)
+				await logger.tryOrError {
+					try await printerController.connectToMultimeter(configuration: configuration)
+					logger.info("Connected to multimeter at \(multimeterAddress)::\(multimeterPort)")
+				} errorString: { error in
+					"Could not connect to multimeter: \(error)"
+				}
+			}
+		case .notInitialized:
+			Task {
+				logger.info("Initializing multimeter")
+				await logger.tryOrError {
+					try await printerController.initializeMultimeter()
+					logger.info("Initialized multimeter")
+				} errorString: { error in
+					"Could not initialize multimeter: \(error)"
+				}
+			}
+		default:
+			break
+		}
+	}
 }
 
 // MARK: - Previews

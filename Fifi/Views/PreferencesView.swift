@@ -14,6 +14,9 @@ struct PreferencesView: View {
   
   @AppStorage("waveformAddress") var waveformAddress = "0.0.0.0"
   @AppStorage("waveformPort") var waveformPort = 0
+	
+	@AppStorage("multimeterAddress") private var multimeterAddress = "0.0.0.0"
+	@AppStorage("multimeterPort") private var multimeterPort = 0
   
   var body: some View {
     VStack {
@@ -26,6 +29,12 @@ struct PreferencesView: View {
       connectionPreferences(named: "Waveform Generator",
                             address: $waveformAddress,
                             port: $waveformPort)
+			
+			Divider()
+			
+			connectionPreferences(named: "Multimeter",
+														address: $multimeterAddress,
+														port: $multimeterPort)
     }
     .padding()
   }
