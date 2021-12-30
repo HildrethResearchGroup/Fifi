@@ -27,7 +27,11 @@ struct WaveformSettingsOperationView: View {
                 return "nil"
               }
             } validate: { string in
-              Double(string)
+							if let double = Double(string) {
+								return double
+							} else {
+								return Optional<Double?>.none
+							}
             }
           }
         }
@@ -44,7 +48,11 @@ struct WaveformSettingsOperationView: View {
                 return "nil"
               }
             } validate: { string in
-              Double(string)
+							if let double = Double(string) {
+								return double
+							} else {
+								return Optional<Double?>.none
+							}
             }
           }
         }
@@ -61,7 +69,11 @@ struct WaveformSettingsOperationView: View {
                 return "nil"
               }
             } validate: { string in
-              Double(string)
+							if let double = Double(string) {
+								return double
+							} else {
+								return Optional<Double?>.none
+							}
             }
           }
         }
@@ -78,13 +90,14 @@ struct WaveformSettingsOperationView: View {
                 return "nil"
               }
             } validate: { string in
-              Double(string)
+							if let double = Double(string) {
+								return double
+							} else {
+								return Optional<Double?>.none
+							}
             }
           }
         }
-        
-        
-        
         
       }
       .textFieldStyle(.squareBorder)

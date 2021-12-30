@@ -19,16 +19,20 @@ struct OperationQueueView: View {
 //				PrinterOperationView(operation: queueState.queue[index], operationIndex: index)
 //			}
 //			.listStyle(.plain)
-      
-      List(queueState.queue) { $operation in
-        PrinterOperationView(
-          operation: $operation,
-          operationIndex: queueState.queue.wrappedValue.firstIndex(of: operation)!
-        )
+			
+			List(queueState.queue) { $operation in
+				PrinterOperationView(
+					operation: $operation,
+					operationIndex: queueState.queue.wrappedValue.firstIndex(of: operation)!
+				)
 					.textFieldStyle(.automatic)
-      }
-      .listStyle(.plain)
-    }
+					.padding(4)
+					.border(Color.secondary)
+					.listRowInsets(EdgeInsets(top: 2, leading: 0, bottom: 0, trailing: 0))
+			}
+			.listStyle(.plain)
+		}
+		.disabled(printerController.printerQueueState.isRunning)
   }
 }
 

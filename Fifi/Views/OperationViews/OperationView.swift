@@ -29,7 +29,11 @@ struct PrinterOperationView: View {
 private extension PrinterOperationView {
   @ViewBuilder
   var configurationView: some View {
-    operation.body(configuration: $operation.configuration)
+		HStack {
+			Spacer()
+				.frame(width: 50, height: 0)
+			operation.body(configuration: $operation.configuration)
+		}
   }
   
   @ViewBuilder
