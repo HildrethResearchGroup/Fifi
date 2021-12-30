@@ -26,9 +26,10 @@ struct ContentView: View {
       HStack {
         OperationQueueView()
           .padding()
-        
+				Spacer()
+
         Divider()
-        
+
         VStack {
           ManualControlView()
             .frame(width: 500)
@@ -36,11 +37,14 @@ struct ContentView: View {
           Spacer()
         }
       }
-      
+
       Divider()
-      
+
       bottomBar
     }
+		// There appears to be a glitch in SwiftUI for macOS where the default button style significantly slows down performance. The default menu style also slightly slows down performance.
+		.buttonStyle(.plain)
+		.menuStyle(.borderlessButton)
     .toolbar {
       toolbarContent
     }
@@ -57,7 +61,7 @@ struct ContentView: View {
 			VStack(spacing: 16) {
 				Label("Waiting…", systemImage: "clock")
 					.font(.title)
-				
+
 				let timeRemaining = printerController.printerQueueState.waitingTimeRemaining ?? 0.0
 				Text("Time remaining: \(timeRemaining, specifier: "%.2f") seconds")
 					.padding(.horizontal)

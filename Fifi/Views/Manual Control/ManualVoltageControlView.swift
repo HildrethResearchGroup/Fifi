@@ -36,7 +36,6 @@ struct ManualVoltageControlView: View {
             }
           }
         }
-        .buttonStyle(.plain)
         .foregroundColor(.accentColor)
       }
       
@@ -56,7 +55,6 @@ struct ManualVoltageControlView: View {
             }
           }
         }
-        .buttonStyle(.plain)
         .foregroundColor(.accentColor)
       }
       
@@ -76,7 +74,6 @@ struct ManualVoltageControlView: View {
             }
           }
         }
-        .buttonStyle(.plain)
         .foregroundColor(.accentColor)
       }
       
@@ -96,7 +93,6 @@ struct ManualVoltageControlView: View {
             }
           }
         }
-        .buttonStyle(.plain)
         .foregroundColor(.accentColor)
       }
       
@@ -110,7 +106,7 @@ struct ManualVoltageControlView: View {
             }
           }
         }
-        .id(UUID())
+//        .id(UUID())
         
         Button("Set") {
           Task {
@@ -119,7 +115,6 @@ struct ManualVoltageControlView: View {
             }
           }
         }
-        .buttonStyle(.plain)
         .foregroundColor(.accentColor)
       }
     }
