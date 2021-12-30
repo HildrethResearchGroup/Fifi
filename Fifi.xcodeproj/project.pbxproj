@@ -70,6 +70,7 @@
 		5A5E830326A91F4800FE37AD /* Fifi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fifi.entitlements; sourceTree = "<group>"; };
 		5A5E830626A9240600FE37AD /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
 		5A5E830826A9363200FE37AD /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		5AAB2A5A277E233B000A32B0 /* XPSQ8Kit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = XPSQ8Kit; path = ../XPSQ8Kit; sourceTree = "<group>"; };
 		5AAB74452738FD5B00240FEB /* FifiApp+Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FifiApp+Commands.swift"; sourceTree = "<group>"; };
 		5AAF5019267BD388002A58B5 /* Fifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AAF501C267BD388002A58B5 /* FifiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiApp.swift; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				5A5B23F326A8C08B0079D7F9 /* PrinterController */,
+				5AAB2A5A277E233B000A32B0 /* XPSQ8Kit */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
