@@ -40,6 +40,10 @@ struct FifiApp: App {
 				kind: .move,
 				operation: .moveOperation(body: MoveOperationView.init)
 			)
+			.register(
+				kind: .printLine,
+				operation: .printLineOperation(body: PrintLineOperationView.init)
+			)
       .finalize()
 		
 		Task { [self] in

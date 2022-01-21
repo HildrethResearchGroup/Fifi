@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A08511A279B41930043E1BA /* PrintLineOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A085119279B41920043E1BA /* PrintLineOperationView.swift */; };
 		5A13DA2526CB041700D8ED3F /* ManualVoltageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13DA2426CB041700D8ED3F /* ManualVoltageControlView.swift */; };
 		5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B639126A8EF2F004C5348 /* CommunicationState.swift */; };
 		5A1B639526A8FE90004C5348 /* PrinterController in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1B639426A8FE90004C5348 /* PrinterController */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A085119279B41920043E1BA /* PrintLineOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintLineOperationView.swift; sourceTree = "<group>"; };
 		5A13DA2426CB041700D8ED3F /* ManualVoltageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualVoltageControlView.swift; sourceTree = "<group>"; };
 		5A1B639126A8EF2F004C5348 /* CommunicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationState.swift; sourceTree = "<group>"; };
 		5A2351C026AA2621004C7374 /* CoordinateTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTransformer.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				5ADE4FE7275499F300AC4505 /* AlertOperationView.swift */,
 				5ADE4FE927549A5100AC4505 /* WaitOperationView.swift */,
 				5A4D3BD626E92DDC00664B46 /* OperationView.swift */,
+				5A085119279B41920043E1BA /* PrintLineOperationView.swift */,
 				5ADE4FEB27549AD100AC4505 /* MoveOperationView.swift */,
 				5ABFD55627140E2200FADA22 /* CommentOperationView.swift */,
 			);
@@ -392,6 +395,7 @@
 				5A4D3BD726E92DDC00664B46 /* OperationView.swift in Sources */,
 				5ABFD55727140E2200FADA22 /* CommentOperationView.swift in Sources */,
 				5ADE4FEA27549A5100AC4505 /* WaitOperationView.swift in Sources */,
+				5A08511A279B41930043E1BA /* PrintLineOperationView.swift in Sources */,
 				5ADE4FEC27549AD100AC4505 /* MoveOperationView.swift in Sources */,
 				5A4D3BDD26E930D200664B46 /* OperationQueueView.swift in Sources */,
 				5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */,
