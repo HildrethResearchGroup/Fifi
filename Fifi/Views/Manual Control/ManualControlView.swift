@@ -44,8 +44,20 @@ struct ManualControlView: View {
         ManualStageView(dimension: dimension, jogLocation: jogLocation(for: dimension), moveLocation: moveLocation(for: dimension), displacementMode: displacementMode(for: dimension))
       }
       
+			ZStack {
       Text("Manual Voltage Control")
         .font(.title3)
+				
+				HStack {
+					Spacer()
+					Button("Abort Voltage") {
+						Task {
+							try await printerController.turnVoltageOff()
+						}
+					}
+					.foregroundColor(.accentColor)
+				}
+			}
       
       ManualVoltageControlView()
     }

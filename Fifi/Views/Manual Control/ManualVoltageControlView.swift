@@ -21,7 +21,7 @@ struct ManualVoltageControlView: View {
   var body: some View {
     VStack {
       HStack {
-        Text("Voltage: \(voltageString)")
+				Text("Voltage: \(voltageString)")
         
         ValidatingTextField("Voltage", value: $targetVoltage) { value in
           "\(value)"

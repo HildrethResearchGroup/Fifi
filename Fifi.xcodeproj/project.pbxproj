@@ -12,6 +12,7 @@
 		5A1B639526A8FE90004C5348 /* PrinterController in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1B639426A8FE90004C5348 /* PrinterController */; };
 		5A2351C126AA2621004C7374 /* CoordinateTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2351C026AA2621004C7374 /* CoordinateTransformer.swift */; };
 		5A2351C326AA2BD7004C7374 /* CoordinateTransformationEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2351C226AA2BD7004C7374 /* CoordinateTransformationEditor.swift */; };
+		5A28BCA42792154F00983D9A /* SwiftVISASwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A28BCA32792154F00983D9A /* SwiftVISASwift */; };
 		5A2A47A0277DAEBE00180428 /* ManualStageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A479F277DAEBE00180428 /* ManualStageView.swift */; };
 		5A2EF44326F8FEFD00CFF342 /* WaveformSettingsOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2EF44226F8FEFD00CFF342 /* WaveformSettingsOperationView.swift */; };
 		5A4D3BD526E92C5500664B46 /* VoltageToggleOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D3BD426E92C5500664B46 /* VoltageToggleOperationView.swift */; };
@@ -95,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A28BCA42792154F00983D9A /* SwiftVISASwift in Frameworks */,
 				5A5B23FA26A8C2270079D7F9 /* SeeayaUI in Frameworks */,
 				5A1B639526A8FE90004C5348 /* PrinterController in Frameworks */,
 			);
@@ -263,6 +265,7 @@
 			packageProductDependencies = (
 				5A5B23F926A8C2270079D7F9 /* SeeayaUI */,
 				5A1B639426A8FE90004C5348 /* PrinterController */,
+				5A28BCA32792154F00983D9A /* SwiftVISASwift */,
 			);
 			productName = Fifi;
 			productReference = 5AAF5019267BD388002A58B5 /* Fifi.app */;
@@ -338,6 +341,7 @@
 			mainGroup = 5AAF5010267BD387002A58B5;
 			packageReferences = (
 				5A5B23F826A8C2270079D7F9 /* XCRemoteSwiftPackageReference "SeeayaUI" */,
+				5A28BCA22792154F00983D9A /* XCRemoteSwiftPackageReference "SwiftVISASwift" */,
 			);
 			productRefGroup = 5AAF501A267BD388002A58B5 /* Products */;
 			projectDirPath = "";
@@ -753,6 +757,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5A28BCA22792154F00983D9A /* XCRemoteSwiftPackageReference "SwiftVISASwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftVISA/SwiftVISASwift.git";
+			requirement = {
+				branch = actor;
+				kind = branch;
+			};
+		};
 		5A5B23F826A8C2270079D7F9 /* XCRemoteSwiftPackageReference "SeeayaUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/seeaya/SeeayaUI.git";
@@ -767,6 +779,11 @@
 		5A1B639426A8FE90004C5348 /* PrinterController */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PrinterController;
+		};
+		5A28BCA32792154F00983D9A /* SwiftVISASwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A28BCA22792154F00983D9A /* XCRemoteSwiftPackageReference "SwiftVISASwift" */;
+			productName = SwiftVISASwift;
 		};
 		5A5B23F926A8C2270079D7F9 /* SeeayaUI */ = {
 			isa = XCSwiftPackageProductDependency;
