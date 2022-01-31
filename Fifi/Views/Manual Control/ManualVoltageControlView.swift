@@ -22,11 +22,11 @@ struct ManualVoltageControlView: View {
   var body: some View {
 		VStack(alignment: .leading) {
 			HStack {
-				Text("Impedance: \(impedanceString)Ω")
+				Text("Impedance: \(impedanceString)")
 				
 				Toggle("Infinite", isOn: infiniteImpedance)
 				
-				ValidatingTextField("Impedance", value: $targetVoltage) { value in
+				ValidatingTextField("Impedance", value: $targetImpedance) { value in
 					"\(value)"
 				} validate: { string in
 					Double(string)
@@ -36,7 +36,7 @@ struct ManualVoltageControlView: View {
 				Button("Set") {
 					Task {
 						await logger.tryOrError {
-							// TODO: Implement
+							try await printerController.setImpedance(to: targetImpedance)
 						}
 					}
 				}
@@ -147,7 +147,9 @@ struct ManualVoltageControlView: View {
 // MARK: - Helpers
 extension ManualVoltageControlView {
 	var impedanceString: String {
-		stringOrQuestionMarkIfOptional(String?.none)
+		let string = printerController.waveformState.impedance
+			.flatMap { $0 == .infinity ? "∞" : "\($0)Ω" }
+		return stringOrQuestionMarkIfOptional(string)
 	}
 	
   var rawVoltageString: String {
