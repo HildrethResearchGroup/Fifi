@@ -118,9 +118,9 @@ private extension ManualStageView {
 	
 	func positionText(for dimension: PrinterController.Dimension) -> Text {
     if let position = position(for: dimension) {
-      return Text("\(position, format: .number.precision(.fractionLength(3)))")
+      return Text("\(position, format: .number.precision(.fractionLength(3)))mm")
     } else {
-      return Text("?")
+      return Text("?mm")
     }
 	}
 	
