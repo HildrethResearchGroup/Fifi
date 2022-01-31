@@ -13,12 +13,12 @@ struct PrintLineOperationView: View {
 	@Binding var configuration: PrintLineConfiguration
 	
 	var body: some View {
-		VStack {
+		VStack(alignment: .leading) {
 			HStack {
 				Text("Direction")
 				
 				Menu(configuration.dimension.rawValue) {
-					ForEach(PrinterController.Dimension.allCases) { dimension in
+					ForEach([PrinterController.Dimension.x, .y]) { dimension in
 						Button(dimension.rawValue) {
 							configuration.dimension = dimension
 						}
@@ -56,7 +56,7 @@ struct PrintLineOperationView: View {
 				}
 			}
 			
-			
+			Toggle("Return to start when done", isOn: $configuration.returnToStart)
 		}
 	}
 	
@@ -69,6 +69,7 @@ struct PrintLineOperationView: View {
 	}()
 }
 
+// MARK: Previews
 struct PrintLineOperationView_Previews: PreviewProvider {
 	static var previews: some View {
 		PrintLineOperationView(configuration: .constant(.init()))

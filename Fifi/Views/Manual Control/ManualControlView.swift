@@ -28,13 +28,18 @@ struct ManualControlView: View {
         
         HStack {
           Spacer()
-          Button("Abort Move") {
-            Task {
-              // FIXME: This throws error -27 (Invalid stage name)
-              try await printerController.abortAllMoves()
-            }
+					Button(movesHaveBeenAborted ? "Reenable Movement" : "Abort Move") {
+						if movesHaveBeenAborted {
+							Task {
+								try await printerController.reenableMovement()
+							}
+						} else {
+							Task {
+								try await printerController.abortAllMoves()
+							}
+						}
           }
-          .foregroundColor(.accentColor)
+          .foregroundColor(.red)
           .disabled(printerController.xpsq8State.groupStatus != .moving)
         }
       }
@@ -44,8 +49,20 @@ struct ManualControlView: View {
         ManualStageView(dimension: dimension, jogLocation: jogLocation(for: dimension), moveLocation: moveLocation(for: dimension), displacementMode: displacementMode(for: dimension))
       }
       
-      Text("Manual Voltage Control")
-        .font(.title3)
+			ZStack {
+				Text("Manual Voltage Control")
+					.font(.title3)
+				
+				HStack {
+					Spacer()
+					Button("Turn Off Voltage") {
+						Task {
+							try await printerController.turnVoltageOff()
+						}
+					}
+					.foregroundColor(.red)
+				}
+			}
       
       ManualVoltageControlView()
     }
@@ -54,6 +71,10 @@ struct ManualControlView: View {
 
 // MARK: Helpers
 private extension ManualControlView {
+	var movesHaveBeenAborted: Bool {
+		printerController.xpsq8State.groupStatus == .readyDueToAbortMove
+	}
+	
   var stageStatusString: String {
     if let status = printerController.xpsq8State.groupStatus {
       return "\(status) (\(status.rawValue))"

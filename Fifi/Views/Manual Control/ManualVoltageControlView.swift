@@ -12,6 +12,7 @@ import SeeayaUI
 struct ManualVoltageControlView: View {
   @EnvironmentObject private var printerController: PrinterController
   
+	@State var targetImpedance = 1.0
   @State var targetVoltage = 0.0
   @State var targetVoltageOffset = 0.0
   @State var targetFrequency = 0.0
@@ -19,11 +20,33 @@ struct ManualVoltageControlView: View {
   @State var targetWaveFunction: WaveFunction = .sin
   
   var body: some View {
-    VStack {
+		VStack(alignment: .leading) {
+			HStack {
+				Text("Impedance: \(impedanceString)Ω")
+				
+				Toggle("Infinite", isOn: infiniteImpedance)
+				
+				ValidatingTextField("Impedance", value: $targetVoltage) { value in
+					"\(value)"
+				} validate: { string in
+					Double(string)
+				}
+				.disabled(infiniteImpedance.wrappedValue)
+				
+				Button("Set") {
+					Task {
+						await logger.tryOrError {
+							// TODO: Implement
+						}
+					}
+				}
+				.foregroundColor(.accentColor)
+			}
+			
       HStack {
-        Text("Voltage: \(voltageString)")
+        Text("Amplitude: \(amplifiedVoltageString)V [\(rawVoltageString)V]")
         
-        ValidatingTextField("Voltage", value: $targetVoltage) { value in
+        ValidatingTextField("Amplitude", value: $targetVoltage) { value in
           "\(value)"
         } validate: { string in
           Double(string)
@@ -32,7 +55,7 @@ struct ManualVoltageControlView: View {
         Button("Set") {
           Task {
             await logger.tryOrError {
-              try await printerController.setVoltage(to: targetVoltage)
+              try await printerController.setAmplifiedVoltage(to: targetVoltage)
             }
           }
         }
@@ -40,7 +63,7 @@ struct ManualVoltageControlView: View {
       }
       
       HStack {
-        Text("Voltage Offset: \(voltageOffsetString)")
+        Text("Voltage Offset: \(amplifiedVoltageOffsetString)V [\(rawVoltageOffsetString)V]")
         
         ValidatingTextField("Voltage Offset", value: $targetVoltageOffset) { value in
           "\(value)"
@@ -51,7 +74,7 @@ struct ManualVoltageControlView: View {
         Button("Set") {
           Task {
             await logger.tryOrError {
-              try await printerController.setVoltageOffset(to: targetVoltageOffset)
+              try await printerController.setAmplifiedVoltageOffset(to: targetVoltageOffset)
             }
           }
         }
@@ -59,7 +82,7 @@ struct ManualVoltageControlView: View {
       }
       
       HStack {
-        Text("Frequency: \(frequencyString)")
+        Text("Frequency: \(frequencyString)Hz")
         
         ValidatingTextField("Frequency", value: $targetFrequency) { value in
           "\(value)"
@@ -78,7 +101,7 @@ struct ManualVoltageControlView: View {
       }
       
       HStack {
-        Text("Phase: \(phaseString)")
+        Text("Phase: \(phaseString)º")
         
         ValidatingTextField("Phase", value: $targetPhase) { value in
           "\(value)"
@@ -123,33 +146,60 @@ struct ManualVoltageControlView: View {
 
 // MARK: - Helpers
 extension ManualVoltageControlView {
-  var voltageString: String {
-    stringOfQuestionMarkIfOptional(printerController.waveformState.voltage)
+	var impedanceString: String {
+		stringOrQuestionMarkIfOptional(String?.none)
+	}
+	
+  var rawVoltageString: String {
+    stringOrQuestionMarkIfOptional(printerController.waveformState.rawVoltage)
   }
   
-  var voltageOffsetString: String {
-    stringOfQuestionMarkIfOptional(printerController.waveformState.voltageOffset)
+  var rawVoltageOffsetString: String {
+    stringOrQuestionMarkIfOptional(printerController.waveformState.rawVoltageOffset)
   }
+	
+	var amplifiedVoltageString: String {
+		stringOrQuestionMarkIfOptional(printerController.waveformState.amplifiedVoltage)
+	}
   
+	var amplifiedVoltageOffsetString: String {
+		stringOrQuestionMarkIfOptional(printerController.waveformState.amplifiedVoltageOffset)
+	}
+	
   var frequencyString: String {
-    stringOfQuestionMarkIfOptional(printerController.waveformState.frequency)
+    stringOrQuestionMarkIfOptional(printerController.waveformState.frequency)
   }
   
   var phaseString: String {
-    stringOfQuestionMarkIfOptional(printerController.waveformState.phase)
+    stringOrQuestionMarkIfOptional(printerController.waveformState.phase)
   }
   
   var waveFunctionString: String {
-    stringOfQuestionMarkIfOptional(printerController.waveformState.waveFunction?.rawValue)
+    stringOrQuestionMarkIfOptional(printerController.waveformState.waveFunction?.rawValue)
   }
   
-  func stringOfQuestionMarkIfOptional<T>(_ value: T?) -> String {
+  func stringOrQuestionMarkIfOptional<T>(_ value: T?) -> String {
     if let value = value {
       return "\(value)"
     } else {
       return "?"
     }
   }
+	
+	var infiniteImpedance: Binding<Bool> {
+		.init {
+			targetImpedance == .infinity
+		} set: { value in
+			if value {
+				targetImpedance = .infinity
+			} else {
+				// Don't set target impedance if it is already finite
+				if !targetImpedance.isFinite {
+					targetImpedance = 1.0
+				}
+			}
+		}
+	}
 }
 
 // MARK: - Previews
