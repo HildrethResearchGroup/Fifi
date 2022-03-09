@@ -65,6 +65,14 @@ struct ManualControlView: View {
 			}
       
       ManualVoltageControlView()
+			
+			Text("Manual Multimeter Control")
+				.font(.title3)
+			
+			HStack {
+				ManualMultimeterView()
+				Spacer()
+			}
     }
   }
 }
