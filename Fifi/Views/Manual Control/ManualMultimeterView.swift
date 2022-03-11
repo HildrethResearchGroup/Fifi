@@ -23,7 +23,7 @@ struct ManualMultimeterView: View {
 // MARK: - Helpers
 private extension ManualMultimeterView {
 	var voltageString: String {
-		stringOrQuestionMarkIfOptional(printerController.multimeterState.rawVoltage)
+		stringOrQuestionMarkIfOptional(printerController.multimeterState.rawResistance)
 	}
 	
 	func stringOrQuestionMarkIfOptional<T>(_ value: T?) -> String {

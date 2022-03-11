@@ -40,7 +40,10 @@ struct ManualControlView: View {
 						}
           }
           .foregroundColor(.red)
-          .disabled(printerController.xpsq8State.groupStatus != .moving)
+          .disabled(
+						printerController.xpsq8State.groupStatus != .moving
+						&& printerController.xpsq8State.groupStatus != .readyDueToAbortMove
+					)
         }
       }
       Text(stageStatusString)
