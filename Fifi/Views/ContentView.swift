@@ -23,18 +23,15 @@ struct ContentView: View {
   
   var body: some View {
     VStack(spacing: 0) {
-      HStack {
+      HSplitView {
         OperationQueueView()
+              .frame(width: 500)
           .padding()
-				Spacer()
-
-        Divider()
 
         VStack {
           ManualControlView()
-            .frame(width: 500)
+            .frame(minWidth: 500)
             .padding()
-          Spacer()
         }
       }
 
