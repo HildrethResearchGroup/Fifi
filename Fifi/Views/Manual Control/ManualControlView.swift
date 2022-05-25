@@ -76,7 +76,9 @@ struct ManualControlView: View {
 				ManualMultimeterView()
 				Spacer()
 			}
-    }
+        Divider()
+        SelectableCameraView()
+    }// END: Top Level VStack
   }
 }
 

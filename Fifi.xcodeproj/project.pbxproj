@@ -39,6 +39,13 @@
 		5ADE4FEA27549A5100AC4505 /* WaitOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FE927549A5100AC4505 /* WaitOperationView.swift */; };
 		5ADE4FEC27549AD100AC4505 /* MoveOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FEB27549AD100AC4505 /* MoveOperationView.swift */; };
 		5ADE4FF02754A14000AC4505 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FEF2754A14000AC4505 /* Model.swift */; };
+		C06E54B3283EBBD500A36145 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54AD283EBBD500A36145 /* CameraViewController.swift */; };
+		C06E54B4283EBBD500A36145 /* RecordingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54AE283EBBD500A36145 /* RecordingState.swift */; };
+		C06E54B5283EBBD500A36145 /* DeviceCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54AF283EBBD500A36145 /* DeviceCameraView.swift */; };
+		C06E54B6283EBBD500A36145 /* SelectableCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54B0283EBBD500A36145 /* SelectableCameraView.swift */; };
+		C06E54B7283EBBD500A36145 /* AVCaptureDevice+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54B1283EBBD500A36145 /* AVCaptureDevice+UI.swift */; };
+		C06E54B8283EBBD500A36145 /* CameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54B2283EBBD500A36145 /* CameraViewControllerDelegate.swift */; };
+		C06E54BA283EBC4D00A36145 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06E54B9283EBC4D00A36145 /* CameraViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +102,13 @@
 		5ADE4FE927549A5100AC4505 /* WaitOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitOperationView.swift; sourceTree = "<group>"; };
 		5ADE4FEB27549AD100AC4505 /* MoveOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveOperationView.swift; sourceTree = "<group>"; };
 		5ADE4FEF2754A14000AC4505 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C06E54AD283EBBD500A36145 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		C06E54AE283EBBD500A36145 /* RecordingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingState.swift; sourceTree = "<group>"; };
+		C06E54AF283EBBD500A36145 /* DeviceCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCameraView.swift; sourceTree = "<group>"; };
+		C06E54B0283EBBD500A36145 /* SelectableCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableCameraView.swift; sourceTree = "<group>"; };
+		C06E54B1283EBBD500A36145 /* AVCaptureDevice+UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+UI.swift"; sourceTree = "<group>"; };
+		C06E54B2283EBBD500A36145 /* CameraViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewControllerDelegate.swift; sourceTree = "<group>"; };
+		C06E54B9283EBC4D00A36145 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +175,7 @@
 		5A5E830426A923ED00FE37AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C06E54AC283EBBC400A36145 /* CameraViews */,
 				5A4D3BD326E92C2E00664B46 /* OperationViews */,
 				5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */,
 				5A5E830826A9363200FE37AD /* LogView.swift */,
@@ -253,6 +268,20 @@
 				5A13DA2426CB041700D8ED3F /* ManualVoltageControlView.swift */,
 			);
 			path = "Manual Control";
+			sourceTree = "<group>";
+		};
+		C06E54AC283EBBC400A36145 /* CameraViews */ = {
+			isa = PBXGroup;
+			children = (
+				C06E54B9283EBC4D00A36145 /* CameraViewController.xib */,
+				C06E54B1283EBBD500A36145 /* AVCaptureDevice+UI.swift */,
+				C06E54AD283EBBD500A36145 /* CameraViewController.swift */,
+				C06E54B2283EBBD500A36145 /* CameraViewControllerDelegate.swift */,
+				C06E54AF283EBBD500A36145 /* DeviceCameraView.swift */,
+				C06E54AE283EBBD500A36145 /* RecordingState.swift */,
+				C06E54B0283EBBD500A36145 /* SelectableCameraView.swift */,
+			);
+			path = CameraViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C06E54BA283EBC4D00A36145 /* CameraViewController.xib in Resources */,
 				5AAF5024267BD389002A58B5 /* Preview Assets.xcassets in Resources */,
 				5AAF5021267BD389002A58B5 /* Assets.xcassets in Resources */,
 			);
@@ -403,6 +433,7 @@
 				5A5B23F726A8C1230079D7F9 /* PreferencesView.swift in Sources */,
 				5A2EF44326F8FEFD00CFF342 /* WaveformSettingsOperationView.swift in Sources */,
 				5A4D3BD726E92DDC00664B46 /* OperationView.swift in Sources */,
+				C06E54B5283EBBD500A36145 /* DeviceCameraView.swift in Sources */,
 				5ABFD55727140E2200FADA22 /* CommentOperationView.swift in Sources */,
 				5A1489DF27D8AD120055D22B /* ManualMultimeterView.swift in Sources */,
 				5ADE4FEA27549A5100AC4505 /* WaitOperationView.swift in Sources */,
@@ -411,6 +442,8 @@
 				5ADE4FEC27549AD100AC4505 /* MoveOperationView.swift in Sources */,
 				5A4D3BDD26E930D200664B46 /* OperationQueueView.swift in Sources */,
 				5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */,
+				C06E54B3283EBBD500A36145 /* CameraViewController.swift in Sources */,
+				C06E54B7283EBBD500A36145 /* AVCaptureDevice+UI.swift in Sources */,
 				5ADE4FE62754991700AC4505 /* HomeOperationView.swift in Sources */,
 				5AAF501D267BD388002A58B5 /* FifiApp.swift in Sources */,
 				5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */,
@@ -418,7 +451,10 @@
 				5AAB74462738FD5B00240FEB /* FifiApp+Commands.swift in Sources */,
 				5A2A47A0277DAEBE00180428 /* ManualStageView.swift in Sources */,
 				5A4D3BD526E92C5500664B46 /* VoltageToggleOperationView.swift in Sources */,
+				C06E54B4283EBBD500A36145 /* RecordingState.swift in Sources */,
+				C06E54B6283EBBD500A36145 /* SelectableCameraView.swift in Sources */,
 				5A13DA2526CB041700D8ED3F /* ManualVoltageControlView.swift in Sources */,
+				C06E54B8283EBBD500A36145 /* CameraViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,12 +618,13 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Fifi/Preview Content\"";
-				DEVELOPMENT_TEAM = 3ER597LK99;
+				DEVELOPMENT_TEAM = Z553N3QGMH;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fifi/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -613,12 +650,13 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Fifi/Preview Content\"";
-				DEVELOPMENT_TEAM = 3ER597LK99;
+				DEVELOPMENT_TEAM = Z553N3QGMH;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fifi/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
