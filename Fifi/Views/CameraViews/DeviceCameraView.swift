@@ -37,9 +37,17 @@ struct DeviceCameraView: NSViewControllerRepresentable {
 	}
 	
 	func updateNSViewController(_ nsViewController: CameraViewController, context: Context) {
-		nsViewController.device = device
-		nsViewController.recordingURL = recordingState.recordingURL
-		nsViewController.isRecording = recordingState.isRecording
+		if nsViewController.device != device {
+			nsViewController.device = device
+		}
+		
+		if nsViewController.recordingURL != recordingState.recordingURL {
+			nsViewController.recordingURL = recordingState.recordingURL
+		}
+		
+		if nsViewController.isRecording != recordingState.isRecording {
+			nsViewController.isRecording = recordingState.isRecording
+		}
 	}
 }
 
