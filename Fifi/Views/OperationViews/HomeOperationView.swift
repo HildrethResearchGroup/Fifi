@@ -12,7 +12,7 @@ struct HomeOperationView: View {
 	@Binding var configuration: HomeConfiguration
 	
 	var body: some View {
-		Text("No configuration options")
+		Text("Not Implemented")
 	}
 }
 
