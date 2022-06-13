@@ -27,10 +27,12 @@ struct OperationQueueView: View {
 						operation: $operation,
 						operationIndex: queueState.queue.wrappedValue.firstIndex(of: operation)!
 					)
-						.textFieldStyle(.automatic)
-						.padding(4)
-						.border(Color.secondary)
-						.listRowInsets(EdgeInsets(top: 2, leading: 0, bottom: 0, trailing: 0))
+					.textFieldStyle(.automatic)
+					.padding(4)
+					.background(.background)
+					.border(Color.secondary)
+					.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+					.padding(.vertical, 6)
 				}
 				.onMove(perform: moveItemsAt(offsets:toOffset:))
 				.listStyle(.plain)
