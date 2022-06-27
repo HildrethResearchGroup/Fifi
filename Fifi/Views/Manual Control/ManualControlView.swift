@@ -36,6 +36,7 @@ struct ManualControlView: View {
 
 // MARK: Manual Stage Control
 private extension ManualControlView {
+	
 	@ViewBuilder
 	var manualStageControlView: some View {
 		ZStack {
