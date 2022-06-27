@@ -100,7 +100,7 @@ struct FifiApp: App {
 }
 
 // MARK: Open Windows
-enum OpenWindows: String, CaseIterable {
+enum OpenWindows: String, CaseIterable, Identifiable {
   case mainWindow
   case logWindow
   
@@ -125,4 +125,8 @@ enum OpenWindows: String, CaseIterable {
       NSWorkspace.shared.open(url)
     }
   }
+	
+	var id: String {
+		rawValue
+	}
 }

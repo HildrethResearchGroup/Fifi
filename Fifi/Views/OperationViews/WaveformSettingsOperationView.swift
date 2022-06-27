@@ -98,6 +98,21 @@ struct WaveformSettingsOperationView: View {
             }
           }
         }
+				
+				Toggle("Update Function", isOn: updateWaveFunction)
+				
+				if updateWaveFunction.wrappedValue {
+					HStack {
+						Text("Waveform: ")
+						Menu(configuration.waveFunction?.displayValue ?? "nil") {
+							ForEach(WaveFunction.allCases) { function in
+								Button(function.displayValue) {
+									configuration.waveFunction = function
+								}
+							}
+						}
+					}
+				}
         
       }
       .textFieldStyle(.squareBorder)

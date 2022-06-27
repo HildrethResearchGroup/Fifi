@@ -56,7 +56,7 @@ struct PrintLineOperationView: View {
 				}
 			}
 			
-			Toggle("Return to start when done", isOn: $configuration.returnToStart)
+			Toggle("Unidirectional", isOn: $configuration.returnToStart)
 		}
 	}
 	

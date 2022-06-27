@@ -14,10 +14,8 @@ extension FifiApp {
 	func commands() -> some Commands {
 		// MARK: Window
 		CommandGroup(before: .windowList) {
-			ForEach(0..<OpenWindows.allCases.count) { index in
-				let window = OpenWindows.allCases[index]
-				
-				if let digit = Character(String(index)) {
+			ForEach(OpenWindows.allCases) { window in
+				if let digit = Character(String(OpenWindows.allCases.firstIndex(of: window)!)) {
 					Button(window.title) {
 						window.open()
 					}

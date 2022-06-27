@@ -15,9 +15,9 @@ struct GapHeightCalibrateOperationView: View {
 	var body: some View {
 		VStack(alignment: .leading) {
 			HStack {
-				Text("Target voltage")
+				Text("Target resistance")
 				
-				ValidatingTextField("Target voltage", value: $configuration.targetVoltage) { value in
+				ValidatingTextField("Target resistance", value: $configuration.targetVoltage) { value in
 					Self.numberFormatter.string(from: NSNumber(value: value)) ?? String(value)
 				} validate: { string in
 					Double(string)
