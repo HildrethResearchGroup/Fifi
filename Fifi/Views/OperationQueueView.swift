@@ -10,6 +10,7 @@ import PrinterController
 
 struct OperationQueueView: View {
 	@EnvironmentObject private var printerController: PrinterController
+    @Environment(\.colorScheme) var colorScheme
 	
 	@State var selection: Set<UUID> = []
 	
@@ -29,7 +30,8 @@ struct OperationQueueView: View {
 					)
 					.textFieldStyle(.automatic)
 					.padding(4)
-					.background(.background)
+                    .background(.background)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
 					.border(Color.secondary)
 					.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
 					.padding(.vertical, 6)
