@@ -25,7 +25,7 @@ struct ManualStageView: View {
 				positionText(for: dimension)
 					.font(.body.monospacedDigit())
 			}
-			.frame(width: 75)
+			.frame(width: 90)
 			
 			Spacer()
 				.frame(width: 20)
@@ -43,6 +43,12 @@ struct ManualStageView: View {
 			}
 			.foregroundColor(.accentColor)
 			.disabled(!canMove)
+            
+            TextField("", value: $jogLocation, format:  FloatingPointFormatStyle
+                .number
+                .precision(.fractionLength(4)))
+                .font(.body.monospacedDigit())
+                .multilineTextAlignment(.trailing)
 			
 			ValidatingTextField(
 				"\(dimension.rawValue) position",
@@ -99,6 +105,12 @@ struct ManualStageView: View {
 //			.id(UUID())
 		}
 	}
+    
+    var numberTextFieldStyle: FloatingPointFormatStyle<Double> {
+        let numberFormatter = FloatingPointFormatStyle<Double>()
+        _ = numberFormatter.precision(.fractionLength(4))
+        return numberFormatter
+    }
 }
 
 // MARK: Helpers
