@@ -49,6 +49,7 @@ struct ManualStageView: View {
                 .precision(.fractionLength(4)))
                 .font(.body.monospacedDigit())
                 .multilineTextAlignment(.trailing)
+                .frame(width: 100)
 			
 			ValidatingTextField(
 				"\(dimension.rawValue) position",
@@ -102,6 +103,9 @@ struct ManualStageView: View {
 					}
 				}
 			}
+            .frame(width: 100)
+            
+            Spacer()
 //			.id(UUID())
 		}
 	}
