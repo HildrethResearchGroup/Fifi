@@ -15,11 +15,20 @@ struct WaitOperationView: View {
 	var body: some View {
 		HStack {
 			Text("Waiting time")
-			ValidatingTextField("Seconds", value: $configuration.time) { value in
-				String(value)
-			} validate: { string in
-				TimeInterval(string)
-			}
+			
+			
+			TextField("", value: $configuration.time, format:  appDefaultTextFieldNumberFormatter())
+				.appDefaultTextFieldStyle()
+			
+			
+			/*
+			 ValidatingTextField("Seconds", value: $configuration.time) { value in
+				 String(value)
+			 } validate: { string in
+				 TimeInterval(string)
+			 }
+			 */
+			
 		}
 	}
 }

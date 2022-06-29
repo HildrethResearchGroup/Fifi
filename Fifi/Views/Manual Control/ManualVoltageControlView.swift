@@ -26,12 +26,19 @@ struct ManualVoltageControlView: View {
 				
 				Toggle("Infinite", isOn: infiniteImpedance)
 				
+				
+				TextField("", value: $targetImpedance, format:  appDefaultTextFieldNumberFormatter())
+					.disabled(infiniteImpedance.wrappedValue)
+					.appDefaultTextFieldStyle()
+				
+				/*
 				ValidatingTextField("Impedance", value: $targetImpedance) { value in
 					"\(value)"
 				} validate: { string in
 					Double(string)
 				}
-				.disabled(infiniteImpedance.wrappedValue)
+				 */
+				
 				
 				Button("Set") {
 					Task {
@@ -45,12 +52,17 @@ struct ManualVoltageControlView: View {
 			
       HStack {
         Text("Amplitude: \(amplifiedVoltageString)V [\(rawVoltageString)V]")
+				
+				TextField("", value: $targetVoltage, format:  appDefaultTextFieldNumberFormatter())
+					.appDefaultTextFieldStyle()
         
+				/*
         ValidatingTextField("Amplitude", value: $targetVoltage) { value in
           "\(value)"
         } validate: { string in
           Double(string)
         }
+				 */
         
         Button("Set") {
           Task {
@@ -65,11 +77,16 @@ struct ManualVoltageControlView: View {
       HStack {
         Text("Voltage Offset: \(amplifiedVoltageOffsetString)V [\(rawVoltageOffsetString)V]")
         
+				TextField("", value: $targetVoltageOffset, format:  appDefaultTextFieldNumberFormatter())
+					.appDefaultTextFieldStyle()
+				
+				/*
         ValidatingTextField("Voltage Offset", value: $targetVoltageOffset) { value in
           "\(value)"
         } validate: { string in
           Double(string)
         }
+				 */
         
         Button("Set") {
           Task {
@@ -84,11 +101,16 @@ struct ManualVoltageControlView: View {
       HStack {
         Text("Frequency: \(frequencyString)Hz")
         
+				TextField("", value: $targetFrequency, format:  appDefaultTextFieldNumberFormatter())
+					.appDefaultTextFieldStyle()
+				
+				/*
         ValidatingTextField("Frequency", value: $targetFrequency) { value in
           "\(value)"
         } validate: { string in
           Double(string)
         }
+				 */
         
         Button("Set") {
           Task {
@@ -103,11 +125,16 @@ struct ManualVoltageControlView: View {
       HStack {
         Text("Phase: \(phaseString)º")
         
+				TextField("", value: $targetPhase, format:  appDefaultTextFieldNumberFormatter())
+					.appDefaultTextFieldStyle()
+				
+				/*
         ValidatingTextField("Phase", value: $targetPhase) { value in
           "\(value)"
         } validate: { string in
           Double(string)
         }
+				 */
         
         Button("Set") {
           Task {
@@ -129,6 +156,7 @@ struct ManualVoltageControlView: View {
             }
           }
         }
+				.frame(width: 100)
 //        .id(UUID())
         
         Button("Set") {
@@ -139,6 +167,8 @@ struct ManualVoltageControlView: View {
           }
         }
         .foregroundColor(.accentColor)
+				
+				Spacer()
       }
     }
   }
@@ -202,6 +232,7 @@ extension ManualVoltageControlView {
 			}
 		}
 	}
+	
 }
 
 // MARK: - Previews

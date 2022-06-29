@@ -12,6 +12,10 @@ import SeeayaUI
 struct ManualControlView: View {
 	@EnvironmentObject private var printerController: PrinterController
 	
+	
+	
+	static let numberTextFieldStyle: FloatingPointFormatStyle<Double> = FloatingPointFormatStyle.number.precision(.fractionLength(4))
+	
 	@State private var xJogLocation = 0.0
 	@State private var yJogLocation = 0.0
 	@State private var zJogLocation = 0.0

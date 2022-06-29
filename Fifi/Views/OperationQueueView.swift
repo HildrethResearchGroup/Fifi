@@ -28,7 +28,8 @@ struct OperationQueueView: View {
 						operation: $operation,
 						operationIndex: queueState.queue.wrappedValue.firstIndex(of: operation)!
 					)
-					.textFieldStyle(.automatic)
+					//.textFieldStyle(.automatic)
+						.textFieldStyle(.squareBorder)
 					.padding(4)
                     .background(.background)
                     .foregroundColor(colorScheme == .dark ? .white : .black)
