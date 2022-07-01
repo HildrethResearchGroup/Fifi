@@ -17,7 +17,7 @@ struct WaitOperationView: View {
 			Text("Waiting time")
 			
 			
-			TextField("", value: $configuration.time, format:  appDefaultTextFieldNumberFormatter())
+			TextField("", value: $configuration.time, format:  appDefaultTextFieldNumberFormatter(3))
 				.appDefaultTextFieldStyle()
 			
 			

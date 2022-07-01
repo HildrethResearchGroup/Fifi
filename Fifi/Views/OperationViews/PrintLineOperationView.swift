@@ -45,7 +45,7 @@ struct PrintLineOperationView: View {
 			
 			HStack {
 				Text("Voltage:")
-				TextField("", value: $configuration.voltage, format:  appDefaultTextFieldNumberFormatter())
+				TextField("", value: $configuration.voltage, format:  appDefaultTextFieldNumberFormatter(1))
 					.appDefaultTextFieldStyle()
 				
 				Spacer()

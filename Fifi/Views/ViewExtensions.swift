@@ -29,8 +29,8 @@ import SwiftUI
 // 3. Optional convenience view modifier
 
  extension View {
-	 func appDefaultTextFieldNumberFormatter() -> FloatingPointFormatStyle<Double> {
-		 FloatingPointFormatStyle.number.precision(.fractionLength(4))
+     func appDefaultTextFieldNumberFormatter(_ length: Int = 4) -> FloatingPointFormatStyle<Double> {
+		 FloatingPointFormatStyle.number.precision(.fractionLength(length))
 	 }
  }
 
