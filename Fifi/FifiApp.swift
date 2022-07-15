@@ -48,6 +48,10 @@ struct FifiApp: App {
 				kind: .gapHeightCalibrate,
 				operation: .gapHeightCalibrateOperation(body: GapHeightCalibrateOperationView.init)
 			)
+			.register(
+				kind: .printDotArray,
+				operation: .printDotArrayOperation(body: PrintDotArrayOperationView.init)
+			)
       .finalize()
 		
 		Task { [self] in
