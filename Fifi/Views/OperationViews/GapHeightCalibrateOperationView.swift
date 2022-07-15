@@ -17,21 +17,23 @@ struct GapHeightCalibrateOperationView: View {
 			HStack {
 				Text("Target resistance")
 				
+				TextField("", value: $configuration.targetVoltage, format:  appDefaultTextFieldNumberFormatter(1))
+					.appDefaultTextFieldStyle()
+				
+				/*
 				ValidatingTextField("Target resistance", value: $configuration.targetVoltage) { value in
 					Self.numberFormatter.string(from: NSNumber(value: value)) ?? String(value)
 				} validate: { string in
 					Double(string)
 				}
+				 */
 			}
 			
 			HStack {
 				Text("Displacement step")
 				
-				ValidatingTextField("Displacement step", value: $configuration.displacementAmount) { value in
-					Self.numberFormatter.string(from: NSNumber(value: value)) ?? String(value)
-				} validate: { string in
-					Double(string)
-				}
+				TextField("", value: $configuration.displacementAmount, format:  appDefaultTextFieldNumberFormatter())
+					.appDefaultTextFieldStyle()
 			}
 		}
 	}

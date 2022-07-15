@@ -35,6 +35,7 @@
 		5AAF5038267BD389002A58B5 /* FifiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF5037267BD389002A58B5 /* FifiUITests.swift */; };
 		5ABFD55727140E2200FADA22 /* CommentOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABFD55627140E2200FADA22 /* CommentOperationView.swift */; };
 		5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5837726A9F8B00056108F /* ManualControlView.swift */; };
+		5AD9E779286D0D7400A4A75F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9E778286D0D7400A4A75F /* ViewExtensions.swift */; };
 		5ADE4FE62754991700AC4505 /* HomeOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FE52754991700AC4505 /* HomeOperationView.swift */; };
 		5ADE4FE8275499F300AC4505 /* AlertOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FE7275499F300AC4505 /* AlertOperationView.swift */; };
 		5ADE4FEA27549A5100AC4505 /* WaitOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FE927549A5100AC4505 /* WaitOperationView.swift */; };
@@ -99,6 +100,7 @@
 		5AAF5037267BD389002A58B5 /* FifiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiUITests.swift; sourceTree = "<group>"; };
 		5ABFD55627140E2200FADA22 /* CommentOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentOperationView.swift; sourceTree = "<group>"; };
 		5AD5837726A9F8B00056108F /* ManualControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualControlView.swift; sourceTree = "<group>"; };
+		5AD9E778286D0D7400A4A75F /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		5ADE4FE52754991700AC4505 /* HomeOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOperationView.swift; sourceTree = "<group>"; };
 		5ADE4FE7275499F300AC4505 /* AlertOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOperationView.swift; sourceTree = "<group>"; };
 		5ADE4FE927549A5100AC4505 /* WaitOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitOperationView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				C06E54AC283EBBC400A36145 /* CameraViews */,
 				5A4D3BD326E92C2E00664B46 /* OperationViews */,
+				5AD9E778286D0D7400A4A75F /* ViewExtensions.swift */,
 				5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */,
 				5A5E830826A9363200FE37AD /* LogView.swift */,
 				5AAF501E267BD388002A58B5 /* ContentView.swift */,
@@ -356,7 +359,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					5AAF5018267BD388002A58B5 = {
 						CreatedOnToolsVersion = 13.0;
@@ -435,6 +438,7 @@
 				5AAF501F267BD388002A58B5 /* ContentView.swift in Sources */,
 				5A5B23F726A8C1230079D7F9 /* PreferencesView.swift in Sources */,
 				5A2EF44326F8FEFD00CFF342 /* WaveformSettingsOperationView.swift in Sources */,
+				5AD9E779286D0D7400A4A75F /* ViewExtensions.swift in Sources */,
 				5A4D3BD726E92DDC00664B46 /* OperationView.swift in Sources */,
 				C06E54B5283EBBD500A36145 /* DeviceCameraView.swift in Sources */,
 				5ABFD55727140E2200FADA22 /* CommentOperationView.swift in Sources */,

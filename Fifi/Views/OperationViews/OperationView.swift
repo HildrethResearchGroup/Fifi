@@ -12,6 +12,8 @@ struct PrinterOperationView: View {
   @EnvironmentObject private var printerController: PrinterController
   @State private var showingConfiguration = true
   @Binding var operation: AnyPrinterOperation
+    
+    @Environment(\.colorScheme) var colorScheme
   var operationIndex: Int
   
   var body: some View {
@@ -43,6 +45,7 @@ private extension PrinterOperationView {
         showingConfiguration.toggle()
       } label: {
         Image(systemName: showingConfiguration ? "chevron.down" : "chevron.right")
+              .foregroundColor(colorScheme == .dark ? .white : .black)
       }
       .frame(width: 20, height: 24)
       
@@ -51,42 +54,12 @@ private extension PrinterOperationView {
       
       Toggle(" ", isOn: $operation.isEnabled)
       Label(operation.name, systemImage: operation.thumbnailName)
-        .foregroundColor(statusColor)
+        //.foregroundColor(statusColor)
+        .foregroundColor(colorScheme == .dark ? .white : .black)
       
       Spacer()
       
 
-      Image(systemName: "line.3.horizontal")
-      .frame(width: 20, height: 20)
-      .onDrag {
-        NSItemProvider(object: NSURL(string: "fifi:operationReorder?index=\(operationIndex)")!)
-      } preview: {
-        Label(operation.name, systemImage: operation.thumbnailName)
-          .foregroundColor(.primary)
-          .frame(minWidth: 400)
-      }
-
-      Button {
-        printerController.printerQueueState.queue.move(
-          fromOffsets: IndexSet(integer: operationIndex),
-          toOffset: operationIndex - 1
-        )
-      } label: {
-        Image(systemName: "arrow.up")
-      }
-      .frame(width: 20, height: 20)
-      .disabled(operationIndex == 0)
-      
-      Button {
-        printerController.printerQueueState.queue.move(
-          fromOffsets: IndexSet(integer: operationIndex),
-          toOffset: operationIndex + 2
-        )
-      } label: {
-        Image(systemName: "arrow.down")
-      }
-      .frame(width: 20, height: 20)
-      .disabled(operationIndex == printerController.printerQueueState.queue.count - 1)
       
       Button {
         printerController.printerQueueState.queue.remove(at: operationIndex)
@@ -102,15 +75,19 @@ private extension PrinterOperationView {
 // MARK: - Helpers
 private extension PrinterOperationView {
   var statusColor: Color {
+      let systemColor: Color = colorScheme == .dark ? .black : .white
+      
     guard operation.isEnabled else { return .secondary }
     guard let runningOperationIndex = printerController.printerQueueState.operationIndex else {
-      return .primary
+        return systemColor
+      //return .primary
     }
     
     if runningOperationIndex > operationIndex {
       return .green
     } else if runningOperationIndex < operationIndex {
-      return .primary
+        return systemColor
+      //return .primary
     } else {
       return .blue
     }

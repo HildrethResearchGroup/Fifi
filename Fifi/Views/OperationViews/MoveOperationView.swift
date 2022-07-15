@@ -40,11 +40,8 @@ struct MoveOperationView: View {
 // MARK: - Subviews
 private extension MoveOperationView {
 	func textField(forProperty property: Binding<Double>, name: String) -> some View {
-		ValidatingTextField(name, value: property) { value in
-			String(value)
-		} validate: { string in
-			Double(string)
-		}
+		TextField("", value: property, format:  appDefaultTextFieldNumberFormatter())
+			.appDefaultTextFieldStyle()
 	}
 }
 

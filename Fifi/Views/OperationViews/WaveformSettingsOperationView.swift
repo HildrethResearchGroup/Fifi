@@ -20,6 +20,9 @@ struct WaveformSettingsOperationView: View {
         if updateFrequency.wrappedValue {
           HStack {
             Text("Frequency: ")
+						
+						
+						
             ValidatingTextField<Double?>("Frequency", value: $configuration.frequency) { value in
               if let value = value {
                 return String(value)

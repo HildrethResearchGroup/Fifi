@@ -25,7 +25,7 @@ struct ManualStageView: View {
 				positionText(for: dimension)
 					.font(.body.monospacedDigit())
 			}
-			.frame(width: 75)
+			.frame(width: 90)
 			
 			Spacer()
 				.frame(width: 20)
@@ -44,19 +44,8 @@ struct ManualStageView: View {
 			.foregroundColor(.accentColor)
 			.disabled(!canMove)
 			
-			ValidatingTextField(
-				"\(dimension.rawValue) position",
-				value: $jogLocation,
-				showError: true
-			) { value in
-				Self.numberFormatter.string(from: NSNumber(value: value)) ?? String(value)
-			} validate: { string in
-				Double(string)
-			} errorMessage: { _ in
-				"Value must be a number"
-			}
-			.font(.body.monospacedDigit())
-			.multilineTextAlignment(.trailing)
+			TextField("", value: $jogLocation, format:  appDefaultTextFieldNumberFormatter())
+				.appDefaultTextFieldStyle()
 			
 			Spacer()
 				.frame(width: 20)
@@ -75,53 +64,54 @@ struct ManualStageView: View {
 			.foregroundColor(.accentColor)
 			.disabled(!canMove)
 			
-			ValidatingTextField(
-				"\(dimension.rawValue) position",
-				value: $moveLocation,
-				showError: true
-			) { value in
-				Self.numberFormatter.string(from: NSNumber(value: value)) ?? String(value)
-			} validate: { string in
-				Double(string)
-			} errorMessage: { _ in
-				"Value must be a number"
-			}
-			.font(.body.monospacedDigit())
-			.multilineTextAlignment(.trailing)
+			TextField("", value: $moveLocation, format:  appDefaultTextFieldNumberFormatter())
+				.font(.body.monospacedDigit())
+				.multilineTextAlignment(.trailing)
+				.frame(width: 100)
+			
 			
 			Menu(displacementMode?.description ?? "") {
 				ForEach(DisplacementMode.allCases, id: \.description) { mode in
 					Button(mode.description) {
 						displacementMode = mode
-					}
+					}.frame(width: 200)
 				}
 			}
-//			.id(UUID())
+			.frame(width: 100)
+			
+			Spacer()
+			//			.id(UUID())
 		}
 	}
+	
+	
 }
 
 // MARK: Helpers
 private extension ManualStageView {
 	var canMove: Bool {
-    [.ready, .reading].contains(printerController.xpsq8ConnectionState)
-    && ![nil, .moving].contains(printerController.xpsq8State.groupStatus)
+		[.ready, .reading].contains(printerController.xpsq8ConnectionState)
+		&& ![nil, .moving].contains(printerController.xpsq8State.groupStatus)
 	}
 	
-	static let numberFormatter: NumberFormatter = {
-		let formatter = NumberFormatter()
-		formatter.maximumFractionDigits = 3
-		formatter.minimumFractionDigits = 3
-		
-		return formatter
-	}()
+	/*
+	 static let numberFormatter: NumberFormatter = {
+		 let formatter = NumberFormatter()
+		 formatter.maximumFractionDigits = 3
+		 formatter.minimumFractionDigits = 3
+		 
+		 return formatter
+	 }()
+	 */
+
+	
 	
 	func positionText(for dimension: PrinterController.Dimension) -> Text {
-    if let position = position(for: dimension) {
-      return Text("\(position, format: .number.precision(.fractionLength(3)))mm")
-    } else {
-      return Text("?mm")
-    }
+		if let position = position(for: dimension) {
+			return Text("\(position, format: .number.precision(.fractionLength(3)))mm")
+		} else {
+			return Text("?mm")
+		}
 	}
 	
 	func position(for dimension: PrinterController.Dimension) -> Double? {
