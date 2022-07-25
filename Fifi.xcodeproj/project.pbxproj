@@ -48,6 +48,10 @@
 		C06E54B7283EBBD500A36145 /* AVCaptureDevice+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54B1283EBBD500A36145 /* AVCaptureDevice+UI.swift */; };
 		C06E54B8283EBBD500A36145 /* CameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54B2283EBBD500A36145 /* CameraViewControllerDelegate.swift */; };
 		C06E54BA283EBC4D00A36145 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06E54B9283EBC4D00A36145 /* CameraViewController.xib */; };
+		C6537F722885D9CD00AB38E0 /* PrinterController in Resources */ = {isa = PBXBuildFile; fileRef = 5A5B23F326A8C08B0079D7F9 /* PrinterController */; };
+		C6537F732885D9CE00AB38E0 /* PrinterController in Resources */ = {isa = PBXBuildFile; fileRef = 5A5B23F326A8C08B0079D7F9 /* PrinterController */; };
+		C6537F752885D9D200AB38E0 /* XPSQ8Kit in Resources */ = {isa = PBXBuildFile; fileRef = 5AAB2A5A277E233B000A32B0 /* XPSQ8Kit */; };
+		C6537F762885D9D200AB38E0 /* XPSQ8Kit in Resources */ = {isa = PBXBuildFile; fileRef = 5AAB2A5A277E233B000A32B0 /* XPSQ8Kit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -413,6 +417,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6537F752885D9D200AB38E0 /* XPSQ8Kit in Resources */,
+				C6537F722885D9CD00AB38E0 /* PrinterController in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +426,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6537F762885D9D200AB38E0 /* XPSQ8Kit in Resources */,
+				C6537F732885D9CE00AB38E0 /* PrinterController in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +634,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Fifi/Preview Content\"";
-				DEVELOPMENT_TEAM = 3ER597LK99;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -658,7 +666,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Fifi/Preview Content\"";
-				DEVELOPMENT_TEAM = 3ER597LK99;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
