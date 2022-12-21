@@ -91,7 +91,9 @@ extension ManualVoltageControlView {
             TextField("", value: $targetVoltageOffset, format:  appDefaultTextFieldNumberFormatter(1))
                 .appDefaultTextFieldStyle()
             
-          
+            Button("+") {
+                targetVoltageOffset += 10
+            }
             Button("Set") {
                 Task {
                     await logger.tryOrError {

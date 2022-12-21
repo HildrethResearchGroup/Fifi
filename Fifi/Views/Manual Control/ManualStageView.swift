@@ -44,6 +44,8 @@ struct ManualStageView: View {
 			.foregroundColor(.accentColor)
 			.disabled(!canMove)
 			
+            
+            // Collin Look Here for Textfield
 			TextField("", value: $jogLocation, format:  appDefaultTextFieldNumberFormatter())
 				.appDefaultTextFieldStyle()
 			
