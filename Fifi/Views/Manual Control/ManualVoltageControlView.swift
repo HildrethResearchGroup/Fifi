@@ -17,6 +17,7 @@ struct ManualVoltageControlView: View {
     @State var targetVoltageOffset = 0.0
     @State var targetFrequency = 0.0
     @State var targetPhase = 0.0
+    @State var targetPulseWidth = 0.1
     @State var targetWaveFunction: WaveFunction = .sin
     
     var body: some View {
@@ -30,6 +31,8 @@ struct ManualVoltageControlView: View {
             targetFrequencyView()
             
             targetPhaseView()
+            
+            targetPulseWidthView()
             
             targetWaveFunctionView()
         }
@@ -138,6 +141,24 @@ extension ManualVoltageControlView {
                 Task {
                     await logger.tryOrError {
                         try await printerController.setPhase(to: targetPhase)
+                    }
+                }
+            }
+            .foregroundColor(.accentColor)
+        }
+    }
+    
+    @ViewBuilder
+    func targetPulseWidthView() -> some View {
+        HStack {
+            Text("Pulse Width: \(targetPulseWidth) [UNITS]")
+            TextField("", value: $targetPulseWidth, format: appDefaultTextFieldNumberFormatter())
+                .appDefaultTextFieldStyle()
+                .help("Max: \(1.0/targetFrequency)")
+            Button("Set") {
+                Task {
+                    await logger.tryOrError {
+                        try await printerController.setPulseWidth(to: targetPulseWidth)
                     }
                 }
             }
