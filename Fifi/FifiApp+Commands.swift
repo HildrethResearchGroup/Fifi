@@ -15,16 +15,25 @@ extension FifiApp {
 		// MARK: Window
 		CommandGroup(before: .windowList) {
 			ForEach(OpenWindows.allCases) { window in
-				if let digit = Character(String(OpenWindows.allCases.firstIndex(of: window)!)) {
-					Button(window.title) {
-						window.open()
-					}
-					.keyboardShortcut(KeyboardShortcut(KeyEquivalent(digit), modifiers: [.command, .shift]))
-				} else {
-					Button(window.title) {
-						window.open()
-					}
-				}
+                
+                // TODO: Not keyboard modifiers not working.
+                /*
+                 if let digit = Character(String(OpenWindows.allCases.firstIndex(of: window)!)) {
+                     Button(window.title) {
+                         window.open()
+                     }
+                     .keyboardShortcut(KeyboardShortcut(KeyEquivalent(digit), modifiers: [.command, .shift]))
+                 } else {
+                     Button(window.title) {
+                         window.open()
+                     }
+                 }
+                 */
+				
+                
+                Button(window.title) {
+                    window.open()
+                }
 			}
 			
 			Divider()

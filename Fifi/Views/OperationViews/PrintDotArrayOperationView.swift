@@ -12,6 +12,8 @@ import SeeayaUI
 struct PrintDotArrayOperationView: View {
 	@Binding var configuration: PrintDotArrayConfiguration
 	
+	
+	
 	var body: some View {
 		VStack {
             HStack(){
