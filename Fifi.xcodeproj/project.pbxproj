@@ -31,8 +31,6 @@
 		5AAF501F267BD388002A58B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF501E267BD388002A58B5 /* ContentView.swift */; };
 		5AAF5021267BD389002A58B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AAF5020267BD389002A58B5 /* Assets.xcassets */; };
 		5AAF5024267BD389002A58B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AAF5023267BD389002A58B5 /* Preview Assets.xcassets */; };
-		5AAF502E267BD389002A58B5 /* FifiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF502D267BD389002A58B5 /* FifiTests.swift */; };
-		5AAF5038267BD389002A58B5 /* FifiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF5037267BD389002A58B5 /* FifiUITests.swift */; };
 		5ABFD55727140E2200FADA22 /* CommentOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABFD55627140E2200FADA22 /* CommentOperationView.swift */; };
 		5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5837726A9F8B00056108F /* ManualControlView.swift */; };
 		5AD9E779286D0D7400A4A75F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9E778286D0D7400A4A75F /* ViewExtensions.swift */; };
@@ -48,28 +46,7 @@
 		C06E54B7283EBBD500A36145 /* AVCaptureDevice+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54B1283EBBD500A36145 /* AVCaptureDevice+UI.swift */; };
 		C06E54B8283EBBD500A36145 /* CameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54B2283EBBD500A36145 /* CameraViewControllerDelegate.swift */; };
 		C06E54BA283EBC4D00A36145 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06E54B9283EBC4D00A36145 /* CameraViewController.xib */; };
-		C6537F722885D9CD00AB38E0 /* PrinterController in Resources */ = {isa = PBXBuildFile; fileRef = 5A5B23F326A8C08B0079D7F9 /* PrinterController */; };
-		C6537F732885D9CE00AB38E0 /* PrinterController in Resources */ = {isa = PBXBuildFile; fileRef = 5A5B23F326A8C08B0079D7F9 /* PrinterController */; };
-		C6537F752885D9D200AB38E0 /* XPSQ8Kit in Resources */ = {isa = PBXBuildFile; fileRef = 5AAB2A5A277E233B000A32B0 /* XPSQ8Kit */; };
-		C6537F762885D9D200AB38E0 /* XPSQ8Kit in Resources */ = {isa = PBXBuildFile; fileRef = 5AAB2A5A277E233B000A32B0 /* XPSQ8Kit */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5AAF502A267BD389002A58B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5AAF5011267BD387002A58B5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5AAF5018267BD388002A58B5;
-			remoteInfo = Fifi;
-		};
-		5AAF5034267BD389002A58B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5AAF5011267BD387002A58B5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5AAF5018267BD388002A58B5;
-			remoteInfo = Fifi;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5A085119279B41920043E1BA /* PrintLineOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintLineOperationView.swift; sourceTree = "<group>"; };
@@ -98,9 +75,7 @@
 		5AAF501E267BD388002A58B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5AAF5020267BD389002A58B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AAF5023267BD389002A58B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5AAF5029267BD389002A58B5 /* FifiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FifiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AAF502D267BD389002A58B5 /* FifiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiTests.swift; sourceTree = "<group>"; };
-		5AAF5033267BD389002A58B5 /* FifiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FifiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AAF5037267BD389002A58B5 /* FifiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiUITests.swift; sourceTree = "<group>"; };
 		5ABFD55627140E2200FADA22 /* CommentOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentOperationView.swift; sourceTree = "<group>"; };
 		5AD5837726A9F8B00056108F /* ManualControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualControlView.swift; sourceTree = "<group>"; };
@@ -127,20 +102,6 @@
 				5A28BCA42792154F00983D9A /* SwiftVISASwift in Frameworks */,
 				5A5B23FA26A8C2270079D7F9 /* SeeayaUI in Frameworks */,
 				5A1B639526A8FE90004C5348 /* PrinterController in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AAF5026267BD389002A58B5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AAF5030267BD389002A58B5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,8 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				5AAF5019267BD388002A58B5 /* Fifi.app */,
-				5AAF5029267BD389002A58B5 /* FifiTests.xctest */,
-				5AAF5033267BD389002A58B5 /* FifiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,42 +278,6 @@
 			productReference = 5AAF5019267BD388002A58B5 /* Fifi.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5AAF5028267BD389002A58B5 /* FifiTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5AAF503E267BD389002A58B5 /* Build configuration list for PBXNativeTarget "FifiTests" */;
-			buildPhases = (
-				5AAF5025267BD389002A58B5 /* Sources */,
-				5AAF5026267BD389002A58B5 /* Frameworks */,
-				5AAF5027267BD389002A58B5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5AAF502B267BD389002A58B5 /* PBXTargetDependency */,
-			);
-			name = FifiTests;
-			productName = FifiTests;
-			productReference = 5AAF5029267BD389002A58B5 /* FifiTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		5AAF5032267BD389002A58B5 /* FifiUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5AAF5041267BD389002A58B5 /* Build configuration list for PBXNativeTarget "FifiUITests" */;
-			buildPhases = (
-				5AAF502F267BD389002A58B5 /* Sources */,
-				5AAF5030267BD389002A58B5 /* Frameworks */,
-				5AAF5031267BD389002A58B5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5AAF5035267BD389002A58B5 /* PBXTargetDependency */,
-			);
-			name = FifiUITests;
-			productName = FifiUITests;
-			productReference = 5AAF5033267BD389002A58B5 /* FifiUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -367,14 +290,6 @@
 				TargetAttributes = {
 					5AAF5018267BD388002A58B5 = {
 						CreatedOnToolsVersion = 13.0;
-					};
-					5AAF5028267BD389002A58B5 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 5AAF5018267BD388002A58B5;
-					};
-					5AAF5032267BD389002A58B5 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 5AAF5018267BD388002A58B5;
 					};
 				};
 			};
@@ -396,8 +311,6 @@
 			projectRoot = "";
 			targets = (
 				5AAF5018267BD388002A58B5 /* Fifi */,
-				5AAF5028267BD389002A58B5 /* FifiTests */,
-				5AAF5032267BD389002A58B5 /* FifiUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -410,24 +323,6 @@
 				C06E54BA283EBC4D00A36145 /* CameraViewController.xib in Resources */,
 				5AAF5024267BD389002A58B5 /* Preview Assets.xcassets in Resources */,
 				5AAF5021267BD389002A58B5 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AAF5027267BD389002A58B5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C6537F752885D9D200AB38E0 /* XPSQ8Kit in Resources */,
-				C6537F722885D9CD00AB38E0 /* PrinterController in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AAF5031267BD389002A58B5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C6537F762885D9D200AB38E0 /* XPSQ8Kit in Resources */,
-				C6537F732885D9CE00AB38E0 /* PrinterController in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,36 +369,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AAF5025267BD389002A58B5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5AAF502E267BD389002A58B5 /* FifiTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AAF502F267BD389002A58B5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5AAF5038267BD389002A58B5 /* FifiUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5AAF502B267BD389002A58B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5AAF5018267BD388002A58B5 /* Fifi */;
-			targetProxy = 5AAF502A267BD389002A58B5 /* PBXContainerItemProxy */;
-		};
-		5AAF5035267BD389002A58B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5AAF5018267BD388002A58B5 /* Fifi */;
-			targetProxy = 5AAF5034267BD389002A58B5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5AAF5039267BD389002A58B5 /* Debug */ = {
@@ -560,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -618,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -639,21 +505,22 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Fifi/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z553N3QGMH;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fifi/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Fifi would like to access your camera to record the needle.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.connorbarnes.Fifi;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.HRG.fifi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -672,124 +539,25 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Fifi/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z553N3QGMH;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fifi/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Fifi would like to access your camera to record the needle.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.connorbarnes.Fifi;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.HRG.fifi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		5AAF503F267BD389002A58B5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 3ER597LK99;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.connorbarnes.FifiTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fifi.app/Contents/MacOS/Fifi";
-			};
-			name = Debug;
-		};
-		5AAF5040267BD389002A58B5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 3ER597LK99;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.connorbarnes.FifiTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fifi.app/Contents/MacOS/Fifi";
-			};
-			name = Release;
-		};
-		5AAF5042267BD389002A58B5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 3ER597LK99;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.connorbarnes.FifiUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Fifi;
-			};
-			name = Debug;
-		};
-		5AAF5043267BD389002A58B5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 3ER597LK99;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.connorbarnes.FifiUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Fifi;
 			};
 			name = Release;
 		};
@@ -810,24 +578,6 @@
 			buildConfigurations = (
 				5AAF503C267BD389002A58B5 /* Debug */,
 				5AAF503D267BD389002A58B5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5AAF503E267BD389002A58B5 /* Build configuration list for PBXNativeTarget "FifiTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5AAF503F267BD389002A58B5 /* Debug */,
-				5AAF5040267BD389002A58B5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5AAF5041267BD389002A58B5 /* Build configuration list for PBXNativeTarget "FifiUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5AAF5042267BD389002A58B5 /* Debug */,
-				5AAF5043267BD389002A58B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

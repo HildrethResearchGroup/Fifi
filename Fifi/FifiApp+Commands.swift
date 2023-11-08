@@ -13,12 +13,15 @@ extension FifiApp {
 	@CommandsBuilder
 	func commands() -> some Commands {
 		// MARK: Window
-		CommandGroup(before: .windowList) {
-			ForEach(OpenWindows.allCases) { window in
-                
-                // TODO: Not keyboard modifiers not working.
-                /*
-                 if let digit = Character(String(OpenWindows.allCases.firstIndex(of: window)!)) {
+        
+        
+         CommandGroup(before: .windowList) {
+             ForEach(OpenWindows.allCases) { window in
+                 
+                 // TODO: Not keyboard modifiers not working.
+                 
+                 if let firstWindowIndex = OpenWindows.allCases.firstIndex(of: window) {
+                     let digit = Character(String(firstWindowIndex))
                      Button(window.title) {
                          window.open()
                      }
@@ -28,16 +31,25 @@ extension FifiApp {
                          window.open()
                      }
                  }
-                 */
-				
-                
-                Button(window.title) {
-                    window.open()
-                }
-			}
-			
-			Divider()
-		}
+                 
+                 /*
+                  if let digit = Character(String(OpenWindows.allCases.firstIndex(of: window)!)) {
+                      Button(window.title) {
+                          window.open()
+                      }
+                      .keyboardShortcut(KeyboardShortcut(KeyEquivalent(digit), modifiers: [.command, .shift]))
+                  } else {
+                      Button(window.title) {
+                          window.open()
+                      }
+                  }
+                  */
+             }
+             
+             Divider()
+         }
+         
+		
 		
 		// MARK: File
 		CommandGroup(replacing: .newItem) {

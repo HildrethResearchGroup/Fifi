@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Fifi would like to access your camera to record the needle.</string>
+	<string>Fifi will use the camera to look at the sample stage</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
