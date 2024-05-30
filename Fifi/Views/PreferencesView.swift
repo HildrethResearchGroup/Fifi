@@ -59,11 +59,14 @@ private extension PreferencesView {
             
             HStack {
                 Text("Port: ")
-                ValidatingTextField("Port", value: port) { value in
-                    String(value)
-                } validate: { string in
-                    Int(string)
-                }
+                TextField("Port", value: port, format: .number)
+                /*
+                 ValidatingTextField("Port", value: port) { value in
+                     String(value)
+                 } validate: { string in
+                     Int(string)
+                 }
+                 */
             }
         }
     }

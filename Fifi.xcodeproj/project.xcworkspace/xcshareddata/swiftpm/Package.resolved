@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "Socket",
-        "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
+        "repositoryURL": "https://github.com/SwiftVISA/BlueSocket.git",
         "state": {
-          "branch": null,
-          "revision": "c9894fd117457f1d006575fbfb2fdfd6f79eac03",
-          "version": "1.0.200"
+          "branch": "master",
+          "revision": "7b23a867008e0027bfd6f4d398d44720707bc8ca",
+          "version": null
         }
       },
       {
@@ -29,20 +29,11 @@
         }
       },
       {
-        "package": "swift-collections",
-        "repositoryURL": "https://github.com/apple/swift-collections",
-        "state": {
-          "branch": "release/1.1",
-          "revision": "4a1d92ba85027010d2c528c05576cde9a362254b",
-          "version": null
-        }
-      },
-      {
         "package": "SwiftVISASwift",
         "repositoryURL": "https://github.com/SwiftVISA/SwiftVISASwift.git",
         "state": {
-          "branch": "actor",
-          "revision": "1ccb532a7967fb0c37a503d2aa15f999991bae2d",
+          "branch": "main",
+          "revision": "98595fdba5f16a2da6b0e21ab7e9dabb848db25b",
           "version": null
         }
       }

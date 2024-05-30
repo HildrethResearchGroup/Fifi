@@ -52,23 +52,6 @@ struct PrintDotArrayOperationView: View {
                 TextField("Number of Layers", value: $configuration.numberOfLayers, format: .number)
                     .appDefaultTextFieldStyle()
             }
-            
-            
-            /*
-
-             
-             public var spacing: Double = 1.0
-             public var voltage: Double = 1.0
-             public var voltageTime: Double = 0.1
-             public var numberOfDots: Int = 1
-             public var numberOfLayers: Int = 1
-             
-             ValidatingTextField("Spacing", value: $configuration.spacing) { value in
-                 String(value)
-             } validate: { string in
-                 Double(string)
-             }
-             */
 			
 		}
 	}

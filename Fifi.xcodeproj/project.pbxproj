@@ -589,7 +589,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftVISA/SwiftVISASwift.git";
 			requirement = {
-				branch = actor;
+				branch = main;
 				kind = branch;
 			};
 		};
