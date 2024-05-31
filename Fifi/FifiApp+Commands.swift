@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PrinterController
+//import PrinterController
 
 extension FifiApp {
 	@MainActor
@@ -15,16 +15,32 @@ extension FifiApp {
 		// MARK: Window
 		CommandGroup(before: .windowList) {
 			ForEach(OpenWindows.allCases) { window in
-				if let digit = Character(String(OpenWindows.allCases.firstIndex(of: window)!)) {
-					Button(window.title) {
-						window.open()
-					}
-					.keyboardShortcut(KeyboardShortcut(KeyEquivalent(digit), modifiers: [.command, .shift]))
-				} else {
-					Button(window.title) {
-						window.open()
-					}
-				}
+                // TODO: Not keyboard modifiers not working.
+                
+                if let firstWindowIndex = OpenWindows.allCases.firstIndex(of: window) {
+                    let digit = Character(String(firstWindowIndex))
+                    Button(window.title) {
+                        window.open()
+                    }
+                    .keyboardShortcut(KeyboardShortcut(KeyEquivalent(digit), modifiers: [.command, .shift]))
+                } else {
+                    Button(window.title) {
+                        window.open()
+                    }
+                }
+                
+                /*
+                 if let digit = Character(String(OpenWindows.allCases.firstIndex(of: window)!)) {
+                     Button(window.title) {
+                         window.open()
+                     }
+                     .keyboardShortcut(KeyboardShortcut(KeyEquivalent(digit), modifiers: [.command, .shift]))
+                 } else {
+                     Button(window.title) {
+                         window.open()
+                     }
+                 }
+                 */
 			}
 			
 			Divider()

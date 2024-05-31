@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PrinterController
+//import PrinterController
 
 struct ManualMultimeterView: View {
 	@EnvironmentObject private var printerController: PrinterController

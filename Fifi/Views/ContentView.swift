@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-import SeeayaUI
-import PrinterController
+//import SeeayaUI
+//import PrinterController
 
 struct ContentView: View {
   @EnvironmentObject private var printerController: PrinterController

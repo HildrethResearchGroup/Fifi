@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-import PrinterController
-import SeeayaUI
+//import PrinterController
+//import SeeayaUI
 
 struct ManualStageView: View {
 	let dimension: PrinterController.Dimension

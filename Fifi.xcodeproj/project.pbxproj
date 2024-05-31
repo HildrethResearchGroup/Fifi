@@ -11,18 +11,15 @@
 		5A13DA2526CB041700D8ED3F /* ManualVoltageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13DA2426CB041700D8ED3F /* ManualVoltageControlView.swift */; };
 		5A1489DD27D8A8BB0055D22B /* GapHeightCalibrateOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1489DC27D8A8BB0055D22B /* GapHeightCalibrateOperationView.swift */; };
 		5A1489DF27D8AD120055D22B /* ManualMultimeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1489DE27D8AD120055D22B /* ManualMultimeterView.swift */; };
-		5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B639126A8EF2F004C5348 /* CommunicationState.swift */; };
-		5A1B639526A8FE90004C5348 /* PrinterController in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1B639426A8FE90004C5348 /* PrinterController */; };
+		5A1B639226A8EF2F004C5348 /* CommunicationState_color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B639126A8EF2F004C5348 /* CommunicationState_color.swift */; };
 		5A2351C126AA2621004C7374 /* CoordinateTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2351C026AA2621004C7374 /* CoordinateTransformer.swift */; };
 		5A2351C326AA2BD7004C7374 /* CoordinateTransformationEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2351C226AA2BD7004C7374 /* CoordinateTransformationEditor.swift */; };
-		5A28BCA42792154F00983D9A /* SwiftVISASwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A28BCA32792154F00983D9A /* SwiftVISASwift */; };
 		5A2A47A0277DAEBE00180428 /* ManualStageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A479F277DAEBE00180428 /* ManualStageView.swift */; };
 		5A2EF44326F8FEFD00CFF342 /* WaveformSettingsOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2EF44226F8FEFD00CFF342 /* WaveformSettingsOperationView.swift */; };
 		5A4D3BD526E92C5500664B46 /* VoltageToggleOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D3BD426E92C5500664B46 /* VoltageToggleOperationView.swift */; };
 		5A4D3BD726E92DDC00664B46 /* OperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D3BD626E92DDC00664B46 /* OperationView.swift */; };
 		5A4D3BDD26E930D200664B46 /* OperationQueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D3BDC26E930D200664B46 /* OperationQueueView.swift */; };
 		5A5B23F726A8C1230079D7F9 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */; };
-		5A5B23FA26A8C2270079D7F9 /* SeeayaUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5B23F926A8C2270079D7F9 /* SeeayaUI */; };
 		5A5E830726A9240600FE37AD /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E830626A9240600FE37AD /* ErrorLogger.swift */; };
 		5A5E830926A9363200FE37AD /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E830826A9363200FE37AD /* LogView.swift */; };
 		5AAB74462738FD5B00240FEB /* FifiApp+Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB74452738FD5B00240FEB /* FifiApp+Commands.swift */; };
@@ -31,8 +28,6 @@
 		5AAF501F267BD388002A58B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF501E267BD388002A58B5 /* ContentView.swift */; };
 		5AAF5021267BD389002A58B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AAF5020267BD389002A58B5 /* Assets.xcassets */; };
 		5AAF5024267BD389002A58B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AAF5023267BD389002A58B5 /* Preview Assets.xcassets */; };
-		5AAF502E267BD389002A58B5 /* FifiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF502D267BD389002A58B5 /* FifiTests.swift */; };
-		5AAF5038267BD389002A58B5 /* FifiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF5037267BD389002A58B5 /* FifiUITests.swift */; };
 		5ABFD55727140E2200FADA22 /* CommentOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABFD55627140E2200FADA22 /* CommentOperationView.swift */; };
 		5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5837726A9F8B00056108F /* ManualControlView.swift */; };
 		5AD9E779286D0D7400A4A75F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9E778286D0D7400A4A75F /* ViewExtensions.swift */; };
@@ -41,6 +36,8 @@
 		5ADE4FEA27549A5100AC4505 /* WaitOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FE927549A5100AC4505 /* WaitOperationView.swift */; };
 		5ADE4FEC27549AD100AC4505 /* MoveOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FEB27549AD100AC4505 /* MoveOperationView.swift */; };
 		5ADE4FF02754A14000AC4505 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FEF2754A14000AC4505 /* Model.swift */; };
+		C02375A82C090D4200DE976A /* SwiftVISASwift in Frameworks */ = {isa = PBXBuildFile; productRef = C02375A72C090D4200DE976A /* SwiftVISASwift */; };
+		C02375AA2C090D4C00DE976A /* XPSQ8Kit in Frameworks */ = {isa = PBXBuildFile; productRef = C02375A92C090D4C00DE976A /* XPSQ8Kit */; };
 		C06E54B3283EBBD500A36145 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54AD283EBBD500A36145 /* CameraViewController.swift */; };
 		C06E54B4283EBBD500A36145 /* RecordingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54AE283EBBD500A36145 /* RecordingState.swift */; };
 		C06E54B5283EBBD500A36145 /* DeviceCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54AF283EBBD500A36145 /* DeviceCameraView.swift */; };
@@ -48,35 +45,50 @@
 		C06E54B7283EBBD500A36145 /* AVCaptureDevice+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54B1283EBBD500A36145 /* AVCaptureDevice+UI.swift */; };
 		C06E54B8283EBBD500A36145 /* CameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54B2283EBBD500A36145 /* CameraViewControllerDelegate.swift */; };
 		C06E54BA283EBC4D00A36145 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06E54B9283EBC4D00A36145 /* CameraViewController.xib */; };
-		C6537F722885D9CD00AB38E0 /* PrinterController in Resources */ = {isa = PBXBuildFile; fileRef = 5A5B23F326A8C08B0079D7F9 /* PrinterController */; };
-		C6537F732885D9CE00AB38E0 /* PrinterController in Resources */ = {isa = PBXBuildFile; fileRef = 5A5B23F326A8C08B0079D7F9 /* PrinterController */; };
-		C6537F752885D9D200AB38E0 /* XPSQ8Kit in Resources */ = {isa = PBXBuildFile; fileRef = 5AAB2A5A277E233B000A32B0 /* XPSQ8Kit */; };
-		C6537F762885D9D200AB38E0 /* XPSQ8Kit in Resources */ = {isa = PBXBuildFile; fileRef = 5AAB2A5A277E233B000A32B0 /* XPSQ8Kit */; };
+		C0AE6ADD2C08F20B0099C540 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AB42C08F20B0099C540 /* Configuration.swift */; };
+		C0AE6ADE2C08F20B0099C540 /* MultimeterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AB52C08F20B0099C540 /* MultimeterController.swift */; };
+		C0AE6ADF2C08F20B0099C540 /* MultimeterController+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AB62C08F20B0099C540 /* MultimeterController+General.swift */; };
+		C0AE6AE02C08F20B0099C540 /* WaveformController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AB72C08F20B0099C540 /* WaveformController.swift */; };
+		C0AE6AE12C08F20B0099C540 /* WaveformController+Waveforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AB82C08F20B0099C540 /* WaveformController+Waveforms.swift */; };
+		C0AE6AE22C08F20B0099C540 /* XPSQ8CollectiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AB92C08F20B0099C540 /* XPSQ8CollectiveController.swift */; };
+		C0AE6AE32C08F20B0099C540 /* AlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ABB2C08F20B0099C540 /* AlertOperation.swift */; };
+		C0AE6AE42C08F20B0099C540 /* AnyPrinterOperation.DynamicDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ABC2C08F20B0099C540 /* AnyPrinterOperation.DynamicDispatch.swift */; };
+		C0AE6AE52C08F20B0099C540 /* AnyPrinterOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ABD2C08F20B0099C540 /* AnyPrinterOperation.swift */; };
+		C0AE6AE62C08F20B0099C540 /* CommentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ABE2C08F20B0099C540 /* CommentOperation.swift */; };
+		C0AE6AE72C08F20B0099C540 /* GapHeightCalibrateOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ABF2C08F20B0099C540 /* GapHeightCalibrateOperation.swift */; };
+		C0AE6AE82C08F20B0099C540 /* HomeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AC02C08F20B0099C540 /* HomeOperation.swift */; };
+		C0AE6AE92C08F20B0099C540 /* MoveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AC12C08F20B0099C540 /* MoveOperation.swift */; };
+		C0AE6AEA2C08F20B0099C540 /* PrintDotArrayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AC22C08F20B0099C540 /* PrintDotArrayOperation.swift */; };
+		C0AE6AEB2C08F20B0099C540 /* PrinterOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AC32C08F20B0099C540 /* PrinterOperation.swift */; };
+		C0AE6AEC2C08F20B0099C540 /* PrintLineOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AC42C08F20B0099C540 /* PrintLineOperation.swift */; };
+		C0AE6AED2C08F20B0099C540 /* VoltageToggleOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AC52C08F20B0099C540 /* VoltageToggleOperation.swift */; };
+		C0AE6AEE2C08F20B0099C540 /* WaitOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AC62C08F20B0099C540 /* WaitOperation.swift */; };
+		C0AE6AEF2C08F20B0099C540 /* WaveformSettingsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AC72C08F20B0099C540 /* WaveformSettingsOperation.swift */; };
+		C0AE6AF02C08F20B0099C540 /* PrinterController.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AC92C08F20B0099C540 /* PrinterController.Error.swift */; };
+		C0AE6AF12C08F20B0099C540 /* PrinterController.Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ACA2C08F20B0099C540 /* PrinterController.Instrument.swift */; };
+		C0AE6AF22C08F20B0099C540 /* PrinterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ACB2C08F20B0099C540 /* PrinterController.swift */; };
+		C0AE6AF32C08F20B0099C540 /* PrinterController+InstrumentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ACC2C08F20B0099C540 /* PrinterController+InstrumentState.swift */; };
+		C0AE6AF42C08F20B0099C540 /* PrinterController+Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ACD2C08F20B0099C540 /* PrinterController+Motion.swift */; };
+		C0AE6AF52C08F20B0099C540 /* PrinterController+Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ACE2C08F20B0099C540 /* PrinterController+Queue.swift */; };
+		C0AE6AF62C08F20B0099C540 /* PrinterController+Waveform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ACF2C08F20B0099C540 /* PrinterController+Waveform.swift */; };
+		C0AE6AF72C08F20B0099C540 /* PrinterContrroller+Multimeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AD02C08F20B0099C540 /* PrinterContrroller+Multimeter.swift */; };
+		C0AE6AF82C08F20B0099C540 /* CommunicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AD22C08F20B0099C540 /* CommunicationState.swift */; };
+		C0AE6AF92C08F20B0099C540 /* MultimeterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AD32C08F20B0099C540 /* MultimeterState.swift */; };
+		C0AE6AFA2C08F20B0099C540 /* PrinterQueueState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AD42C08F20B0099C540 /* PrinterQueueState.swift */; };
+		C0AE6AFB2C08F20B0099C540 /* WaveformState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AD52C08F20B0099C540 /* WaveformState.swift */; };
+		C0AE6AFC2C08F20B0099C540 /* XPSQ8State.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AD62C08F20B0099C540 /* XPSQ8State.swift */; };
+		C0AE6AFD2C08F20B0099C540 /* DisplacementMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AD82C08F20B0099C540 /* DisplacementMode.swift */; };
+		C0AE6AFE2C08F20B0099C540 /* PrinterController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AD92C08F20B0099C540 /* PrinterController+State.swift */; };
+		C0AE6AFF2C08F20B0099C540 /* PrinterQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ADA2C08F20B0099C540 /* PrinterQueue.swift */; };
+		C0AE6B002C08F20B0099C540 /* WaveFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6ADB2C08F20B0099C540 /* WaveFunction.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5AAF502A267BD389002A58B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5AAF5011267BD387002A58B5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5AAF5018267BD388002A58B5;
-			remoteInfo = Fifi;
-		};
-		5AAF5034267BD389002A58B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5AAF5011267BD387002A58B5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5AAF5018267BD388002A58B5;
-			remoteInfo = Fifi;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5A085119279B41920043E1BA /* PrintLineOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintLineOperationView.swift; sourceTree = "<group>"; };
 		5A13DA2426CB041700D8ED3F /* ManualVoltageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualVoltageControlView.swift; sourceTree = "<group>"; };
 		5A1489DC27D8A8BB0055D22B /* GapHeightCalibrateOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GapHeightCalibrateOperationView.swift; sourceTree = "<group>"; };
 		5A1489DE27D8AD120055D22B /* ManualMultimeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualMultimeterView.swift; sourceTree = "<group>"; };
-		5A1B639126A8EF2F004C5348 /* CommunicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationState.swift; sourceTree = "<group>"; };
+		5A1B639126A8EF2F004C5348 /* CommunicationState_color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationState_color.swift; sourceTree = "<group>"; };
 		5A2351C026AA2621004C7374 /* CoordinateTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTransformer.swift; sourceTree = "<group>"; };
 		5A2351C226AA2BD7004C7374 /* CoordinateTransformationEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTransformationEditor.swift; sourceTree = "<group>"; };
 		5A2A479F277DAEBE00180428 /* ManualStageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualStageView.swift; sourceTree = "<group>"; };
@@ -85,12 +97,10 @@
 		5A4D3BD426E92C5500664B46 /* VoltageToggleOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltageToggleOperationView.swift; sourceTree = "<group>"; };
 		5A4D3BD626E92DDC00664B46 /* OperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationView.swift; sourceTree = "<group>"; };
 		5A4D3BDC26E930D200664B46 /* OperationQueueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueView.swift; sourceTree = "<group>"; };
-		5A5B23F326A8C08B0079D7F9 /* PrinterController */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PrinterController; path = ../PrinterController; sourceTree = "<group>"; };
 		5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		5A5E830326A91F4800FE37AD /* Fifi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fifi.entitlements; sourceTree = "<group>"; };
 		5A5E830626A9240600FE37AD /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
 		5A5E830826A9363200FE37AD /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
-		5AAB2A5A277E233B000A32B0 /* XPSQ8Kit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = XPSQ8Kit; path = ../XPSQ8Kit; sourceTree = "<group>"; };
 		5AAB74452738FD5B00240FEB /* FifiApp+Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FifiApp+Commands.swift"; sourceTree = "<group>"; };
 		5AAE96992881EDE3000E35A6 /* PrintDotArrayOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintDotArrayOperationView.swift; sourceTree = "<group>"; };
 		5AAF5019267BD388002A58B5 /* Fifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,10 +108,6 @@
 		5AAF501E267BD388002A58B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5AAF5020267BD389002A58B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AAF5023267BD389002A58B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5AAF5029267BD389002A58B5 /* FifiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FifiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AAF502D267BD389002A58B5 /* FifiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiTests.swift; sourceTree = "<group>"; };
-		5AAF5033267BD389002A58B5 /* FifiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FifiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AAF5037267BD389002A58B5 /* FifiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifiUITests.swift; sourceTree = "<group>"; };
 		5ABFD55627140E2200FADA22 /* CommentOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentOperationView.swift; sourceTree = "<group>"; };
 		5AD5837726A9F8B00056108F /* ManualControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualControlView.swift; sourceTree = "<group>"; };
 		5AD9E778286D0D7400A4A75F /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
@@ -117,6 +123,42 @@
 		C06E54B1283EBBD500A36145 /* AVCaptureDevice+UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+UI.swift"; sourceTree = "<group>"; };
 		C06E54B2283EBBD500A36145 /* CameraViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewControllerDelegate.swift; sourceTree = "<group>"; };
 		C06E54B9283EBC4D00A36145 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
+		C0AE6AB42C08F20B0099C540 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		C0AE6AB52C08F20B0099C540 /* MultimeterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultimeterController.swift; sourceTree = "<group>"; };
+		C0AE6AB62C08F20B0099C540 /* MultimeterController+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MultimeterController+General.swift"; sourceTree = "<group>"; };
+		C0AE6AB72C08F20B0099C540 /* WaveformController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformController.swift; sourceTree = "<group>"; };
+		C0AE6AB82C08F20B0099C540 /* WaveformController+Waveforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WaveformController+Waveforms.swift"; sourceTree = "<group>"; };
+		C0AE6AB92C08F20B0099C540 /* XPSQ8CollectiveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPSQ8CollectiveController.swift; sourceTree = "<group>"; };
+		C0AE6ABB2C08F20B0099C540 /* AlertOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertOperation.swift; sourceTree = "<group>"; };
+		C0AE6ABC2C08F20B0099C540 /* AnyPrinterOperation.DynamicDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyPrinterOperation.DynamicDispatch.swift; sourceTree = "<group>"; };
+		C0AE6ABD2C08F20B0099C540 /* AnyPrinterOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyPrinterOperation.swift; sourceTree = "<group>"; };
+		C0AE6ABE2C08F20B0099C540 /* CommentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentOperation.swift; sourceTree = "<group>"; };
+		C0AE6ABF2C08F20B0099C540 /* GapHeightCalibrateOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GapHeightCalibrateOperation.swift; sourceTree = "<group>"; };
+		C0AE6AC02C08F20B0099C540 /* HomeOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeOperation.swift; sourceTree = "<group>"; };
+		C0AE6AC12C08F20B0099C540 /* MoveOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveOperation.swift; sourceTree = "<group>"; };
+		C0AE6AC22C08F20B0099C540 /* PrintDotArrayOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintDotArrayOperation.swift; sourceTree = "<group>"; };
+		C0AE6AC32C08F20B0099C540 /* PrinterOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterOperation.swift; sourceTree = "<group>"; };
+		C0AE6AC42C08F20B0099C540 /* PrintLineOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintLineOperation.swift; sourceTree = "<group>"; };
+		C0AE6AC52C08F20B0099C540 /* VoltageToggleOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoltageToggleOperation.swift; sourceTree = "<group>"; };
+		C0AE6AC62C08F20B0099C540 /* WaitOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitOperation.swift; sourceTree = "<group>"; };
+		C0AE6AC72C08F20B0099C540 /* WaveformSettingsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformSettingsOperation.swift; sourceTree = "<group>"; };
+		C0AE6AC92C08F20B0099C540 /* PrinterController.Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterController.Error.swift; sourceTree = "<group>"; };
+		C0AE6ACA2C08F20B0099C540 /* PrinterController.Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterController.Instrument.swift; sourceTree = "<group>"; };
+		C0AE6ACB2C08F20B0099C540 /* PrinterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterController.swift; sourceTree = "<group>"; };
+		C0AE6ACC2C08F20B0099C540 /* PrinterController+InstrumentState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrinterController+InstrumentState.swift"; sourceTree = "<group>"; };
+		C0AE6ACD2C08F20B0099C540 /* PrinterController+Motion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrinterController+Motion.swift"; sourceTree = "<group>"; };
+		C0AE6ACE2C08F20B0099C540 /* PrinterController+Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrinterController+Queue.swift"; sourceTree = "<group>"; };
+		C0AE6ACF2C08F20B0099C540 /* PrinterController+Waveform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrinterController+Waveform.swift"; sourceTree = "<group>"; };
+		C0AE6AD02C08F20B0099C540 /* PrinterContrroller+Multimeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrinterContrroller+Multimeter.swift"; sourceTree = "<group>"; };
+		C0AE6AD22C08F20B0099C540 /* CommunicationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationState.swift; sourceTree = "<group>"; };
+		C0AE6AD32C08F20B0099C540 /* MultimeterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultimeterState.swift; sourceTree = "<group>"; };
+		C0AE6AD42C08F20B0099C540 /* PrinterQueueState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterQueueState.swift; sourceTree = "<group>"; };
+		C0AE6AD52C08F20B0099C540 /* WaveformState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformState.swift; sourceTree = "<group>"; };
+		C0AE6AD62C08F20B0099C540 /* XPSQ8State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPSQ8State.swift; sourceTree = "<group>"; };
+		C0AE6AD82C08F20B0099C540 /* DisplacementMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplacementMode.swift; sourceTree = "<group>"; };
+		C0AE6AD92C08F20B0099C540 /* PrinterController+State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrinterController+State.swift"; sourceTree = "<group>"; };
+		C0AE6ADA2C08F20B0099C540 /* PrinterQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterQueue.swift; sourceTree = "<group>"; };
+		C0AE6ADB2C08F20B0099C540 /* WaveFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,36 +166,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A28BCA42792154F00983D9A /* SwiftVISASwift in Frameworks */,
-				5A5B23FA26A8C2270079D7F9 /* SeeayaUI in Frameworks */,
-				5A1B639526A8FE90004C5348 /* PrinterController in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AAF5026267BD389002A58B5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AAF5030267BD389002A58B5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				C02375AA2C090D4C00DE976A /* XPSQ8Kit in Frameworks */,
+				C02375A82C090D4200DE976A /* SwiftVISASwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A1B639326A8FE90004C5348 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		5A4D3BD326E92C2E00664B46 /* OperationViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,27 +192,15 @@
 			path = OperationViews;
 			sourceTree = "<group>";
 		};
-		5A5B23F226A8C08B0079D7F9 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				5A5B23F326A8C08B0079D7F9 /* PrinterController */,
-				5AAB2A5A277E233B000A32B0 /* XPSQ8Kit */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		5A5E830426A923ED00FE37AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C06E54AC283EBBC400A36145 /* CameraViews */,
-				5A4D3BD326E92C2E00664B46 /* OperationViews */,
-				5AD9E778286D0D7400A4A75F /* ViewExtensions.swift */,
-				5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */,
-				5A5E830826A9363200FE37AD /* LogView.swift */,
 				5AAF501E267BD388002A58B5 /* ContentView.swift */,
-				5A4D3BDC26E930D200664B46 /* OperationQueueView.swift */,
-				5A2351C226AA2BD7004C7374 /* CoordinateTransformationEditor.swift */,
+				C06E54AC283EBBC400A36145 /* CameraViews */,
+				C0AE6B062C08F65A0099C540 /* Helper Views */,
 				5AD5837626A9F89E0056108F /* Manual Control */,
+				C0AE6B052C08F6400099C540 /* Operation Queue */,
+				C0AE6B042C08F6230099C540 /* Preferences */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,7 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				5A2351C026AA2621004C7374 /* CoordinateTransformer.swift */,
-				5A1B639126A8EF2F004C5348 /* CommunicationState.swift */,
+				5A1B639126A8EF2F004C5348 /* CommunicationState_color.swift */,
 				5A5E830626A9240600FE37AD /* ErrorLogger.swift */,
 				5ADE4FEF2754A14000AC4505 /* Model.swift */,
 			);
@@ -211,12 +219,9 @@
 		5AAF5010267BD387002A58B5 = {
 			isa = PBXGroup;
 			children = (
-				5A5B23F226A8C08B0079D7F9 /* Packages */,
 				5AAF501B267BD388002A58B5 /* Fifi */,
-				5AAF502C267BD389002A58B5 /* FifiTests */,
-				5AAF5036267BD389002A58B5 /* FifiUITests */,
 				5AAF501A267BD388002A58B5 /* Products */,
-				5A1B639326A8FE90004C5348 /* Frameworks */,
+				C0AE6B072C08F7B70099C540 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,8 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				5AAF5019267BD388002A58B5 /* Fifi.app */,
-				5AAF5029267BD389002A58B5 /* FifiTests.xctest */,
-				5AAF5033267BD389002A58B5 /* FifiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				5A5E830326A91F4800FE37AD /* Fifi.entitlements */,
 				5AAF501C267BD388002A58B5 /* FifiApp.swift */,
 				5AAB74452738FD5B00240FEB /* FifiApp+Commands.swift */,
+				C0AE6AB32C08F1FE0099C540 /*  Controllers */,
 				5A5E830526A923F700FE37AD /* Utilities */,
 				5A5E830426A923ED00FE37AD /* Views */,
 				5AAF5020267BD389002A58B5 /* Assets.xcassets */,
@@ -251,22 +255,6 @@
 				5AAF5023267BD389002A58B5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		5AAF502C267BD389002A58B5 /* FifiTests */ = {
-			isa = PBXGroup;
-			children = (
-				5AAF502D267BD389002A58B5 /* FifiTests.swift */,
-			);
-			path = FifiTests;
-			sourceTree = "<group>";
-		};
-		5AAF5036267BD389002A58B5 /* FifiUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5AAF5037267BD389002A58B5 /* FifiUITests.swift */,
-			);
-			path = FifiUITests;
 			sourceTree = "<group>";
 		};
 		5AD5837626A9F89E0056108F /* Manual Control */ = {
@@ -294,6 +282,123 @@
 			path = CameraViews;
 			sourceTree = "<group>";
 		};
+		C0AE6AB32C08F1FE0099C540 /*  Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C0AE6ADC2C08F20B0099C540 /* PrinterController */,
+			);
+			path = " Controllers";
+			sourceTree = "<group>";
+		};
+		C0AE6ABA2C08F20B0099C540 /* InstrumentControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C0AE6AB42C08F20B0099C540 /* Configuration.swift */,
+				C0AE6AB52C08F20B0099C540 /* MultimeterController.swift */,
+				C0AE6AB62C08F20B0099C540 /* MultimeterController+General.swift */,
+				C0AE6AB72C08F20B0099C540 /* WaveformController.swift */,
+				C0AE6AB82C08F20B0099C540 /* WaveformController+Waveforms.swift */,
+				C0AE6AB92C08F20B0099C540 /* XPSQ8CollectiveController.swift */,
+			);
+			path = InstrumentControllers;
+			sourceTree = "<group>";
+		};
+		C0AE6AC82C08F20B0099C540 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C0AE6ABB2C08F20B0099C540 /* AlertOperation.swift */,
+				C0AE6ABC2C08F20B0099C540 /* AnyPrinterOperation.DynamicDispatch.swift */,
+				C0AE6ABD2C08F20B0099C540 /* AnyPrinterOperation.swift */,
+				C0AE6ABE2C08F20B0099C540 /* CommentOperation.swift */,
+				C0AE6ABF2C08F20B0099C540 /* GapHeightCalibrateOperation.swift */,
+				C0AE6AC02C08F20B0099C540 /* HomeOperation.swift */,
+				C0AE6AC12C08F20B0099C540 /* MoveOperation.swift */,
+				C0AE6AC22C08F20B0099C540 /* PrintDotArrayOperation.swift */,
+				C0AE6AC32C08F20B0099C540 /* PrinterOperation.swift */,
+				C0AE6AC42C08F20B0099C540 /* PrintLineOperation.swift */,
+				C0AE6AC52C08F20B0099C540 /* VoltageToggleOperation.swift */,
+				C0AE6AC62C08F20B0099C540 /* WaitOperation.swift */,
+				C0AE6AC72C08F20B0099C540 /* WaveformSettingsOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		C0AE6AD12C08F20B0099C540 /* PrinterController */ = {
+			isa = PBXGroup;
+			children = (
+				C0AE6AC92C08F20B0099C540 /* PrinterController.Error.swift */,
+				C0AE6ACA2C08F20B0099C540 /* PrinterController.Instrument.swift */,
+				C0AE6ACB2C08F20B0099C540 /* PrinterController.swift */,
+				C0AE6ACC2C08F20B0099C540 /* PrinterController+InstrumentState.swift */,
+				C0AE6ACD2C08F20B0099C540 /* PrinterController+Motion.swift */,
+				C0AE6ACE2C08F20B0099C540 /* PrinterController+Queue.swift */,
+				C0AE6ACF2C08F20B0099C540 /* PrinterController+Waveform.swift */,
+				C0AE6AD02C08F20B0099C540 /* PrinterContrroller+Multimeter.swift */,
+			);
+			path = PrinterController;
+			sourceTree = "<group>";
+		};
+		C0AE6AD72C08F20B0099C540 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				C0AE6AD22C08F20B0099C540 /* CommunicationState.swift */,
+				C0AE6AD32C08F20B0099C540 /* MultimeterState.swift */,
+				C0AE6AD42C08F20B0099C540 /* PrinterQueueState.swift */,
+				C0AE6AD52C08F20B0099C540 /* WaveformState.swift */,
+				C0AE6AD62C08F20B0099C540 /* XPSQ8State.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		C0AE6ADC2C08F20B0099C540 /* PrinterController */ = {
+			isa = PBXGroup;
+			children = (
+				C0AE6ABA2C08F20B0099C540 /* InstrumentControllers */,
+				C0AE6AC82C08F20B0099C540 /* Operations */,
+				C0AE6AD12C08F20B0099C540 /* PrinterController */,
+				C0AE6AD72C08F20B0099C540 /* State */,
+				C0AE6AD82C08F20B0099C540 /* DisplacementMode.swift */,
+				C0AE6AD92C08F20B0099C540 /* PrinterController+State.swift */,
+				C0AE6ADA2C08F20B0099C540 /* PrinterQueue.swift */,
+				C0AE6ADB2C08F20B0099C540 /* WaveFunction.swift */,
+			);
+			path = PrinterController;
+			sourceTree = "<group>";
+		};
+		C0AE6B042C08F6230099C540 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				5A5B23F626A8C1230079D7F9 /* PreferencesView.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		C0AE6B052C08F6400099C540 /* Operation Queue */ = {
+			isa = PBXGroup;
+			children = (
+				5A4D3BDC26E930D200664B46 /* OperationQueueView.swift */,
+				5A4D3BD326E92C2E00664B46 /* OperationViews */,
+			);
+			path = "Operation Queue";
+			sourceTree = "<group>";
+		};
+		C0AE6B062C08F65A0099C540 /* Helper Views */ = {
+			isa = PBXGroup;
+			children = (
+				5AD9E778286D0D7400A4A75F /* ViewExtensions.swift */,
+				5A5E830826A9363200FE37AD /* LogView.swift */,
+				5A2351C226AA2BD7004C7374 /* CoordinateTransformationEditor.swift */,
+			);
+			path = "Helper Views";
+			sourceTree = "<group>";
+		};
+		C0AE6B072C08F7B70099C540 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -311,49 +416,12 @@
 			);
 			name = Fifi;
 			packageProductDependencies = (
-				5A5B23F926A8C2270079D7F9 /* SeeayaUI */,
-				5A1B639426A8FE90004C5348 /* PrinterController */,
-				5A28BCA32792154F00983D9A /* SwiftVISASwift */,
+				C02375A72C090D4200DE976A /* SwiftVISASwift */,
+				C02375A92C090D4C00DE976A /* XPSQ8Kit */,
 			);
 			productName = Fifi;
 			productReference = 5AAF5019267BD388002A58B5 /* Fifi.app */;
 			productType = "com.apple.product-type.application";
-		};
-		5AAF5028267BD389002A58B5 /* FifiTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5AAF503E267BD389002A58B5 /* Build configuration list for PBXNativeTarget "FifiTests" */;
-			buildPhases = (
-				5AAF5025267BD389002A58B5 /* Sources */,
-				5AAF5026267BD389002A58B5 /* Frameworks */,
-				5AAF5027267BD389002A58B5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5AAF502B267BD389002A58B5 /* PBXTargetDependency */,
-			);
-			name = FifiTests;
-			productName = FifiTests;
-			productReference = 5AAF5029267BD389002A58B5 /* FifiTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		5AAF5032267BD389002A58B5 /* FifiUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5AAF5041267BD389002A58B5 /* Build configuration list for PBXNativeTarget "FifiUITests" */;
-			buildPhases = (
-				5AAF502F267BD389002A58B5 /* Sources */,
-				5AAF5030267BD389002A58B5 /* Frameworks */,
-				5AAF5031267BD389002A58B5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5AAF5035267BD389002A58B5 /* PBXTargetDependency */,
-			);
-			name = FifiUITests;
-			productName = FifiUITests;
-			productReference = 5AAF5033267BD389002A58B5 /* FifiUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -363,18 +431,10 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					5AAF5018267BD388002A58B5 = {
 						CreatedOnToolsVersion = 13.0;
-					};
-					5AAF5028267BD389002A58B5 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 5AAF5018267BD388002A58B5;
-					};
-					5AAF5032267BD389002A58B5 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 5AAF5018267BD388002A58B5;
 					};
 				};
 			};
@@ -388,16 +448,14 @@
 			);
 			mainGroup = 5AAF5010267BD387002A58B5;
 			packageReferences = (
-				5A5B23F826A8C2270079D7F9 /* XCRemoteSwiftPackageReference "SeeayaUI" */,
-				5A28BCA22792154F00983D9A /* XCRemoteSwiftPackageReference "SwiftVISASwift" */,
+				C0AE6B0A2C08F8AF0099C540 /* XCRemoteSwiftPackageReference "XPSQ8Kit" */,
+				C02375A62C090D4200DE976A /* XCRemoteSwiftPackageReference "SwiftVISASwift" */,
 			);
 			productRefGroup = 5AAF501A267BD388002A58B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				5AAF5018267BD388002A58B5 /* Fifi */,
-				5AAF5028267BD389002A58B5 /* FifiTests */,
-				5AAF5032267BD389002A58B5 /* FifiUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -413,24 +471,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AAF5027267BD389002A58B5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C6537F752885D9D200AB38E0 /* XPSQ8Kit in Resources */,
-				C6537F722885D9CD00AB38E0 /* PrinterController in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AAF5031267BD389002A58B5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C6537F762885D9D200AB38E0 /* XPSQ8Kit in Resources */,
-				C6537F732885D9CE00AB38E0 /* PrinterController in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -441,76 +481,83 @@
 				5ADE4FF02754A14000AC4505 /* Model.swift in Sources */,
 				5A5E830726A9240600FE37AD /* ErrorLogger.swift in Sources */,
 				5A2351C126AA2621004C7374 /* CoordinateTransformer.swift in Sources */,
+				C0AE6AF62C08F20B0099C540 /* PrinterController+Waveform.swift in Sources */,
+				C0AE6AEF2C08F20B0099C540 /* WaveformSettingsOperation.swift in Sources */,
+				C0AE6AE72C08F20B0099C540 /* GapHeightCalibrateOperation.swift in Sources */,
 				5A5E830926A9363200FE37AD /* LogView.swift in Sources */,
 				5A2351C326AA2BD7004C7374 /* CoordinateTransformationEditor.swift in Sources */,
 				5AAF501F267BD388002A58B5 /* ContentView.swift in Sources */,
 				5A5B23F726A8C1230079D7F9 /* PreferencesView.swift in Sources */,
+				C0AE6AFF2C08F20B0099C540 /* PrinterQueue.swift in Sources */,
 				5A2EF44326F8FEFD00CFF342 /* WaveformSettingsOperationView.swift in Sources */,
+				C0AE6AE32C08F20B0099C540 /* AlertOperation.swift in Sources */,
+				C0AE6AFA2C08F20B0099C540 /* PrinterQueueState.swift in Sources */,
 				5AD9E779286D0D7400A4A75F /* ViewExtensions.swift in Sources */,
 				5A4D3BD726E92DDC00664B46 /* OperationView.swift in Sources */,
+				C0AE6ADD2C08F20B0099C540 /* Configuration.swift in Sources */,
 				C06E54B5283EBBD500A36145 /* DeviceCameraView.swift in Sources */,
+				C0AE6AF32C08F20B0099C540 /* PrinterController+InstrumentState.swift in Sources */,
+				C0AE6AE52C08F20B0099C540 /* AnyPrinterOperation.swift in Sources */,
 				5ABFD55727140E2200FADA22 /* CommentOperationView.swift in Sources */,
 				5A1489DF27D8AD120055D22B /* ManualMultimeterView.swift in Sources */,
 				5ADE4FEA27549A5100AC4505 /* WaitOperationView.swift in Sources */,
+				C0AE6AE12C08F20B0099C540 /* WaveformController+Waveforms.swift in Sources */,
+				C0AE6AFE2C08F20B0099C540 /* PrinterController+State.swift in Sources */,
+				C0AE6AE22C08F20B0099C540 /* XPSQ8CollectiveController.swift in Sources */,
+				C0AE6AEE2C08F20B0099C540 /* WaitOperation.swift in Sources */,
+				C0AE6AF02C08F20B0099C540 /* PrinterController.Error.swift in Sources */,
+				C0AE6AE92C08F20B0099C540 /* MoveOperation.swift in Sources */,
 				5A08511A279B41930043E1BA /* PrintLineOperationView.swift in Sources */,
+				C0AE6AEB2C08F20B0099C540 /* PrinterOperation.swift in Sources */,
 				5A1489DD27D8A8BB0055D22B /* GapHeightCalibrateOperationView.swift in Sources */,
 				5ADE4FEC27549AD100AC4505 /* MoveOperationView.swift in Sources */,
 				5A4D3BDD26E930D200664B46 /* OperationQueueView.swift in Sources */,
-				5A1B639226A8EF2F004C5348 /* CommunicationState.swift in Sources */,
+				C0AE6AF42C08F20B0099C540 /* PrinterController+Motion.swift in Sources */,
+				5A1B639226A8EF2F004C5348 /* CommunicationState_color.swift in Sources */,
+				C0AE6B002C08F20B0099C540 /* WaveFunction.swift in Sources */,
+				C0AE6AFC2C08F20B0099C540 /* XPSQ8State.swift in Sources */,
 				C06E54B3283EBBD500A36145 /* CameraViewController.swift in Sources */,
 				C06E54B7283EBBD500A36145 /* AVCaptureDevice+UI.swift in Sources */,
+				C0AE6AE62C08F20B0099C540 /* CommentOperation.swift in Sources */,
 				5AAE969A2881EDE3000E35A6 /* PrintDotArrayOperationView.swift in Sources */,
+				C0AE6AFD2C08F20B0099C540 /* DisplacementMode.swift in Sources */,
+				C0AE6AE42C08F20B0099C540 /* AnyPrinterOperation.DynamicDispatch.swift in Sources */,
 				5ADE4FE62754991700AC4505 /* HomeOperationView.swift in Sources */,
 				5AAF501D267BD388002A58B5 /* FifiApp.swift in Sources */,
 				5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */,
+				C0AE6AF52C08F20B0099C540 /* PrinterController+Queue.swift in Sources */,
+				C0AE6AF12C08F20B0099C540 /* PrinterController.Instrument.swift in Sources */,
+				C0AE6AEC2C08F20B0099C540 /* PrintLineOperation.swift in Sources */,
+				C0AE6ADE2C08F20B0099C540 /* MultimeterController.swift in Sources */,
+				C0AE6AF22C08F20B0099C540 /* PrinterController.swift in Sources */,
+				C0AE6AEA2C08F20B0099C540 /* PrintDotArrayOperation.swift in Sources */,
+				C0AE6AF82C08F20B0099C540 /* CommunicationState.swift in Sources */,
 				5ADE4FE8275499F300AC4505 /* AlertOperationView.swift in Sources */,
 				5AAB74462738FD5B00240FEB /* FifiApp+Commands.swift in Sources */,
+				C0AE6AED2C08F20B0099C540 /* VoltageToggleOperation.swift in Sources */,
 				5A2A47A0277DAEBE00180428 /* ManualStageView.swift in Sources */,
+				C0AE6AF72C08F20B0099C540 /* PrinterContrroller+Multimeter.swift in Sources */,
+				C0AE6AFB2C08F20B0099C540 /* WaveformState.swift in Sources */,
+				C0AE6AE02C08F20B0099C540 /* WaveformController.swift in Sources */,
 				5A4D3BD526E92C5500664B46 /* VoltageToggleOperationView.swift in Sources */,
 				C06E54B4283EBBD500A36145 /* RecordingState.swift in Sources */,
+				C0AE6AE82C08F20B0099C540 /* HomeOperation.swift in Sources */,
+				C0AE6AF92C08F20B0099C540 /* MultimeterState.swift in Sources */,
 				C06E54B6283EBBD500A36145 /* SelectableCameraView.swift in Sources */,
 				5A13DA2526CB041700D8ED3F /* ManualVoltageControlView.swift in Sources */,
+				C0AE6ADF2C08F20B0099C540 /* MultimeterController+General.swift in Sources */,
 				C06E54B8283EBBD500A36145 /* CameraViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AAF5025267BD389002A58B5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5AAF502E267BD389002A58B5 /* FifiTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AAF502F267BD389002A58B5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5AAF5038267BD389002A58B5 /* FifiUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5AAF502B267BD389002A58B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5AAF5018267BD388002A58B5 /* Fifi */;
-			targetProxy = 5AAF502A267BD389002A58B5 /* PBXContainerItemProxy */;
-		};
-		5AAF5035267BD389002A58B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5AAF5018267BD388002A58B5 /* Fifi */;
-			targetProxy = 5AAF5034267BD389002A58B5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5AAF5039267BD389002A58B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = x86_64;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -541,9 +588,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -558,7 +607,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -572,7 +621,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = x86_64;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -603,9 +652,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -614,7 +665,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -626,6 +677,7 @@
 		5AAF503C267BD389002A58B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Fifi/Fifi.entitlements;
@@ -633,22 +685,24 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Fifi/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z553N3QGMH;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fifi/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Fifi would like to access your camera to record the needle.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.connorbarnes.Fifi;
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.HRG.Fifi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -658,6 +712,7 @@
 		5AAF503D267BD389002A58B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Fifi/Fifi.entitlements;
@@ -665,121 +720,27 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Fifi/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z553N3QGMH;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fifi/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Fifi would like to access your camera to record the needle.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.connorbarnes.Fifi;
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.HRG.Fifi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		5AAF503F267BD389002A58B5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3ER597LK99;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.connorbarnes.FifiTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fifi.app/Contents/MacOS/Fifi";
-			};
-			name = Debug;
-		};
-		5AAF5040267BD389002A58B5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3ER597LK99;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.connorbarnes.FifiTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fifi.app/Contents/MacOS/Fifi";
-			};
-			name = Release;
-		};
-		5AAF5042267BD389002A58B5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3ER597LK99;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.connorbarnes.FifiUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Fifi;
-			};
-			name = Debug;
-		};
-		5AAF5043267BD389002A58B5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3ER597LK99;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.connorbarnes.FifiUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Fifi;
 			};
 			name = Release;
 		};
@@ -804,59 +765,37 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5AAF503E267BD389002A58B5 /* Build configuration list for PBXNativeTarget "FifiTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5AAF503F267BD389002A58B5 /* Debug */,
-				5AAF5040267BD389002A58B5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5AAF5041267BD389002A58B5 /* Build configuration list for PBXNativeTarget "FifiUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5AAF5042267BD389002A58B5 /* Debug */,
-				5AAF5043267BD389002A58B5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5A28BCA22792154F00983D9A /* XCRemoteSwiftPackageReference "SwiftVISASwift" */ = {
+		C02375A62C090D4200DE976A /* XCRemoteSwiftPackageReference "SwiftVISASwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftVISA/SwiftVISASwift.git";
 			requirement = {
-				branch = actor;
+				branch = main;
 				kind = branch;
 			};
 		};
-		5A5B23F826A8C2270079D7F9 /* XCRemoteSwiftPackageReference "SeeayaUI" */ = {
+		C0AE6B0A2C08F8AF0099C540 /* XCRemoteSwiftPackageReference "XPSQ8Kit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/seeaya/SeeayaUI.git";
+			repositoryURL = "https://github.com/HildrethResearchGroup/XPSQ8Kit";
 			requirement = {
-				branch = main;
+				branch = master;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5A1B639426A8FE90004C5348 /* PrinterController */ = {
+		C02375A72C090D4200DE976A /* SwiftVISASwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = PrinterController;
-		};
-		5A28BCA32792154F00983D9A /* SwiftVISASwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A28BCA22792154F00983D9A /* XCRemoteSwiftPackageReference "SwiftVISASwift" */;
+			package = C02375A62C090D4200DE976A /* XCRemoteSwiftPackageReference "SwiftVISASwift" */;
 			productName = SwiftVISASwift;
 		};
-		5A5B23F926A8C2270079D7F9 /* SeeayaUI */ = {
+		C02375A92C090D4C00DE976A /* XPSQ8Kit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5A5B23F826A8C2270079D7F9 /* XCRemoteSwiftPackageReference "SeeayaUI" */;
-			productName = SeeayaUI;
+			package = C0AE6B0A2C08F8AF0099C540 /* XCRemoteSwiftPackageReference "XPSQ8Kit" */;
+			productName = XPSQ8Kit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

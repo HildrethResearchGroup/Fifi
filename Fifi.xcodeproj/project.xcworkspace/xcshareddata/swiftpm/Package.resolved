@@ -1,52 +1,42 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Socket",
-        "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
-        "state": {
-          "branch": null,
-          "revision": "c9894fd117457f1d006575fbfb2fdfd6f79eac03",
-          "version": "1.0.200"
-        }
-      },
-      {
-        "package": "CoreSwiftVISA",
-        "repositoryURL": "https://github.com/SwiftVISA/CoreSwiftVISA.git",
-        "state": {
-          "branch": "actor",
-          "revision": "229f53ba130653b4945188a94a0bbeea5d21ea6f",
-          "version": null
-        }
-      },
-      {
-        "package": "SeeayaUI",
-        "repositoryURL": "https://github.com/seeaya/SeeayaUI.git",
-        "state": {
-          "branch": "main",
-          "revision": "5e78b273becb70b88bd3fc3fe5e55d029e99befd",
-          "version": null
-        }
-      },
-      {
-        "package": "swift-collections",
-        "repositoryURL": "https://github.com/apple/swift-collections",
-        "state": {
-          "branch": null,
-          "revision": "9d8719c8bebdc79740b6969c912ac706eb721d7a",
-          "version": "0.0.7"
-        }
-      },
-      {
-        "package": "SwiftVISASwift",
-        "repositoryURL": "https://github.com/SwiftVISA/SwiftVISASwift.git",
-        "state": {
-          "branch": "actor",
-          "revision": "1ccb532a7967fb0c37a503d2aa15f999991bae2d",
-          "version": null
-        }
+  "originHash" : "d5abe88ca143f9f9c8d41532fc8d4ab4d9d28d45ba8811b22300dd55d54ec6db",
+  "pins" : [
+    {
+      "identity" : "bluesocket",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftVISA/BlueSocket.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "7b23a867008e0027bfd6f4d398d44720707bc8ca"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "coreswiftvisa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftVISA/CoreSwiftVISA.git",
+      "state" : {
+        "branch" : "actor",
+        "revision" : "229f53ba130653b4945188a94a0bbeea5d21ea6f"
+      }
+    },
+    {
+      "identity" : "swiftvisaswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftVISA/SwiftVISASwift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "98595fdba5f16a2da6b0e21ab7e9dabb848db25b"
+      }
+    },
+    {
+      "identity" : "xpsq8kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/HildrethResearchGroup/XPSQ8Kit",
+      "state" : {
+        "branch" : "master",
+        "revision" : "844648a18451a9c99f97a3bdcd84fff9c16e6ea4"
+      }
+    }
+  ],
+  "version" : 3
 }

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PrinterController
+//import PrinterController
 
 @main
 struct FifiApp: App {
