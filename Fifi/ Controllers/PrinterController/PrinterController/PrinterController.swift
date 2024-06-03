@@ -13,6 +13,7 @@ public actor PrinterController: ObservableObject {
    var waveformController: WaveformController?
 	var multimeterController: MultimeterController?
 	var xpsq8CollectiveController: XPSQ8CollectiveController?
+    var syringePumpController: SyringePumpController?
   
   @MainActor
   @Published var xpsq8ConnectionState = CommunicationState.notConnected
@@ -20,9 +21,12 @@ public actor PrinterController: ObservableObject {
   @MainActor
   @Published var waveformConnectionState = CommunicationState.notConnected
 	
-	@MainActor
-	@Published var multimeterConnectionState = CommunicationState.notConnected
-  
+  @MainActor
+  @Published public var multimeterConnectionState = CommunicationState.notConnected
+
+  @MainActor
+  @Published public var pumpConnectionState = CommunicationState.notConnected
+
   @MainActor
   @Published var xpsq8State = XPSQ8State()
   
@@ -34,10 +38,15 @@ public actor PrinterController: ObservableObject {
   
   @MainActor
   @Published public var printerQueueState = PrinterQueueState()
+    
+    @MainActor
+    @Published public var pumpState = PumpState()
   
   @MainActor
 	@Published public var updateInterval: TimeInterval? = 0.2
   
+    // TODO: add updateState for pumpState
+    
   public init() async {
     Task {
       await withTaskGroup(of: Void.self) { taskGroup in
@@ -111,6 +120,8 @@ public extension PrinterController {
 		}
 	}
   
+    //TODO: add connectToPump
+    
   func disconnectFromWaveform() async {
     waveformController = nil
     await setState(instrument: .waveform, state: .notConnected)
@@ -148,6 +159,11 @@ public extension PrinterController {
 //    try await print("Homed: ", stageGroup.status)
     await setState(instrument: .xpsq8, state: .ready)
   }
+    
+    func initializePump() async throws {
+        await setState(instrument: .pump, state: .ready)
+    }
+
 	
 	func initializeMultimeter() async throws {
 		// TODO: Implement

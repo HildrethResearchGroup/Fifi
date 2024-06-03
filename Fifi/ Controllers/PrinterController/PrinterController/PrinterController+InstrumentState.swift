@@ -42,7 +42,7 @@ extension PrinterController {
 	func setMultimeterState<T>(_ keypath: WritableKeyPath<MultimeterState, T>, to value: T) {
 		multimeterState[keyPath: keypath] = value
 	}
-  
+  //TODO: add updatePumpState
   @MainActor
   func setWaveformState<T>(_ keypath: WritableKeyPath<WaveformState, T>, to value: T) {
     waveformState[keyPath: keypath] = value
@@ -52,6 +52,13 @@ extension PrinterController {
   func setPrinterQueueState<T>(_ keypath: WritableKeyPath<PrinterQueueState, T>, to value: T) {
     printerQueueState[keyPath: keypath] = value
   }
+    
+    //TODO: add setPumpState
+  @MainActor
+  func setPumpState<T>(_ keypath: WritableKeyPath<PumpState, T>, to value: T) {
+    pumpState[keyPath: keypath] = value
+  }
+
   
   @MainActor
   func setXPSQ8LastSetDisplacementMode(in dimension: Dimension, to displacementMode: DisplacementMode) {
@@ -93,11 +100,13 @@ extension PrinterController {
   func setState(instrument: Instrument, state: CommunicationState) {
     switch instrument {
     case .xpsq8:
-      xpsq8ConnectionState = state
+        xpsq8ConnectionState = state
     case .waveform:
-      waveformConnectionState = state
-		case .multimeter:
-			multimeterConnectionState = state
+        waveformConnectionState = state
+    case .multimeter:
+        multimeterConnectionState = state
+    case .pump:
+        pumpConnectionState = state
     }
   }
   
@@ -105,11 +114,13 @@ extension PrinterController {
   func state(for instrument: Instrument) -> CommunicationState {
     switch instrument {
     case .xpsq8:
-      return xpsq8ConnectionState
+        xpsq8ConnectionState = state
     case .waveform:
-      return waveformConnectionState
-		case .multimeter:
-			return multimeterConnectionState
+        waveformConnectionState = state
+    case .multimeter:
+        multimeterConnectionState = state
+    case .pump:
+        pumpConnectionState = state
     }
   }
 }
