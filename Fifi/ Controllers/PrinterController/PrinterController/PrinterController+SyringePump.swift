@@ -43,4 +43,12 @@ public extension PrinterController {
         try await syringePumpController?.startPumping(pump: "01")
     }
     
+    func stopPump1() async throws {
+        try await syringePumpController?.stopPumping(pump: "00")
+    }
+    
+    func stopPump2() async throws {
+        try await syringePumpController?.stopPumping(pump: "01")
+    }
+    
 }
