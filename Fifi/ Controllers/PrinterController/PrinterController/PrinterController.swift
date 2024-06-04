@@ -135,7 +135,10 @@ public extension PrinterController {
         }
     }
     
+    
     //TODO: add disconnect from pump
+    
+    
   func disconnectFromWaveform() async {
     waveformController = nil
     await setState(instrument: .waveform, state: .notConnected)
@@ -174,7 +177,7 @@ public extension PrinterController {
     await setState(instrument: .xpsq8, state: .ready)
   }
     
-    func initializePump() async throws {
+    func initializeSyringePump() async throws {
         await setState(instrument: .pump, state: .ready)
     }
 
