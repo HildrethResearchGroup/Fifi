@@ -122,9 +122,17 @@ public extension PrinterController {
   
     //TODO: add connectToPump
     
-    func connectToSyringePump() async {
-        syringePumpController = nil
-        await setState(instrument: .multimeter, state: .notConnected)
+    func connectToSyringePump(configuration: syringePumpConfiguration) async throws {
+        do {
+            await setState(instrument: .pump, state: .connecting)
+            sleep(1)
+            //maybe problem here, might need to pass the new instrument to the pumpcontroller like the other instruments
+            syringePumpController = try await configuration.makeInstrument()
+            await setState(instrument: .pump, state: .notInitialized)
+        } catch {
+            await setState(instrument: .pump, state: .notConnected)
+            throw error
+        }
     }
     
     //TODO: add disconnect from pump
