@@ -24,6 +24,10 @@ struct FifiApp: App {
         kind: .waveformSettings,
         operation: .waveformSettingsOperation(body: WaveformSettingsOperationView.init)
       )
+      .register(
+        kind: .syringePumpSettings,
+        operation: .syringePumpSettingsOperation(body: SyringePumpSettingsOperationView.init)
+      )
 			.register(
 				kind: .home,
 				operation: .homeOperation(body: HomeOperationView.init)

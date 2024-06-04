@@ -16,6 +16,7 @@ public struct SyringePumpSettingsConfiguration: Hashable, Codable {
   public var enable2: Bool?
   public var id1: Double?
   public var id2: Double?
+    //TODO: set id1 and id2 are not used
     
   
   
@@ -23,15 +24,45 @@ public struct SyringePumpSettingsConfiguration: Hashable, Codable {
 }
 
 extension PrinterOperation {
-  public static func syringePumpSettingsOperation<Body: View>(
-    body: @escaping (Binding<SyringePumpSettingsConfiguration>) -> Body
-  ) -> PrinterOperation<SyringePumpSettingsConfiguration, Body> {
-    .init(
-        //settings below are for the dropdown menu when adding operations
-      kind: .syringePumpSettings,
-      configuration: .init(),
-      name: "Syringe Pump Settings",
-      thumbnailName: "syringe.fill", body: body) { configuration, printerController in
+    public static func syringePumpSettingsOperation<Body: View>(
+        body: @escaping (Binding<SyringePumpSettingsConfiguration>) -> Body
+    ) -> PrinterOperation<SyringePumpSettingsConfiguration, Body> {
+        .init(
+            //settings below are for the dropdown menu when adding operations
+            kind: .syringePumpSettings,
+            configuration: .init(),
+            name: "Syringe Pump Settings",
+            thumbnailName: "syringe.fill", body: body) {configuration, printerController in
+                if let flowRate1 = configuration.flowRate1 {
+             //   TODO:
+                    try await printerController.setFlowRate1(to: flowRate1)
+                }
+                
+                if let flowRate2 = configuration.flowRate2 {
+                    try await printerController.setFlowRate2(to: flowRate2)
+                }
+                
+                if let enable1 = configuration.enable1 {
+                    try await printerController.enablePump1(to: enable1)
+                }
+                
+                if let enable2 = configuration.enable2 {
+                    try await printerController.enablePump2(to: enable2)
+                }
+                
+                if let  = configuration.enable2 {
+                    try await printerController.enablePump2(to: enable2)
+                }
+                
+                if let enable2 = configuration.enable2 {
+                    try await printerController.enablePump2(to: enable2)
+                }
+                    
+              
+                }
+            }
+    }
+    
           
           
 //        if let flowRate1 = configuration.flowRate1 {
@@ -42,9 +73,7 @@ extension PrinterOperation {
 //          try await printerController.setAmplifiedVoltage(to: flowRate2)
 //        }
     
-      }
-  }
-}
+
 
 //// MARK: Running
 //extension WaveformSettingsConfiguration: PrinterOperationConfiguration {

@@ -21,6 +21,19 @@ public extension PrinterController {
           try await syringePumpController?.setRate(for: "01", to: quantity, of: units)
       }
     }
+    
+//TODO: fix these funcs
+    func enablePump1(to quantity: String, of units:String) async throws {
+      try await with(.pump) {
+          try await syringePumpController?.setRate(for: "01", to: quantity, of: units)
+      }
+    }
+    
+    func enablePump2(to quantity: String, of units:String) async throws {
+      try await with(.pump) {
+          try await syringePumpController?.setRate(for: "01", to: quantity, of: units)
+      }
+    }
 
     func setInnerDiameter1(to value: String) async throws {
         try await with(.pump) {

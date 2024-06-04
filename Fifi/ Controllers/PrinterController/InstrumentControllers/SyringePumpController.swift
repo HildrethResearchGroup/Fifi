@@ -2,6 +2,12 @@ import Foundation
 import Socket
 
 public class SyringePumpController: ObservableObject {
+    
+    let address: String
+    let port: Int
+    let timeout: TimeInterval
+    
+    
     var communicator: SyringePumpCommunicator?
     
     /*
@@ -9,6 +15,9 @@ public class SyringePumpController: ObservableObject {
      */
     public init(address: String, port: Int, timeout: TimeInterval) async throws {
         do {
+            self.address = address
+            self.port = port
+            self.timeout = timeout
             communicator = try SyringePumpCommunicator(address: address, port: Int(port), timeout: timeout)
             print("Connected to the syringe pump")
         } catch {

@@ -8,7 +8,9 @@
 import SwiftUI
 //import PrinterController
 
-struct CustomVerticalDivider: View {
+struct SyringePumpSettingsOperationView: View {
+    @Binding var configuration: SyringePumpSettingsConfiguration
+
     let width: CGFloat
     let height: CGFloat
     let color: Color
@@ -23,18 +25,14 @@ struct CustomVerticalDivider: View {
         Rectangle()
             .fill(color)
             .frame(width: width, height: height)
-    }
-}
+    
 
-
-struct SyringePumpSettingsOperationView: View {
-    @Binding var configuration: SyringePumpSettingsConfiguration
-    @ObservedObject var controller = SyringePumpController()
+    @ObservedObject var controller = SyringePumpController(address: <#T##String#>, port: <#T##Int#>, timeout: TimeInterval)
 
     @State private var enable1: Bool = false
     @State private var enable2: Bool = false
 
-    var body: some View {
+
         VStack {
             Text("Syringe Pump Network").font(.title2).padding(.top, 30)
 
@@ -88,7 +86,7 @@ struct SyringePumpSettingsOperationView: View {
                         .toggleStyle(SwitchToggleStyle(tint: .blue))
                     }
                 }
-                CustomVerticalDivider()
+                SyringePumpSettingsOperationView()
                 VStack {
                     Text("Syringe Pump 2").font(.title2).padding(.top, -5)
                     Form {
@@ -121,10 +119,7 @@ struct SyringePumpSettingsOperationView: View {
     }
 }
 
-// MARK: - Helpers
-private extension SyringePumpSettingsOperationView {
-    // Helper methods for managing the configuration state can be added here if needed
-}
+
 
 // MARK: - Previews
 struct SyringePumpSettingsOperationView_Previews: PreviewProvider {
@@ -133,3 +128,5 @@ struct SyringePumpSettingsOperationView_Previews: PreviewProvider {
             .padding()
     }
 }
+                                         
+

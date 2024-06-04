@@ -69,4 +69,5 @@ public extension PrinterController {
       try await waveformController?.turnVoltageOff()
     }
   }
+    
 }
