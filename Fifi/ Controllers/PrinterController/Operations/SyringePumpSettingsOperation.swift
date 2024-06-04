@@ -16,7 +16,7 @@ public struct SyringePumpSettingsConfiguration: Hashable, Codable {
   public var units2: String?
   public var id1: String?
   public var id2: String?
-    //TODO: set id1 and id2 are not used
+
     
   
   
