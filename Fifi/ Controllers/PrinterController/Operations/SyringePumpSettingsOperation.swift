@@ -10,9 +10,9 @@ import SwiftUI
 public struct SyringePumpSettingsConfiguration: Hashable, Codable {
     // TODO: Add ON State
 //for each separate pump
-  public var flowRate1: String?
+  public var flowRate1: Double?
   public var units1: String?
-  public var flowRate2: String?
+  public var flowRate2: Double?
   public var units2: String?
   public var id1: String?
   public var id2: String?
