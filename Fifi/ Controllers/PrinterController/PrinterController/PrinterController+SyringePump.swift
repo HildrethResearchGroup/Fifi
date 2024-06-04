@@ -9,16 +9,16 @@ import Foundation
 
 
 public extension PrinterController {
-    func setFlowRate1(to quantity: String, of units:String) async throws {
+    func setFlowRate1(to quantity: Double, of units:String) async throws {
         // TODO:
         try await with(.pump) {
-            try await syringePumpController?.setRate(for: "00", to: quantity, of: units)
+            try await syringePumpController?.setRate(for: "00", to: String(format: "%f", quantity), of: units)
         }
     }
 
-    func setFlowRate2(to quantity: String, of units:String) async throws {
+    func setFlowRate2(to quantity: Double, of units:String) async throws {
       try await with(.pump) {
-          try await syringePumpController?.setRate(for: "01", to: quantity, of: units)
+          try await syringePumpController?.setRate(for: "01", to: String(format: "%f", quantity), of: units)
       }
     }
     
