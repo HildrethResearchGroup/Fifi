@@ -143,16 +143,15 @@ private extension ContentView {
 														state: printerController.xpsq8ConnectionState))
       
       //added for syringe pump
-    Button {
-        syringePumpAction()
-    } label: {
-        Image(systemName: "syringe.fill")
-            .foregroundColor(printerController.syringePumpConnectionState.color)
-    }
-    .help(helpForInstrument(named: "Syringe Pump",
-                            state: printerController.syringePumpConnectionState))
-
-  }
+      Button {
+                  syringePumpAction()
+              } label: {
+                  Image(systemName: "syringe.fill")
+                      .foregroundColor(printerController.syringePumpConnectionState.color)
+              }
+              .help(helpForInstrument(named: "Syringe Pump", state: printerController.syringePumpConnectionState))
+          }
+          
   
   func helpForInstrument(named name: String, state: CommunicationState) -> String {
     switch state {

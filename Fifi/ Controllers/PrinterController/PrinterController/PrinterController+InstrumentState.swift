@@ -106,7 +106,7 @@ extension PrinterController {
     case .multimeter:
         multimeterConnectionState = state
     case .pump:
-        pumpConnectionState = state
+        syringePumpConnectionState = state
     }
   }
   
@@ -114,13 +114,13 @@ extension PrinterController {
   func state(for instrument: Instrument) -> CommunicationState {
     switch instrument {
     case .xpsq8:
-        xpsq8ConnectionState = state
+        return xpsq8ConnectionState
     case .waveform:
-        waveformConnectionState = state
+        return waveformConnectionState
     case .multimeter:
-        multimeterConnectionState = state
+        return multimeterConnectionState
     case .pump:
-        pumpConnectionState = state
+        return syringePumpConnectionState 
     }
   }
 }

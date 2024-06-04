@@ -50,12 +50,12 @@ extension PrinterOperation {
                     try await printerController.enablePump2(to: enable2)
                 }
                 
-                if let  = configuration.enable2 {
-                    try await printerController.enablePump2(to: enable2)
+                if let innerDiam1 = configuration.innerDiam1 {
+                    try await printerController.enablePump2(to: innerDiam1)
                 }
                 
-                if let enable2 = configuration.enable2 {
-                    try await printerController.enablePump2(to: enable2)
+                if let innerDiam2 = configuration.innerDiam2 {
+                    try await printerController.enablePump2(to: innerDiam2)
                 }
                     
               

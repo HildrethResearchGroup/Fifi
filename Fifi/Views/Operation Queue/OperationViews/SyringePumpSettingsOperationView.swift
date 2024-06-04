@@ -1,12 +1,4 @@
-//
-//  SyringePumpSettingsOperationView.swift
-//  Fifi
-//
-//  Created by Alyssa Hanson (Student) on 6/3/24.
-//
-
 import SwiftUI
-//import PrinterController
 
 struct SyringePumpSettingsOperationView: View {
     @Binding var configuration: SyringePumpSettingsConfiguration
@@ -15,25 +7,27 @@ struct SyringePumpSettingsOperationView: View {
     let height: CGFloat
     let color: Color
 
-    init(width: CGFloat = 1, height: CGFloat = 140, color: Color = .gray) {
-        self.width = width
-        self.height = height
-        self.color = color
-    }
-
-    var body: some View {
-        Rectangle()
-            .fill(color)
-            .frame(width: width, height: height)
-    
-
-    @ObservedObject var controller = SyringePumpController(address: <#T##String#>, port: <#T##Int#>, timeout: TimeInterval)
-
+    @ObservedObject var controller: SyringePumpController
     @State private var enable1: Bool = false
     @State private var enable2: Bool = false
 
+    init(configuration: Binding<SyringePumpSettingsConfiguration>,
+         width: CGFloat = 1,
+         height: CGFloat = 140,
+         color: Color = .gray) {
+        self._configuration = configuration
+        self.width = width
+        self.height = height
+        self.color = color
+     
+    }
 
+    var body: some View {
         VStack {
+            Rectangle()
+                .fill(color)
+                .frame(width: width, height: height)
+
             Text("Syringe Pump Network").font(.title2).padding(.top, 30)
 
             HStack {
@@ -68,7 +62,7 @@ struct SyringePumpSettingsOperationView: View {
                         }
                         // Units
                         Picker("Units", selection: $controller.units1) {
-                            ForEach(SyringePumpController.flowRateUnits1.allCases) { unit1 in
+                            ForEach(SyringePumpController.flowRateUnits1.allCases, id: \.self) { unit1 in
                                 Text(unit1.rawValue).tag(unit1)
                             }
                         }
@@ -86,7 +80,6 @@ struct SyringePumpSettingsOperationView: View {
                         .toggleStyle(SwitchToggleStyle(tint: .blue))
                     }
                 }
-                SyringePumpSettingsOperationView()
                 VStack {
                     Text("Syringe Pump 2").font(.title2).padding(.top, -5)
                     Form {
@@ -96,7 +89,7 @@ struct SyringePumpSettingsOperationView: View {
                         }
                         // Units
                         Picker("Units", selection: $controller.units2) {
-                            ForEach(SyringePumpController.flowRateUnits2.allCases) { unit2 in
+                            ForEach(SyringePumpController.flowRateUnits2.allCases, id: \.self) { unit2 in
                                 Text(unit2.rawValue).tag(unit2)
                             }
                         }
@@ -120,6 +113,79 @@ struct SyringePumpSettingsOperationView: View {
 }
 
 
+private extension SyringePumpSettingsOperationView {
+  var updateRate1: Binding<Bool> {
+    Binding {
+      configuration.flowRate1 != nil
+    } set: { newValue in
+      if newValue {
+        configuration.flowRate1 = 0.0
+      } else {
+        configuration.flowRate1 = nil
+      }
+    }
+  }
+  
+  var updateRate2: Binding<Bool> {
+    Binding {
+      configuration.flowRate2 != nil
+    } set: { newValue in
+      if newValue {
+        configuration.flowRate2 = 0.0
+      } else {
+        configuration.flowRate2 = nil
+      }
+    }
+  }
+  
+  var updateInnerDiam1: Binding<Bool> {
+    Binding {
+      configuration.frequency != nil
+    } set: { newValue in
+      if newValue {
+        configuration.frequency = 0.0
+      } else {
+        configuration.frequency = nil
+      }
+    }
+  }
+  
+  var updateInnerDiam2: Binding<Bool> {
+    Binding {
+      configuration.offset != nil
+    } set: { newValue in
+      if newValue {
+        configuration.offset = 0.0
+      } else {
+        configuration.offset = nil
+      }
+    }
+  }
+  
+    var updateEnable1: Binding<Bool> {
+        Binding {
+            configuration.enable1 != nil
+        } set: { newValue in
+            if newValue {
+                configuration.enable1 = 0.0
+            } else {
+                configuration.enable1 = nil
+            }
+        }
+    }
+    var updateEnable2: Binding<Bool> {
+        Binding {
+            configuration.enable2 != nil
+        } set: { newValue in
+            if newValue {
+                configuration.enable2 = 0.0
+            } else {
+                configuration.enable2 = nil
+            }
+        }
+    }
+    
+}
 
 // MARK: - Previews
 struct SyringePumpSettingsOperationView_Previews: PreviewProvider {
@@ -128,5 +194,3 @@ struct SyringePumpSettingsOperationView_Previews: PreviewProvider {
             .padding()
     }
 }
-                                         
-

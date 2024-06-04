@@ -122,6 +122,11 @@ public extension PrinterController {
   
     //TODO: add connectToPump
     
+    func connectToSyringePump() async {
+        syringePumpController = nil
+        await setState(instrument: .multimeter, state: .notConnected)
+    }
+    
     //TODO: add disconnect from pump
   func disconnectFromWaveform() async {
     waveformController = nil
