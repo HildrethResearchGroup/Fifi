@@ -28,7 +28,7 @@ struct FifiApp: App {
         kind: .syringePumpSettings,
         operation: .syringePumpSettingsOperation(body: SyringePumpSettingsOperationView.init)
       )
-			.register(
+      .register(
 				kind: .home,
 				operation: .homeOperation(body: HomeOperationView.init)
 			)
