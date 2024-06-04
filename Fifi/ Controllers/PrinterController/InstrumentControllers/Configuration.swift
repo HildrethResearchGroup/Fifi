@@ -69,7 +69,7 @@ public struct XPSQ8Configuration: Sendable {
 }
 
 // MARK: - Pump Configuration
-public struct PumpConfiguration: Sendable {
+public struct syringePumpConfiguration: Sendable {
   public var address: String
   public var port: Int
   public var timeout: TimeInterval = 5.0
@@ -84,7 +84,7 @@ public struct PumpConfiguration: Sendable {
     self.timeout = timeout
   }
 
-  public static var empty: PumpConfiguration {
+  public static var empty: syringePumpConfiguration {
     return .init(address: "0.0.0.0", port: 5001)
   }
 
