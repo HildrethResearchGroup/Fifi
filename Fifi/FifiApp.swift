@@ -29,6 +29,10 @@ struct FifiApp: App {
         operation: .syringePumpSettingsOperation(body: SyringePumpSettingsOperationView.init)
       )
       .register(
+        kind: .syringePumpToggle,
+        operation: .syringePumpToggleOperation(body: SyringePumpToggleOperationView.init)
+      )
+      .register(
 				kind: .home,
 				operation: .homeOperation(body: HomeOperationView.init)
 			)

@@ -20,10 +20,10 @@ extension PrinterOperation {
     body: @escaping (Binding<SyringePumpToggleConfiguration>) -> Body
   ) -> PrinterOperation<SyringePumpToggleConfiguration, Body> {
     .init(
-      kind: .voltageToggle,
+      kind: .syringePumpToggle,
       configuration: .init(),
-      name: "Voltage Toggle",
-      thumbnailName: "bolt.fill",
+      name: "Syringe Pump Toggle",
+      thumbnailName: "drop.circle",
       body: body
     ) { configuration, printerController in
         switch configuration.pump1Action {

@@ -42,6 +42,8 @@
 		5ADE4FEA27549A5100AC4505 /* WaitOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FE927549A5100AC4505 /* WaitOperationView.swift */; };
 		5ADE4FEC27549AD100AC4505 /* MoveOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FEB27549AD100AC4505 /* MoveOperationView.swift */; };
 		5ADE4FF02754A14000AC4505 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE4FEF2754A14000AC4505 /* Model.swift */; };
+		AAAFD3612C0FBFCC008653FA /* SyringePumpToggleOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAFD3602C0FBFCC008653FA /* SyringePumpToggleOperation.swift */; };
+		AAAFD3632C0FC229008653FA /* PumpActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAFD3622C0FC229008653FA /* PumpActions.swift */; };
 		C02375A82C090D4200DE976A /* SwiftVISASwift in Frameworks */ = {isa = PBXBuildFile; productRef = C02375A72C090D4200DE976A /* SwiftVISASwift */; };
 		C02375AA2C090D4C00DE976A /* XPSQ8Kit in Frameworks */ = {isa = PBXBuildFile; productRef = C02375A92C090D4C00DE976A /* XPSQ8Kit */; };
 		C06E54B3283EBBD500A36145 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E54AD283EBBD500A36145 /* CameraViewController.swift */; };
@@ -128,6 +130,8 @@
 		5ADE4FE927549A5100AC4505 /* WaitOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitOperationView.swift; sourceTree = "<group>"; };
 		5ADE4FEB27549AD100AC4505 /* MoveOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveOperationView.swift; sourceTree = "<group>"; };
 		5ADE4FEF2754A14000AC4505 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		AAAFD3602C0FBFCC008653FA /* SyringePumpToggleOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyringePumpToggleOperation.swift; sourceTree = "<group>"; };
+		AAAFD3622C0FC229008653FA /* PumpActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PumpActions.swift; sourceTree = "<group>"; };
 		C06E54AD283EBBD500A36145 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		C06E54AE283EBBD500A36145 /* RecordingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingState.swift; sourceTree = "<group>"; };
 		C06E54AF283EBBD500A36145 /* DeviceCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCameraView.swift; sourceTree = "<group>"; };
@@ -335,6 +339,7 @@
 				C0AE6AC62C08F20B0099C540 /* WaitOperation.swift */,
 				C0AE6AC72C08F20B0099C540 /* WaveformSettingsOperation.swift */,
 				236FC3D32C0E7AB6006BA845 /* SyringePumpSettingsOperation.swift */,
+				AAAFD3602C0FBFCC008653FA /* SyringePumpToggleOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				C0AE6AD92C08F20B0099C540 /* PrinterController+State.swift */,
 				C0AE6ADA2C08F20B0099C540 /* PrinterQueue.swift */,
 				C0AE6ADB2C08F20B0099C540 /* WaveFunction.swift */,
+				AAAFD3622C0FC229008653FA /* PumpActions.swift */,
 			);
 			path = PrinterController;
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 				5A08511A279B41930043E1BA /* PrintLineOperationView.swift in Sources */,
 				C0AE6AEB2C08F20B0099C540 /* PrinterOperation.swift in Sources */,
 				5A1489DD27D8A8BB0055D22B /* GapHeightCalibrateOperationView.swift in Sources */,
+				AAAFD3632C0FC229008653FA /* PumpActions.swift in Sources */,
 				5ADE4FEC27549AD100AC4505 /* MoveOperationView.swift in Sources */,
 				5A4D3BDD26E930D200664B46 /* OperationQueueView.swift in Sources */,
 				C0AE6AF42C08F20B0099C540 /* PrinterController+Motion.swift in Sources */,
@@ -570,6 +577,7 @@
 				C06E54B6283EBBD500A36145 /* SelectableCameraView.swift in Sources */,
 				5A13DA2526CB041700D8ED3F /* ManualVoltageControlView.swift in Sources */,
 				C0AE6ADF2C08F20B0099C540 /* MultimeterController+General.swift in Sources */,
+				AAAFD3612C0FBFCC008653FA /* SyringePumpToggleOperation.swift in Sources */,
 				C06E54B8283EBBD500A36145 /* CameraViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
