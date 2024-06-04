@@ -11,8 +11,8 @@ import Foundation
 public struct PumpState {
   public var updateInterval: TimeInterval? = 0.2
 
-  public internal(set) var innerDiameter1: String?
-  public internal(set) var innerDiameter2: String?
+    public internal(set) var innerDiameter1: String?
+    public internal(set) var innerDiameter2: String?
     public internal(set) var flowRate1: String?
     public internal(set) var flowRate2: String?
 
