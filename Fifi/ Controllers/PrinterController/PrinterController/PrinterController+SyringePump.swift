@@ -35,15 +35,15 @@ public extension PrinterController {
       }
     }
 
-    func setInnerDiameter1(to value: String) async throws {
+    func setInnerDiameter1(to value: Double) async throws {
         try await with(.pump) {
-            try await syringePumpController?.setInnerDiameter(for: "00", to: value)
+            try await syringePumpController?.setInnerDiameter(for: "00", to: String(format: "%f", value))
         }
     }
 
-    func setInnerDiameter2(to value: String) async throws {
+    func setInnerDiameter2(to value: Double) async throws {
         try await with(.pump) {
-            try await syringePumpController?.setInnerDiameter(for: "01", to: value)
+            try await syringePumpController?.setInnerDiameter(for: "01", to: String(format: "%f", value))
         }
     }
     
