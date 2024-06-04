@@ -18,6 +18,32 @@ struct SyringePumpView1: View {
                 }
             }
             
+            Menu {
+                            Button("mL/hr") {
+                                configuration.units1 = "MH"
+                            }
+                            
+                            Button("mL/min") {
+                                configuration.units1 = "MM"
+                            }
+                            
+                            Button("uL/hr") {
+                                configuration.units1 = "UH"
+                            }
+                            
+                            Button("uL/min") {
+                                configuration.units1 = "UM"
+                            }
+                        } label: {
+                            Text(configuration.units1 == "MH" ? "mL/hr" :
+                                 configuration.units1 == "MM" ? "mL/min" :
+                                 configuration.units1 == "UH" ? "uL/hr" :
+                                 configuration.units1 == "UM" ? "uL/min" : "Select units")
+                                .foregroundColor(.black)
+                        }
+                        .border(Color.gray, width: 1) // Border color and width
+                        .frame(maxWidth: 100) // Max width
+            
             Toggle("Update ID 1", isOn: updateID1)
             if let updateID1 = configuration.id1 {
                 HStack {
@@ -27,11 +53,11 @@ struct SyringePumpView1: View {
                 }
             }
             
-            if let units1 = configuration.units1 {
-                Picker("Units", selection: $configuration.units1) {
-                    Text(units1).tag(units1)
-                }
-            }
+//            if let units1 = configuration.units1 {
+//                Picker("Units", selection: $configuration.units1) {
+//                    Text(units1).tag(units1)
+//                }
+//            }
         }
     }
     
@@ -78,6 +104,32 @@ struct SyringePumpView2: View {
                 }
             }
             
+            Menu {
+                            Button("mL/hr") {
+                                configuration.units2 = "MH"
+                            }
+                            
+                            Button("mL/min") {
+                                configuration.units2 = "MM"
+                            }
+                            
+                            Button("uL/hr") {
+                                configuration.units2 = "UH"
+                            }
+                            
+                            Button("uL/min") {
+                                configuration.units2 = "UM"
+                            }
+                        } label: {
+                            Text(configuration.units2 == "MH" ? "mL/hr" :
+                                 configuration.units2 == "MM" ? "mL/min" :
+                                 configuration.units2 == "UH" ? "uL/hr" :
+                                 configuration.units2 == "UM" ? "uL/min" : "Select units")
+                                .foregroundColor(.black)
+                        }
+                        .border(Color.gray, width: 1) // Border color and width
+                        .frame(maxWidth: 100) // Max width
+            
             Toggle("Update ID 2", isOn: updateID2)
             if let updateID2 = configuration.id2 {
                 HStack {
@@ -87,11 +139,11 @@ struct SyringePumpView2: View {
                 }
             }
             
-            if let units2 = configuration.units2 {
-                Picker("Units", selection: $configuration.units2) {
-                    Text(units2).tag(units2)
-                }
-            }
+//            if let units2 = configuration.units2 {
+//                Picker("Units", selection: $configuration.units2) {
+//                    Text(units2).tag(units2)
+//                }
+//            }
         }
     }
     
