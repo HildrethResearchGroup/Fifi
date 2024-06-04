@@ -122,6 +122,7 @@ public extension PrinterController {
   
     //TODO: add connectToPump
     
+    //TODO: add disconnect from pump
   func disconnectFromWaveform() async {
     waveformController = nil
     await setState(instrument: .waveform, state: .notConnected)

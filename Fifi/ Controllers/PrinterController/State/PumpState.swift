@@ -10,14 +10,11 @@ import Foundation
 //TODO: change the copy pasted-code so that it actually works with the
 public struct PumpState {
   public var updateInterval: TimeInterval? = 0.2
-  
-  public internal(set) var rawVoltage: Double?
-  public internal(set) var rawVoltageOffset: Double?
-  public internal(set) var frequency: Double?
-  public internal(set) var phase: Double?
-  public internal(set) var waveFunction: WaveFunction?
-    public internal(set) var impedance: Double?
-    public internal(set) var voltageIsOn: Bool?
+
+  public internal(set) var innerDiameter1: String?
+  public internal(set) var innerDiameter2: String?
+    public internal(set) var flowRate1: String?
+    public internal(set) var flowRate2: String?
     
     public var amplifiedVoltage: Double? {
         rawVoltage.flatMap { $0 * 1000 }
