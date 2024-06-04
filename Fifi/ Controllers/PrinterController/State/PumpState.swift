@@ -15,12 +15,5 @@ public struct PumpState {
   public internal(set) var innerDiameter2: String?
     public internal(set) var flowRate1: String?
     public internal(set) var flowRate2: String?
-    
-    public var amplifiedVoltage: Double? {
-        rawVoltage.flatMap { $0 * 1000 }
-    }
-    
-    public var amplifiedVoltageOffset: Double? {
-        rawVoltageOffset.flatMap { $0 * 1000 }
-    }
+
 }
