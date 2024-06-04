@@ -14,8 +14,8 @@ public struct SyringePumpSettingsConfiguration: Hashable, Codable {
   public var units1: String?
   public var flowRate2: Double?
   public var units2: String?
-  public var id1: String?
-  public var id2: String?
+  public var id1: Double?
+  public var id2: Double?
 
     
   
