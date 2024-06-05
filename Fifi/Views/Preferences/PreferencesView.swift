@@ -27,25 +27,26 @@ struct PreferencesView: View {
                                   address: $xpsq8Address,
                                   port: $xpsq8Port)
             
-            Divider()
+       //     Divider()
             
             connectionPreferences(named: "Waveform Generator",
                                   address: $waveformAddress,
                                   port: $waveformPort)
             
-            Divider()
+       //     Divider()
             
             connectionPreferences(named: "Multimeter",
                                   address: $multimeterAddress,
                                   port: $multimeterPort)
             
-            Divider()
+       //     Divider()
 
             connectionPreferences(named: "Syringe Pump",
                                     address: $syringePumpAddress,
                                     port: $syringePumpPort)
         }
         .padding()
+        
     }
 }
 
