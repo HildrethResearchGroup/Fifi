@@ -16,33 +16,34 @@ struct SyringePumpView1: View {
                     TextField("Rate", value: $configuration.flowRate1, format: .number)
                         .frame(maxWidth: 100) // Set maximum width here
                 }
+                Menu {
+                                Button("mL/hr") {
+                                    configuration.units1 = "MH"
+                                }
+                                
+                                Button("mL/min") {
+                                    configuration.units1 = "MM"
+                                }
+                                
+                                Button("uL/hr") {
+                                    configuration.units1 = "UH"
+                                }
+                                
+                                Button("uL/min") {
+                                    configuration.units1 = "UM"
+                                }
+                            } label: {
+                                Text(configuration.units1 == "MH" ? "mL/hr" :
+                                     configuration.units1 == "MM" ? "mL/min" :
+                                     configuration.units1 == "UH" ? "uL/hr" :
+                                     configuration.units1 == "UM" ? "uL/min" : "Select units")
+                                  //  .foregroundColor(.black)
+                            }
+                            .border(Color.gray, width: 1) // Border color and width
+                            .frame(maxWidth: 100) // Max width
             }
             
-            Menu {
-                            Button("mL/hr") {
-                                configuration.units1 = "MH"
-                            }
-                            
-                            Button("mL/min") {
-                                configuration.units1 = "MM"
-                            }
-                            
-                            Button("uL/hr") {
-                                configuration.units1 = "UH"
-                            }
-                            
-                            Button("uL/min") {
-                                configuration.units1 = "UM"
-                            }
-                        } label: {
-                            Text(configuration.units1 == "MH" ? "mL/hr" :
-                                 configuration.units1 == "MM" ? "mL/min" :
-                                 configuration.units1 == "UH" ? "uL/hr" :
-                                 configuration.units1 == "UM" ? "uL/min" : "Select units")
-                                .foregroundColor(.black)
-                        }
-                        .border(Color.gray, width: 1) // Border color and width
-                        .frame(maxWidth: 100) // Max width
+           
             
             Toggle("Update ID 1", isOn: updateID1)
             if let updateID1 = configuration.id1 {
@@ -102,34 +103,35 @@ struct SyringePumpView2: View {
                     TextField("Rate", value: $configuration.flowRate2, format: .number)
                         .frame(maxWidth: 100) // Set maximum width here
                 }
+                Menu {
+                                Button("mL/hr") {
+                                    configuration.units2 = "MH"
+                                }
+                                
+                                Button("mL/min") {
+                                    configuration.units2 = "MM"
+                                }
+                                
+                                Button("uL/hr") {
+                                    configuration.units2 = "UH"
+                                }
+                                
+                                Button("uL/min") {
+                                    configuration.units2 = "UM"
+                                }
+                            } label: {
+                                Text(configuration.units2 == "MH" ? "mL/hr" :
+                                     configuration.units2 == "MM" ? "mL/min" :
+                                     configuration.units2 == "UH" ? "uL/hr" :
+                                     configuration.units2 == "UM" ? "uL/min" : "Select units")
+                                  //  .foregroundColor(.black)
+                            }
+                            .border(Color.gray, width: 1) // Border color and width
+                            .frame(maxWidth: 100) // Max width
             }
             
-            Menu {
-                            Button("mL/hr") {
-                                configuration.units2 = "MH"
-                            }
-                            
-                            Button("mL/min") {
-                                configuration.units2 = "MM"
-                            }
-                            
-                            Button("uL/hr") {
-                                configuration.units2 = "UH"
-                            }
-                            
-                            Button("uL/min") {
-                                configuration.units2 = "UM"
-                            }
-                        } label: {
-                            Text(configuration.units2 == "MH" ? "mL/hr" :
-                                 configuration.units2 == "MM" ? "mL/min" :
-                                 configuration.units2 == "UH" ? "uL/hr" :
-                                 configuration.units2 == "UM" ? "uL/min" : "Select units")
-                                .foregroundColor(.black)
-                        }
-                        .border(Color.gray, width: 1) // Border color and width
-                        .frame(maxWidth: 100) // Max width
-            
+           
+                    
             Toggle("Update ID 2", isOn: updateID2)
             if let updateID2 = configuration.id2 {
                 HStack {
