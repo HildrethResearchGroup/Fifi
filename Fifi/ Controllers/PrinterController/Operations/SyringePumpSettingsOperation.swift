@@ -34,6 +34,7 @@ extension PrinterOperation {
             name: "Syringe Pump Settings",
             thumbnailName: "syringe.fill", body: body) {configuration, printerController in
                     if let flowRate1 = configuration.flowRate1, let units1 = configuration.units1 {
+                        print(units1)
                         try await printerController.setFlowRate1(to: flowRate1, of: units1)
                     }
                     
