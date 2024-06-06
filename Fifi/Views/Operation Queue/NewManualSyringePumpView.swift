@@ -19,43 +19,35 @@ struct CustomVerticalDivider: View {
 }
 
 struct NewManualSyringePumpView: View {
-    @ObservedObject var controller: NewManualSyringePumpController
+    @EnvironmentObject private var printerController: PrinterController
+
+    //@ObservedObject var controller: NewManualSyringePumpController
+    
     @State private var enable1: Bool = false
     @State private var enable2: Bool = false
 
     var body: some View {
         VStack {
-            Text("Syringe Pump Network")
-                .font(.system(size: 24)) // Change the font size here
-                .padding(.top, 30)
-            
+ 
             HStack {
-                Text("Port")
-                    .font(.system(size: 16)) // Change the font size here
-                
-                Button(action: { controller.connectOrDisconnect() }) {
-                    Text(controller.nextPortState)
-                        .font(.system(size: 16)) // Change the font size here
-                }
-                
                 Toggle(isOn: Binding(
-                    get: { self.controller.dualStart },
+                    get: { self.printerController.dualStart },
                     set: { newValue in
-                        self.controller.dualChange()
+                        self.printerController.dualChange()
                         switch (enable1, enable2) {
                         case (true, false):
-                            self.controller.startOrStopPumping1(pump: "00")
+                            self.printerController.startOrStopPumping1(pump: "00")
                         case (true, true):
-                            self.controller.startOrStopPumping1(pump: "00")
-                            self.controller.startOrStopPumping2(pump: "01")
+                            self.printerController.startOrStopPumping1(pump: "00")
+                            self.printerController.startOrStopPumping2(pump: "01")
                         case (false, true):
-                            self.controller.startOrStopPumping2(pump: "01")
+                            self.printerController.startOrStopPumping2(pump: "01")
                         default:
                             break
                         }
                     }
                 )) {
-                    Text(self.controller.nextPumpState == .startPumping1 ? "Start Both Pumps" : "Stop Both Pumps")
+                    Text(self.printerController.nextPumpState == .startPumping1 ? "Start Both Pumps" : "Stop Both Pumps")
                         .font(.system(size: 16)) // Change the font size here
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .blue))
@@ -63,27 +55,26 @@ struct NewManualSyringePumpView: View {
             
             HStack {
                 VStack {
-                    Text("Syringe Pump 1")
+                    Text("Pump 1")
                         .font(.system(size: 15)) // Change the font size here
                         .padding(.top, -5)
                     
                     Form {
                         // Select units
                         VStack {
-                            TextField("Flow Rate", text: $controller.flowRate)
+                            TextField("Flow Rate", text: $printerController.flowRate)
                                 .frame(width: 100) // Set desired width here
                                 .fixedSize(horizontal: true, vertical: false) // Prevent expansion
-                            TextField("Diameter", text: self.$controller.id1)
+                            TextField("Diameter", text: self.$printerController.id1)
                                 .frame(width: 115) // Set desired width here
                                 .fixedSize(horizontal: true, vertical: false) // Prevent expansion
                         }
-                        Picker("Units", selection: $controller.units) {
+                        Picker("Units", selection: $printerController.units) {
                             ForEach(NewManualSyringePumpController.flowRateUnits.allCases) { unit in
                                 Text(unit.rawValue)
                                     .tag(unit)
                             }
                         }
-                    
                         .font(.system(size: 12))
                         .frame(width: 124) // Set desired width here
                         .clipped() // Ensure the picker does not expand beyond this width
@@ -104,7 +95,7 @@ struct NewManualSyringePumpView: View {
                                     }
                                 }
                             }
-                        )) 
+                        ))
                         
                         
                         {
@@ -117,31 +108,32 @@ struct NewManualSyringePumpView: View {
                             .font(.system(size: 12)) // Change the font size here
 
                         
-                        Text(controller.subString)
+                        Text(printerController.subString)
                             .font(.system(size: 12)) // Change the font size here
                     
                     }
                 }
                 
+                
                 CustomVerticalDivider(width: 1, height: 140, color: .gray)
                 
                 VStack {
-                    Text("Syringe Pump 2")
+                    Text("Pump 2")
                         .font(.system(size: 15)) // Change the font size here
                         .padding(.top, -5)
                     
                     Form {
                         // Select units
                         VStack {
-                            TextField("Flow Rate", text: $controller.flowRate2)
+                            TextField("Flow Rate", text: $printerController.flowRate2)
                                 .frame(width: 100) // Set desired width here
                                 .fixedSize(horizontal: true, vertical: false) // Prevent expansion
-                            TextField("Diameter", text: $controller.id2)
+                            TextField("Diameter", text: $printerController.id2)
                                 .frame(width: 115) // Set desired width here
                                 .fixedSize(horizontal: true, vertical: false) // Prevent expansion
                         }
-                        Picker("Units", selection: $controller.units2) {
-                            ForEach(NewManualSyringePumpController.flowRateUnits2.allCases) { unit2 in
+                        Picker("Units", selection: $printerController.units2) {
+                            ForEach(printerController.flowRateUnits2.allCases) { unit2 in
                                 Text(unit2.rawValue)
                                     .tag(unit2)
                             }
@@ -156,13 +148,13 @@ struct NewManualSyringePumpView: View {
                                 enable2 = newValue
                                 if newValue {
                                     print("Enable2: \(enable2)")
-                                    if self.controller.dualStart {
-                                        self.controller.startOrStopPumping2(pump: "01")
+                                    if self.printerController.dualStart {
+                                        self.printerController.startOrStopPumping2(pump: "01")
                                     }
                                 } else {
                                     print("Enable2: \(enable2)")
-                                    if self.controller.dualStart {
-                                        self.controller.startOrStopPumping2(pump: "01")
+                                    if self.printerController.dualStart {
+                                        self.printerController.startOrStopPumping2(pump: "01")
                                     }
                                 }
                             }
@@ -176,7 +168,7 @@ struct NewManualSyringePumpView: View {
                             .font(.system(size: 12)) // Change the font size here
 
                         
-                        Text(controller.subString)
+                        Text(printerController.subString)
                             .font(.system(size: 12)) // Change the font size here
                     }
                 }
@@ -185,8 +177,8 @@ struct NewManualSyringePumpView: View {
     }
 }
 
-struct NewSyringePumpView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewManualSyringePumpView(controller: NewManualSyringePumpController())
-    }
-}
+//struct NewSyringePumpView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewManualSyringePumpView(controller: NewManualSyringePumpController())
+//    }
+//}
