@@ -10,6 +10,8 @@ import SwiftUI
 
 struct OperationQueueView: View {
 	@EnvironmentObject private var printerController: PrinterController
+    @EnvironmentObject private var pumpController:  NewManualSyringePumpController
+
     @Environment(\.colorScheme) var colorScheme
 	
 	@State var selection: Set<UUID> = []
@@ -40,7 +42,12 @@ struct OperationQueueView: View {
 				.onMove(perform: moveItemsAt(offsets:toOffset:))
 				.listStyle(.plain)
 			}
-			
+            
+            
+            
+            
+            //NewManualSyringePumpView(controller: NewManualSyringePumpController())
+
 		}
 		.disabled(printerController.printerQueueState.isRunning)
 	}

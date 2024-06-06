@@ -31,7 +31,7 @@ extension PrinterOperation {
             try await printerController.startPump1()
         case .stop:
             try await printerController.stopPump1()
-        case .hold: return
+        case .hold: break
         }
         
         switch configuration.pump2Action {
