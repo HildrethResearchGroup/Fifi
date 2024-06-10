@@ -43,7 +43,7 @@ public class SyringePumpController: ObservableObject {
         if let data = sendString.data(using: .utf8) {
             do {
                 try communicator.write(data: data)
-                Thread.sleep(forTimeInterval: 0.1)
+                Thread.sleep(forTimeInterval: 0.05)
             } catch {
                 print("Failed to send data: \(error)")
             }

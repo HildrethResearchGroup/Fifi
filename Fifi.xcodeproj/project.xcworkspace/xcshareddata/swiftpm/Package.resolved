@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "bluesocket",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftVISA/BlueSocket.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "7b23a867008e0027bfd6f4d398d44720707bc8ca"
+      }
+    },
+    {
+      "identity" : "coreswiftvisa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftVISA/CoreSwiftVISA.git",
+      "state" : {
+        "branch" : "actor",
+        "revision" : "229f53ba130653b4945188a94a0bbeea5d21ea6f"
+      }
+    },
+    {
+      "identity" : "swiftvisaswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftVISA/SwiftVISASwift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "98595fdba5f16a2da6b0e21ab7e9dabb848db25b"
+      }
+    },
+    {
+      "identity" : "xpsq8kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/HildrethResearchGroup/XPSQ8Kit",
+      "state" : {
+        "branch" : "master",
+        "revision" : "9334d6fcc4871b0dc888006c50bbc37315035839"
+      }
+    }
+  ],
+  "version" : 2
+}

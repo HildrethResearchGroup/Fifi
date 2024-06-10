@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		174BC4882C12506F0085D230 /* NewSyringePumpCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BC4852C12506E0085D230 /* NewSyringePumpCommunicator.swift */; };
-		174BC4892C12506F0085D230 /* NewSyringePumpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BC4862C12506E0085D230 /* NewSyringePumpController.swift */; };
 		174BC48A2C12506F0085D230 /* NewManualSyringePumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BC4872C12506F0085D230 /* NewManualSyringePumpView.swift */; };
 		236FC3CC2C0E726A006BA845 /* SyringePumpSettingsOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236FC3CB2C0E726A006BA845 /* SyringePumpSettingsOperationView.swift */; };
 		236FC3D02C0E788B006BA845 /* SyringePumpCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236FC3CF2C0E788B006BA845 /* SyringePumpCommunicator.swift */; };
@@ -96,8 +94,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		174BC4852C12506E0085D230 /* NewSyringePumpCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSyringePumpCommunicator.swift; sourceTree = "<group>"; };
-		174BC4862C12506E0085D230 /* NewSyringePumpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSyringePumpController.swift; sourceTree = "<group>"; };
 		174BC4872C12506F0085D230 /* NewManualSyringePumpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewManualSyringePumpView.swift; sourceTree = "<group>"; };
 		236FC3CB2C0E726A006BA845 /* SyringePumpSettingsOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpSettingsOperationView.swift; sourceTree = "<group>"; };
 		236FC3CF2C0E788B006BA845 /* SyringePumpCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpCommunicator.swift; sourceTree = "<group>"; };
@@ -411,8 +407,6 @@
 			children = (
 				5A4D3BDC26E930D200664B46 /* OperationQueueView.swift */,
 				174BC4872C12506F0085D230 /* NewManualSyringePumpView.swift */,
-				174BC4852C12506E0085D230 /* NewSyringePumpCommunicator.swift */,
-				174BC4862C12506E0085D230 /* NewSyringePumpController.swift */,
 				5A4D3BD326E92C2E00664B46 /* OperationViews */,
 			);
 			path = "Operation Queue";
@@ -556,7 +550,6 @@
 				C0AE6AF42C08F20B0099C540 /* PrinterController+Motion.swift in Sources */,
 				5A1B639226A8EF2F004C5348 /* CommunicationState_color.swift in Sources */,
 				C0AE6B002C08F20B0099C540 /* WaveFunction.swift in Sources */,
-				174BC4882C12506F0085D230 /* NewSyringePumpCommunicator.swift in Sources */,
 				C0AE6AFC2C08F20B0099C540 /* XPSQ8State.swift in Sources */,
 				C06E54B3283EBBD500A36145 /* CameraViewController.swift in Sources */,
 				C06E54B7283EBBD500A36145 /* AVCaptureDevice+UI.swift in Sources */,
@@ -589,7 +582,6 @@
 				C0AE6AE82C08F20B0099C540 /* HomeOperation.swift in Sources */,
 				C0AE6AF92C08F20B0099C540 /* MultimeterState.swift in Sources */,
 				AAAFD3652C0FC3AC008653FA /* SyringePumpToggleOperationView.swift in Sources */,
-				174BC4892C12506F0085D230 /* NewSyringePumpController.swift in Sources */,
 				C06E54B6283EBBD500A36145 /* SelectableCameraView.swift in Sources */,
 				5A13DA2526CB041700D8ED3F /* ManualVoltageControlView.swift in Sources */,
 				C0AE6ADF2C08F20B0099C540 /* MultimeterController+General.swift in Sources */,
