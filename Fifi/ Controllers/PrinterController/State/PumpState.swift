@@ -15,5 +15,7 @@ public struct PumpState {
     public internal(set) var innerDiameter2: String?
     public internal(set) var flowRate1: String?
     public internal(set) var flowRate2: String?
-
+    public internal(set) var  dualStart: Bool?
+    public internal(set) var dispensed: String?
+//TODO: see if this file is actually needed for anything
 }
