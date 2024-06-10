@@ -38,6 +38,10 @@ extension PrinterController {
 		try await setMultimeterState(\.rawResistance, to: multimeterController?.rawResistance)
 	}
 	
+//TODO: update Syringepump state
+/*
+ The only thing we should need to read from the instrument is the volumen dispensed, so that should be the only thing that we need to keep track of
+ */
 	@MainActor
 	func setMultimeterState<T>(_ keypath: WritableKeyPath<MultimeterState, T>, to value: T) {
 		multimeterState[keyPath: keypath] = value
@@ -53,9 +57,8 @@ extension PrinterController {
     printerQueueState[keyPath: keypath] = value
   }
     
-    //TODO: add setPumpState
   @MainActor
-  func setPumpState<T>(_ keypath: WritableKeyPath<PumpState, T>, to value: T) {
+  func setSyringePumpState<T>(_ keypath: WritableKeyPath<PumpState, T>, to value: T) {
     pumpState[keyPath: keypath] = value
   }
 
