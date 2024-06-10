@@ -18,36 +18,127 @@ struct CustomVerticalDivider: View {
     }
 }
 
+
+
 struct NewManualSyringePumpView: View {
-    @EnvironmentObject private var printerController: PrinterController
+    //MARK: State vars
+    @State var nextPortState: String = "Connect"
+    @State var startPumping1: Bool = true
+    @State var startPumping2: Bool = true
+    
+    @State var id1: String = "10"
+    @State var id2: String = "10"
+    
+    @State var units: flowRateUnits = .nL_min
+    @State var units2: flowRateUnits2 = .nL_min
+    
+    @State var pumpNum: pumpNumber = .p0
+    
+    @State var flowRate: String = "20"
+    @State var flowRate2: String = "20"
+    
+    @State var pump: String = "00"
+    @State var dualStart: Bool = false
+    @State var subString: String = ""
+    
+    //MARK: ENUMS
+    enum pumpNumber: String, CaseIterable, Identifiable {
+        var id: Self { self }
+        
+        case p0 = "Pump 1"
+        case p1 = "Pump 2"
+        
+        var queryString: String {
+            switch self {
+            case .p0: return "00"
+            case .p1: return "01"
+            }
+        }
+    }
+
+    enum flowRateUnits: String, CaseIterable, Identifiable {
+        var id: Self { self }
+        
+        case mm_hr = "ml / hr"
+        case uL_hr = "µl / hr"
+        case nL_hr = "nl / hr"
+        case mm_min = "ml / min"
+        case uL_min = "µl / min"
+        case nL_min = "nl / min"
+        
+        var queryString: String {
+            switch self {
+            case .mm_hr: return "MH"
+            case .uL_hr: return "UH"
+            case .nL_hr: return "NH"
+            case .mm_min: return "MM"
+            case .uL_min: return "UM"
+            case .nL_min: return "NM"
+            }
+        }
+    }
+    enum flowRateUnits2: String, CaseIterable, Identifiable {
+        var id: Self { self }
+        
+        case mm_hr = "ml / hr"
+        case uL_hr = "µl / hr"
+        case nL_hr = "nl / hr"
+        case mm_min = "ml / min"
+        case uL_min = "µl / min"
+        case nL_min = "nl / min"
+        
+        var queryString2: String {
+            switch self {
+            case .mm_hr: return "MH"
+            case .uL_hr: return "UH"
+            case .nL_hr: return "NH"
+            case .mm_min: return "MM"
+            case .uL_min: return "UM"
+            case .nL_min: return "NM"
+            }
+        }
+    }
+
+    @EnvironmentObject var printerController: PrinterController
 
     //@ObservedObject var controller: NewManualSyringePumpController
-    
     @State private var enable1: Bool = false
     @State private var enable2: Bool = false
 
-    var body: some View {
+    var body: some View {    //MARK: State vars
+
         VStack {
  
             HStack {
                 Toggle(isOn: Binding(
-                    get: { self.printerController.dualStart },
+                    get: { self.dualStart},
                     set: { newValue in
-                        self.printerController.dualChange()
-                        switch (enable1, enable2) {
-                        case (true, false):
-                            self.printerController.startOrStopPumping1(pump: "00")
-                        case (true, true):
-                            self.printerController.startOrStopPumping1(pump: "00")
-                            self.printerController.startOrStopPumping2(pump: "01")
-                        case (false, true):
-                            self.printerController.startOrStopPumping2(pump: "01")
-                        default:
-                            break
+                        Task {
+                            self.dualStart = !dualStart
+                            switch (enable1, enable2) {
+                            case (true, false):
+                                try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
+                                try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
+                                startPumping1 = !startPumping1
+                            case (true, true):
+                                try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
+                                try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
+                                startPumping1 = !startPumping1
+                                
+                                try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
+                                try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
+                                startPumping2 = !startPumping2
+                            case (false, true):
+                                try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
+                                try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
+                                startPumping2 = !startPumping2
+                            default:
+                                break
+                            }
                         }
                     }
                 )) {
-                    Text(self.printerController.nextPumpState == .startPumping1 ? "Start Both Pumps" : "Stop Both Pumps")
+                    Text(self.startPumping1 ? "Start Both Pumps" : "Stop Both Pumps")
                         .font(.system(size: 16)) // Change the font size here
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .blue))
@@ -62,15 +153,15 @@ struct NewManualSyringePumpView: View {
                     Form {
                         // Select units
                         VStack {
-                            TextField("Flow Rate", text: $printerController.flowRate)
+                            TextField("Flow Rate", text: self.$flowRate)
                                 .frame(width: 100) // Set desired width here
                                 .fixedSize(horizontal: true, vertical: false) // Prevent expansion
-                            TextField("Diameter", text: self.$printerController.id1)
+                            TextField("Diameter", text: self.$id1)
                                 .frame(width: 115) // Set desired width here
                                 .fixedSize(horizontal: true, vertical: false) // Prevent expansion
                         }
-                        Picker("Units", selection: $printerController.units) {
-                            ForEach(NewManualSyringePumpController.flowRateUnits.allCases) { unit in
+                    Picker("Units", selection: self.$units) {
+                        ForEach(NewManualSyringePumpView.flowRateUnits.allCases) { unit in
                                 Text(unit.rawValue)
                                     .tag(unit)
                             }
@@ -82,22 +173,26 @@ struct NewManualSyringePumpView: View {
                         Toggle(isOn: Binding(
                             get: { enable1 },
                             set: { newValue in
-                                enable1 = newValue
-                                if newValue {
-                                    print("Enable1: \(enable1)")
-                                    if self.controller.dualStart {
-                                        self.controller.startOrStopPumping1(pump: "00")
-                                    }
-                                } else {
-                                    print("Enable1: \(enable1)")
-                                    if self.controller.dualStart {
-                                        self.controller.startOrStopPumping1(pump: "00")
+                                Task {
+                                    enable1 = newValue
+                                    if newValue {
+                                        print("Enable1: \(enable1)")
+                                        if self.dualStart {
+                                            try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
+                                            try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
+                                            startPumping1 = !startPumping1
+                                        }
+                                    } else {
+                                        print("Enable1: \(enable1)")
+                                        if self.dualStart {
+                                            try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
+                                            try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
+                                            startPumping1 = !startPumping1
+                                        }
                                     }
                                 }
                             }
                         ))
-                        
-                        
                         {
                             Text("Enable Pump 1")
                                 .font(.system(size: 12)) // Change the font size here
@@ -108,7 +203,7 @@ struct NewManualSyringePumpView: View {
                             .font(.system(size: 12)) // Change the font size here
 
                         
-                        Text(printerController.subString)
+                    Text(self.subString)
                             .font(.system(size: 12)) // Change the font size here
                     
                     }
@@ -125,15 +220,15 @@ struct NewManualSyringePumpView: View {
                     Form {
                         // Select units
                         VStack {
-                            TextField("Flow Rate", text: $printerController.flowRate2)
+                            TextField("Flow Rate", text: self.$flowRate2)
                                 .frame(width: 100) // Set desired width here
                                 .fixedSize(horizontal: true, vertical: false) // Prevent expansion
-                            TextField("Diameter", text: $printerController.id2)
+                            TextField("Diameter", text: self.$id2)
                                 .frame(width: 115) // Set desired width here
                                 .fixedSize(horizontal: true, vertical: false) // Prevent expansion
                         }
-                        Picker("Units", selection: $printerController.units2) {
-                            ForEach(printerController.flowRateUnits2.allCases) { unit2 in
+                    Picker("Units", selection: self.$units2) {
+                        ForEach(NewManualSyringePumpView.flowRateUnits2.allCases) { unit2 in
                                 Text(unit2.rawValue)
                                     .tag(unit2)
                             }
@@ -145,16 +240,22 @@ struct NewManualSyringePumpView: View {
                         Toggle(isOn: Binding(
                             get: { enable2 },
                             set: { newValue in
-                                enable2 = newValue
-                                if newValue {
-                                    print("Enable2: \(enable2)")
-                                    if self.printerController.dualStart {
-                                        self.printerController.startOrStopPumping2(pump: "01")
-                                    }
-                                } else {
-                                    print("Enable2: \(enable2)")
-                                    if self.printerController.dualStart {
-                                        self.printerController.startOrStopPumping2(pump: "01")
+                                Task {
+                                    enable2 = newValue
+                                    if newValue {
+                                        print("Enable2: \(enable2)")
+                                        if self.dualStart {
+                                            try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
+                                            try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
+                                            startPumping2 = !startPumping2
+                                        }
+                                    } else {
+                                        print("Enable2: \(enable2)")
+                                        if self.dualStart {
+                                            try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
+                                            try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
+                                            startPumping2 = !startPumping2
+                                        }
                                     }
                                 }
                             }
@@ -168,7 +269,7 @@ struct NewManualSyringePumpView: View {
                             .font(.system(size: 12)) // Change the font size here
 
                         
-                        Text(printerController.subString)
+                    Text(self.subString)
                             .font(.system(size: 12)) // Change the font size here
                     }
                 }
