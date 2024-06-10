@@ -51,4 +51,16 @@ public extension PrinterController {
         try await syringePumpController?.stopPumping(pump: "01")
     }
     
+    func startOrStopPumping(pump: String, shouldStart: Bool) async throws {
+        if shouldStart {
+            try await syringePumpController?.startPumping(pump: pump)
+        } else {
+            try await syringePumpController?.stopPumping(pump: pump)
+        }
+    }
+    
+    func sendAllSettings(pump: String, rate: String, ID: String, units: String) async throws {
+        try await syringePumpController?.setRate(for: pump, to: rate, of: units)
+        try await syringePumpController?.setInnerDiameter(for: pump, to: ID)
+    }
 }
