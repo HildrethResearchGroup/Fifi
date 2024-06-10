@@ -10,7 +10,6 @@ import SwiftUI
 
 struct OperationQueueView: View {
 	@EnvironmentObject private var printerController: PrinterController
-    @EnvironmentObject private var newpumpController:  NewManualSyringePumpController
 
     @Environment(\.colorScheme) var colorScheme
 	
@@ -46,7 +45,7 @@ struct OperationQueueView: View {
             
             
             
-            NewManualSyringePumpView(controller: NewManualSyringePumpController())
+            NewManualSyringePumpView()
 
 		}
 		.disabled(printerController.printerQueueState.isRunning)
