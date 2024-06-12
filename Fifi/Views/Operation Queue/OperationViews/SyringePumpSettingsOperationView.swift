@@ -5,10 +5,9 @@ struct SyringePumpView1: View {
     
     var body: some View {
         VStack {
-            Text("Syringe Pump 1")
-                .font(.title2)
-                .padding(.top, 30)
-            
+            Text("Pump 1")
+                .font(.title3)
+    
             Toggle("Update Rate 1", isOn: updateRate1)
             if let updateRate1 = configuration.flowRate1 {
                 HStack {
@@ -92,9 +91,8 @@ struct SyringePumpView2: View {
     
     var body: some View {
         VStack {
-            Text("Syringe Pump 2")
-                .font(.title2)
-                .padding(.top, 30)
+            Text("Pump 2")
+                .font(.title3)
             
             Toggle("Update Rate 2", isOn: updateRate2)
             if let updateRate2 = configuration.flowRate2 {
@@ -178,10 +176,7 @@ struct SyringePumpSettingsOperationView: View {
     @Binding var configuration: SyringePumpSettingsConfiguration
     
     var body: some View {
-            VStack {
-                Text("Syringe Pump Network")
-                    .font(.title2)
-                    .padding(.top, 20)
+            VStack {//
                 
                 HStack(spacing: 30) { // Added spacing between views
                     SyringePumpView1(configuration: $configuration)
