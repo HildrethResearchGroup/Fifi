@@ -127,6 +127,8 @@ struct NewManualSyringePumpView: View {
                                 if !startPumping1{
                                     amntDisp1 = try await printerController.getVolDispensed(pump: "00")
                                 }
+                                try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
+
                                 startPumping1 = !startPumping1
                             case (true, true):
                                 if startPumping1 {
@@ -136,6 +138,8 @@ struct NewManualSyringePumpView: View {
                                 if !startPumping1{
                                     amntDisp1 = try await printerController.getVolDispensed(pump: "00")
                                 }
+                                try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
+
                                 startPumping1 = !startPumping1
                                 
                                 if startPumping2 {
@@ -145,6 +149,8 @@ struct NewManualSyringePumpView: View {
                                 if !startPumping2{
                                     amntDisp2 = try await printerController.getVolDispensed(pump: "01")
                                 }
+                                try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
+
                                 startPumping2 = !startPumping2
                             case (false, true):
                                 if startPumping2 {
@@ -154,6 +160,9 @@ struct NewManualSyringePumpView: View {
                                 if !startPumping2{
                                     amntDisp2 = try await printerController.getVolDispensed(pump: "01")
                                 }
+                                try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
+
+                                
                                 startPumping2 = !startPumping2
                             default:
                                 break
@@ -208,6 +217,8 @@ struct NewManualSyringePumpView: View {
                                             if !startPumping1{
                                                 amntDisp1 = try await printerController.getVolDispensed(pump: "00")
                                             }
+                                            try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
+
                                             startPumping1 = !startPumping1
                                         }
                                     } else {
@@ -220,6 +231,8 @@ struct NewManualSyringePumpView: View {
                                             if !startPumping1{
                                                 amntDisp1 = try await printerController.getVolDispensed(pump: "00")
                                             }
+                                            try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
+
                                             startPumping1 = !startPumping1
                                         }
                                     }
@@ -285,6 +298,8 @@ struct NewManualSyringePumpView: View {
                                             if !startPumping2{
                                                 amntDisp2 = try await printerController.getVolDispensed(pump: "01")
                                             }
+                                            try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
+
                                             startPumping2 = !startPumping2
                                         }
                                     } else {
@@ -297,6 +312,8 @@ struct NewManualSyringePumpView: View {
                                             if !startPumping2{
                                                 amntDisp2 = try await printerController.getVolDispensed(pump: "01")
                                             }
+                                            try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
+
                                             startPumping2 = !startPumping2
                                         }
                                     }

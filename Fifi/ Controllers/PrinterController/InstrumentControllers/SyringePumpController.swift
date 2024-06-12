@@ -98,9 +98,9 @@ public class SyringePumpController: ObservableObject {
         send("\(pump)STP")
         
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.send("\(pump)STP") // entering rate mode
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//            self.send("\(pump)STP") // entering rate mode
+//        }
     }
     
     public func getVolDispensed(pump: String) throws -> String{
