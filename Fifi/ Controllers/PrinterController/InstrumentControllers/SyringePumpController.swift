@@ -1,3 +1,6 @@
+/*
+ Class used for all operations on the syringe pump
+ */
 import Foundation
 import Socket
 
