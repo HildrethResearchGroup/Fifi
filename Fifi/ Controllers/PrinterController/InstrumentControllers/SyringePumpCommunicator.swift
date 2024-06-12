@@ -9,6 +9,8 @@ import Foundation
 import Socket //import bluesocket library
 
 final class SyringePumpCommunicator {
+    var substring: String = ""
+    var lastTwo: String = ""
 
     let socket: Socket
 
@@ -157,5 +159,64 @@ extension SyringePumpCommunicator.Error {
         case .couldNotDecode:
             return "Could not decode."
         }
+    }
+}
+
+
+extension SyringePumpCommunicator{
+    public func readAndPrint(data: inout Data, pump: String) throws -> String {
+//        if let data = "\(pump)CLD".data(using: .utf8){
+//            do{
+//                try self.write(data: data)
+//                Thread.sleep(forTimeInterval: 0.05)
+//            }catch{
+//                print("Failed to send")
+//            }
+//        }
+       // self.write(data: "CLD")
+        if let data = "\(pump)DIS\r".data(using: .utf8){
+            do{
+                print("Check")
+                try socket.write(from: data)
+                Thread.sleep(forTimeInterval: 0.05)
+            }catch{
+                print("Failed to send")
+            }
+        }
+        data.count = 0
+        let bytesRead = try socket.read(into: &data)
+        if bytesRead > 0 {
+            guard let response = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) else {
+                print("Error accessing received data...")
+                return "Error"
+            }
+            print(response)
+            
+
+            let inputString = response as String
+            if inputString.count >= 3 {
+                let index = inputString.index(inputString.endIndex, offsetBy: -3)
+                lastTwo = String(inputString[index...])
+            } else {
+                lastTwo = inputString
+            }
+            // Find the range of "W"
+            if let rangeOfW = inputString.range(of: "W") {
+                // Check if there are at least 4 characters before "W"
+                if inputString.distance(from: inputString.startIndex, to: rangeOfW.lowerBound) >= 5 {
+                    let startIndex = inputString.index(rangeOfW.lowerBound, offsetBy: -5)
+                    let endIndex = inputString.index(rangeOfW.lowerBound, offsetBy: -1)
+                    substring = String(inputString[startIndex...endIndex])
+                    //print("Characters before W: \(substring)")
+                    let output: String = (substring + lastTwo)
+                    return String(output)
+                } else {
+                    print("Not enough characters before W")
+                }
+            } else {
+                print("Could not find 'W' in the string")
+            }
+        }
+        return substring
     }
 }

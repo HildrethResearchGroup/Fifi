@@ -275,4 +275,12 @@ public extension PrinterController {
 		// TODO: Implement
 		await setState(instrument: .multimeter, state: .ready)
 	}
+    
+    func getVolDispensed(pump: String) throws -> String{
+        if let returnString = try syringePumpController?.getVolDispensed(pump: pump){
+            return returnString
+        }else{
+            return "Error"
+        }
+    }
 }

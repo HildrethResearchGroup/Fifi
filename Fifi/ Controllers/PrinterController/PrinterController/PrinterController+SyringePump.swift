@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Socket
 
 
 public extension PrinterController {
@@ -62,5 +63,13 @@ public extension PrinterController {
     func sendAllSettings(pump: String, rate: String, ID: String, units: String) async throws {
         try await syringePumpController?.setRate(for: pump, to: rate, of: units)
         try await syringePumpController?.setInnerDiameter(for: pump, to: ID)
+    }
+    
+    func getVolume(pump: String) -> String{
+        do{
+            return try syringePumpController?.getVolDispensed(pump: pump) ?? "Error"
+        }catch{
+            return "Error"
+        }
     }
 }

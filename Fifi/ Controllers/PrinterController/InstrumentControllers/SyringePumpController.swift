@@ -9,7 +9,9 @@ public class SyringePumpController: ObservableObject {
     let address: String
     let port: Int
     let timeout: TimeInterval
-    
+    var substring: String = ""
+    var lastTwo: String = ""
+
     
     
     var communicator: SyringePumpCommunicator?
@@ -94,8 +96,23 @@ public class SyringePumpController: ObservableObject {
      */
     public func stopPumping(pump: String) {
         send("\(pump)STP")
+        
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.send("\(pump)STP") // entering rate mode
         }
     }
+    
+    public func getVolDispensed(pump: String) throws -> String{
+        var data = Data()
+        if let returnString = try communicator?.readAndPrint(data: &data, pump: pump){
+            return returnString
+        } else{
+            return "Error"
+        }
+    }
+    
+    
+
+
 }

@@ -28,6 +28,9 @@ struct NewManualSyringePumpView: View {
     
     @State var id1: String = "10"
     @State var id2: String = "10"
+    @State var amntDisp1: String = ""
+    @State var amntDisp2: String = ""
+
     
     @State var units: flowRateUnits = .nL_min
     @State var units2: flowRateUnits2 = .nL_min
@@ -119,18 +122,30 @@ struct NewManualSyringePumpView: View {
                             case (true, false):
                                 try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
                                 try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
+                                if !startPumping1{
+                                    amntDisp1 = try await printerController.getVolDispensed(pump: "00")
+                                }
                                 startPumping1 = !startPumping1
                             case (true, true):
                                 try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
                                 try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
+                                if !startPumping1{
+                                    amntDisp1 = try await printerController.getVolDispensed(pump: "00")
+                                }
                                 startPumping1 = !startPumping1
                                 
                                 try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
                                 try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
+                                if !startPumping2{
+                                    amntDisp2 = try await printerController.getVolDispensed(pump: "01")
+                                }
                                 startPumping2 = !startPumping2
                             case (false, true):
                                 try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
                                 try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
+                                if !startPumping2{
+                                    amntDisp2 = try await printerController.getVolDispensed(pump: "01")
+                                }
                                 startPumping2 = !startPumping2
                             default:
                                 break
@@ -180,6 +195,9 @@ struct NewManualSyringePumpView: View {
                                         if self.dualStart {
                                             try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
                                             try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
+                                            if !startPumping1{
+                                                amntDisp1 = try await printerController.getVolDispensed(pump: "00")
+                                            }
                                             startPumping1 = !startPumping1
                                         }
                                     } else {
@@ -187,6 +205,9 @@ struct NewManualSyringePumpView: View {
                                         if self.dualStart {
                                             try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
                                             try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
+                                            if !startPumping1{
+                                                amntDisp1 = try await printerController.getVolDispensed(pump: "00")
+                                            }
                                             startPumping1 = !startPumping1
                                         }
                                     }
@@ -203,7 +224,7 @@ struct NewManualSyringePumpView: View {
                             .font(.system(size: 12)) // Change the font size here
 
                         
-                    Text(self.subString)
+                        Text(self.amntDisp1)
                             .font(.system(size: 12)) // Change the font size here
                     
                     }
@@ -247,6 +268,9 @@ struct NewManualSyringePumpView: View {
                                         if self.dualStart {
                                             try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
                                             try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
+                                            if !startPumping2{
+                                                amntDisp2 = try await printerController.getVolDispensed(pump: "01")
+                                            }
                                             startPumping2 = !startPumping2
                                         }
                                     } else {
@@ -254,6 +278,9 @@ struct NewManualSyringePumpView: View {
                                         if self.dualStart {
                                             try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
                                             try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
+                                            if !startPumping2{
+                                                amntDisp2 = try await printerController.getVolDispensed(pump: "01")
+                                            }
                                             startPumping2 = !startPumping2
                                         }
                                     }
@@ -269,7 +296,7 @@ struct NewManualSyringePumpView: View {
                             .font(.system(size: 12)) // Change the font size here
 
                         
-                    Text(self.subString)
+                    Text(self.amntDisp2)
                             .font(.system(size: 12)) // Change the font size here
                     }
                 }
