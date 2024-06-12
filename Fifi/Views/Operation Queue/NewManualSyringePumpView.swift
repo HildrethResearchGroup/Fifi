@@ -120,28 +120,36 @@ struct NewManualSyringePumpView: View {
                             self.dualStart = !dualStart
                             switch (enable1, enable2) {
                             case (true, false):
-                                try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
+                                if startPumping1 {
+                                    try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
+                                }
                                 try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
                                 if !startPumping1{
                                     amntDisp1 = try await printerController.getVolDispensed(pump: "00")
                                 }
                                 startPumping1 = !startPumping1
                             case (true, true):
-                                try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
+                                if startPumping1 {
+                                    try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
+                                }
                                 try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
                                 if !startPumping1{
                                     amntDisp1 = try await printerController.getVolDispensed(pump: "00")
                                 }
                                 startPumping1 = !startPumping1
                                 
-                                try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
+                                if startPumping2 {
+                                    try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
+                                }
                                 try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
                                 if !startPumping2{
                                     amntDisp2 = try await printerController.getVolDispensed(pump: "01")
                                 }
                                 startPumping2 = !startPumping2
                             case (false, true):
-                                try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
+                                if startPumping2 {
+                                    try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
+                                }
                                 try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
                                 if !startPumping2{
                                     amntDisp2 = try await printerController.getVolDispensed(pump: "01")
@@ -193,7 +201,9 @@ struct NewManualSyringePumpView: View {
                                     if newValue {
                                         print("Enable1: \(enable1)")
                                         if self.dualStart {
-                                            try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
+                                            if startPumping1 {
+                                                try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
+                                            }
                                             try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
                                             if !startPumping1{
                                                 amntDisp1 = try await printerController.getVolDispensed(pump: "00")
@@ -203,7 +213,9 @@ struct NewManualSyringePumpView: View {
                                     } else {
                                         print("Enable1: \(enable1)")
                                         if self.dualStart {
-                                            try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
+                                            if startPumping1 {
+                                                try await printerController.sendAllSettings(pump: "00", rate: flowRate, ID: id1, units: units.queryString)
+                                            }
                                             try await printerController.startOrStopPumping(pump: "00", shouldStart: startPumping1)
                                             if !startPumping1{
                                                 amntDisp1 = try await printerController.getVolDispensed(pump: "00")
@@ -266,7 +278,9 @@ struct NewManualSyringePumpView: View {
                                     if newValue {
                                         print("Enable2: \(enable2)")
                                         if self.dualStart {
-                                            try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
+                                            if startPumping2 {
+                                                try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
+                                            }
                                             try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
                                             if !startPumping2{
                                                 amntDisp2 = try await printerController.getVolDispensed(pump: "01")
@@ -276,7 +290,9 @@ struct NewManualSyringePumpView: View {
                                     } else {
                                         print("Enable2: \(enable2)")
                                         if self.dualStart {
-                                            try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
+                                            if startPumping2 {
+                                                try await printerController.sendAllSettings(pump: "01", rate: flowRate2, ID: id2, units: units2.queryString2)
+                                            }
                                             try await printerController.startOrStopPumping(pump: "01", shouldStart: startPumping2)
                                             if !startPumping2{
                                                 amntDisp2 = try await printerController.getVolDispensed(pump: "01")
