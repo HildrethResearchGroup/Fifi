@@ -27,6 +27,7 @@ public class SyringePumpController: ObservableObject {
             print("Connected to the syringe pump")
         } catch {
             print("Failed to connect: \(error)")
+            throw Error.communicatorNotConnected
         }
     }
     
@@ -112,7 +113,8 @@ public class SyringePumpController: ObservableObject {
         }
     }
     
-    
-
+    enum Error: Swift.Error {
+        case communicatorNotConnected
+    }
 
 }
