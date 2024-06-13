@@ -4,6 +4,7 @@
 //
 //  Created by Alyssa Hanson (Student) on 6/3/24.
 //
+// uses the syringe pump controller to define functions needed by the printercontroller
 
 import Foundation
 import Socket
@@ -51,7 +52,9 @@ public extension PrinterController {
     func stopPump2() async throws {
         try await syringePumpController?.stopPumping(pump: "01")
     }
-    
+    //MARK: Manual control functionality
+    // unlike other functions in this file, this one takes the pump number
+    // only used by manual control
     func startOrStopPumping(pump: String, shouldStart: Bool) async throws {
         if shouldStart {
             try await syringePumpController?.startPumping(pump: pump)

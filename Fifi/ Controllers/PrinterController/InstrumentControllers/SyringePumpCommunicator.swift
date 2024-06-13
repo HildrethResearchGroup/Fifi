@@ -164,6 +164,11 @@ extension SyringePumpCommunicator.Error {
 
 
 extension SyringePumpCommunicator{
+    
+    // This function sends a query command to the pump, reads the socket to get the response from the pump, and parses this string to find the specific substring containing the amount dispensed.
+    // data is an unused parameter from an older version of the function
+    // pump is the string with the pump address, for two pumps its either "00" or "01"
+    //returns the string with the pump response
     public func readAndPrint(data: inout Data, pump: String) throws -> String {
 //        if let data = "\(pump)CLD".data(using: .utf8){
 //            do{

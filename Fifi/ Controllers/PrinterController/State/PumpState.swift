@@ -7,7 +7,7 @@
 
 import Foundation
 
-//TODO: change the copy pasted-code so that it actually works with the
+//Currently unused, mimicked from waveform state. UI does not query the instrument for updates like the waveform controller does.
 public struct PumpState {
   public var updateInterval: TimeInterval? = 0.2
 
@@ -17,5 +17,4 @@ public struct PumpState {
     public internal(set) var flowRate2: String?
     public internal(set) var  dualStart: Bool?
     public internal(set) var dispensed: String?
-//TODO: see if this file is actually needed for anything
 }
