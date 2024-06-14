@@ -3,7 +3,7 @@
 //  SyringePumpToggleOperation
 //
 //  Created by Elijah Cook on 9/12/21.
-//
+// See SyringePumpSettingsOperation.swift for comments on format of operations.
 
 import SwiftUI
 

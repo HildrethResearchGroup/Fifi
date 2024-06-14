@@ -23,6 +23,8 @@ struct CustomVerticalDivider: View {
 struct NewManualSyringePumpView: View {
     //MARK: State vars
     @State var nextPortState: String = "Connect"
+    
+    //used for toggle functionality. Pump must be explicitly sent start or stop
     @State var startPumping1: Bool = true
     @State var startPumping2: Bool = true
     

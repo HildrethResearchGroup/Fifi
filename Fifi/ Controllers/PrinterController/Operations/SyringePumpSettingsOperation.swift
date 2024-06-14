@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct SyringePumpSettingsConfiguration: Hashable, Codable {
+public struct SyringePumpSettingsConfiguration: Hashable, Codable { // for each operation define a new struct containing all data needed to perform that operation. This struct will be used in the operation view and in the operation code below.
     // TODO: Add ON State
 //for each separate pump
   public var flowRate1: Double?
@@ -32,7 +32,7 @@ extension PrinterOperation {
             kind: .syringePumpSettings,
             configuration: .init(),
             name: "Syringe Pump Settings",
-            thumbnailName: "syringe.fill", body: body) {configuration, printerController in
+            thumbnailName: "syringe.fill", body: body) {configuration, printerController in // code to be executed goes in this trailing closure. Must take configuration and printerController. The configuration here is an instance of the struct declared above.
                     if let flowRate1 = configuration.flowRate1, let units1 = configuration.units1 {
                         print(units1)
                         try await printerController.setFlowRate1(to: flowRate1, of: units1)
@@ -54,54 +54,3 @@ extension PrinterOperation {
     }
     
           
-          
-//        if let flowRate1 = configuration.flowRate1 {
-//          try await printerController.setFlowRate1(to: flowRate1) //these call a function that calls another function in SyringePumpController
-//        }
-//
-//        if let flowRate2 = configuration.flowRate2 {
-//          try await printerController.setAmplifiedVoltage(to: flowRate2)
-//        }
-    
-
-
-//// MARK: Running
-//extension WaveformSettingsConfiguration: PrinterOperationConfiguration {
-//  func run(printerController: PrinterController) async throws {
-//    if let frequency = frequency {
-//      try await printerController.setFrequency(to: frequency)
-//    }
-//
-//    if let amplitude = amplitude {
-//      try await printerController.setVoltage(to: amplitude)
-//    }
-//
-//    if let offset = offset {
-//      try await printerController.setVoltageOffset(to: offset)
-//    }
-//
-//    if let phase = phase {
-//      try await printerController.setPhase(to: phase)
-//    }
-//
-//    if let waveFunction = waveFunction {
-//      try await printerController.setWaveFunction(to: waveFunction)
-//    }
-//  }
-//}
-//
-//// MARK: - Binding
-//public extension Binding where Value == PrinterOperation {
-//  var waveformConfiguration: Binding<WaveformSettingsConfiguration> {
-//    Binding<WaveformSettingsConfiguration> {
-//      if case let .waveformSettings(configuration) = wrappedValue.operationType {
-//        return configuration
-//      } else {
-//        return .init()
-//      }
-//    } set: { newValue in
-//      wrappedValue.operationType = .waveformSettings(newValue)
-//    }
-//  }
-//}
-
