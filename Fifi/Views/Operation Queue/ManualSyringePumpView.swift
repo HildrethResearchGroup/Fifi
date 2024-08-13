@@ -20,7 +20,7 @@ struct CustomVerticalDivider: View {
 
 
 
-struct NewManualSyringePumpView: View {
+struct ManualSyringePumpView: View {
     //MARK: State vars
     @State var nextPortState: String = "Connect"
     
@@ -195,7 +195,7 @@ struct NewManualSyringePumpView: View {
                                 .fixedSize(horizontal: true, vertical: false) // Prevent expansion
                         }
                     Picker("Units", selection: self.$units) {
-                        ForEach(NewManualSyringePumpView.flowRateUnits.allCases) { unit in
+                        ForEach(ManualSyringePumpView.flowRateUnits.allCases) { unit in
                                 Text(unit.rawValue)
                                     .tag(unit)
                             }
@@ -276,7 +276,7 @@ struct NewManualSyringePumpView: View {
                                 .fixedSize(horizontal: true, vertical: false) // Prevent expansion
                         }
                     Picker("Units", selection: self.$units2) {
-                        ForEach(NewManualSyringePumpView.flowRateUnits2.allCases) { unit2 in
+                        ForEach(ManualSyringePumpView.flowRateUnits2.allCases) { unit2 in
                                 Text(unit2.rawValue)
                                     .tag(unit2)
                             }

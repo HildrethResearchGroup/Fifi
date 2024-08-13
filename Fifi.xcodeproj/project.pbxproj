@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		174BC48A2C12506F0085D230 /* NewManualSyringePumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BC4872C12506F0085D230 /* NewManualSyringePumpView.swift */; };
+		174BC48A2C12506F0085D230 /* ManualSyringePumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BC4872C12506F0085D230 /* ManualSyringePumpView.swift */; };
 		236FC3CC2C0E726A006BA845 /* SyringePumpSettingsOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236FC3CB2C0E726A006BA845 /* SyringePumpSettingsOperationView.swift */; };
 		236FC3D02C0E788B006BA845 /* SyringePumpCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236FC3CF2C0E788B006BA845 /* SyringePumpCommunicator.swift */; };
 		236FC3D22C0E78A4006BA845 /* SyringePumpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236FC3D12C0E78A4006BA845 /* SyringePumpController.swift */; };
@@ -94,7 +94,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		174BC4872C12506F0085D230 /* NewManualSyringePumpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewManualSyringePumpView.swift; sourceTree = "<group>"; };
+		174BC4872C12506F0085D230 /* ManualSyringePumpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualSyringePumpView.swift; sourceTree = "<group>"; };
 		236FC3CB2C0E726A006BA845 /* SyringePumpSettingsOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpSettingsOperationView.swift; sourceTree = "<group>"; };
 		236FC3CF2C0E788B006BA845 /* SyringePumpCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpCommunicator.swift; sourceTree = "<group>"; };
 		236FC3D12C0E78A4006BA845 /* SyringePumpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpController.swift; sourceTree = "<group>"; };
@@ -406,7 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				5A4D3BDC26E930D200664B46 /* OperationQueueView.swift */,
-				174BC4872C12506F0085D230 /* NewManualSyringePumpView.swift */,
+				174BC4872C12506F0085D230 /* ManualSyringePumpView.swift */,
 				5A4D3BD326E92C2E00664B46 /* OperationViews */,
 			);
 			path = "Operation Queue";
@@ -558,7 +558,7 @@
 				5AAE969A2881EDE3000E35A6 /* PrintDotArrayOperationView.swift in Sources */,
 				C0AE6AFD2C08F20B0099C540 /* DisplacementMode.swift in Sources */,
 				C0AE6AE42C08F20B0099C540 /* AnyPrinterOperation.DynamicDispatch.swift in Sources */,
-				174BC48A2C12506F0085D230 /* NewManualSyringePumpView.swift in Sources */,
+				174BC48A2C12506F0085D230 /* ManualSyringePumpView.swift in Sources */,
 				5ADE4FE62754991700AC4505 /* HomeOperationView.swift in Sources */,
 				5AAF501D267BD388002A58B5 /* FifiApp.swift in Sources */,
 				5AD5837826A9F8B00056108F /* ManualControlView.swift in Sources */,

@@ -47,7 +47,7 @@ struct OperationQueueView: View {
 
             }.disabled(printerController.printerQueueState.isRunning)
             
-            NewManualSyringePumpView()
+            ManualSyringePumpView()
         }
 		
 		
