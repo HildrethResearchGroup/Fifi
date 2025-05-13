@@ -92,6 +92,8 @@ extension AnyPrinterOperation {
         case comment
         case voltageToggle
         case waveformSettings
+        case syringePumpSettings
+        case syringePumpToggle
         case home
         case alert
         case wait

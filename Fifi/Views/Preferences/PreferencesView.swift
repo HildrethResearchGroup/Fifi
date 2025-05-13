@@ -18,25 +18,35 @@ struct PreferencesView: View {
     @AppStorage("multimeterAddress") private var multimeterAddress = "0.0.0.0"
     @AppStorage("multimeterPort") private var multimeterPort = 0
     
+    @AppStorage("syringePumpAddress") private var syringePumpAddress = "0.0.0.0"
+    @AppStorage("syringePumpPort") private var syringePumpPort = 0
+    
     var body: some View {
         VStack {
             connectionPreferences(named: "XPS-Q8",
                                   address: $xpsq8Address,
                                   port: $xpsq8Port)
             
-            Divider()
+       //     Divider()
             
             connectionPreferences(named: "Waveform Generator",
                                   address: $waveformAddress,
                                   port: $waveformPort)
             
-            Divider()
+       //     Divider()
             
             connectionPreferences(named: "Multimeter",
                                   address: $multimeterAddress,
                                   port: $multimeterPort)
+            
+       //     Divider()
+
+            connectionPreferences(named: "Syringe Pump",
+                                    address: $syringePumpAddress,
+                                    port: $syringePumpPort)
         }
         .padding()
+        
     }
 }
 

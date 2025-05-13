@@ -1,5 +1,4 @@
 {
-  "originHash" : "d5abe88ca143f9f9c8d41532fc8d4ab4d9d28d45ba8811b22300dd55d54ec6db",
   "pins" : [
     {
       "identity" : "bluesocket",
@@ -34,9 +33,9 @@
       "location" : "https://github.com/HildrethResearchGroup/XPSQ8Kit",
       "state" : {
         "branch" : "master",
-        "revision" : "844648a18451a9c99f97a3bdcd84fff9c16e6ea4"
+        "revision" : "9334d6fcc4871b0dc888006c50bbc37315035839"
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

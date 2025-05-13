@@ -10,5 +10,6 @@ extension PrinterController {
     case xpsq8
     case waveform
     case multimeter
+    case pump
   }
 }

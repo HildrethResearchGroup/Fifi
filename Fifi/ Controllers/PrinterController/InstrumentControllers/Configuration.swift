@@ -67,3 +67,28 @@ public struct XPSQ8Configuration: Sendable {
     try await XPSQ8CollectiveController(address: address, port: port, timeout: timeout)
   }
 }
+
+// MARK: - Pump Configuration
+public struct syringePumpConfiguration: Sendable {
+  public var address: String
+  public var port: Int
+  public var timeout: TimeInterval = 5.0
+
+  public init(
+    address: String,
+    port: Int,
+    timeout: TimeInterval = 5.0
+  ) {
+    self.address = address
+    self.port = port
+    self.timeout = timeout
+  }
+
+  public static var empty: syringePumpConfiguration {
+    return .init(address: "0.0.0.0", port: 5001)
+  }
+
+  func makeInstrument() async throws -> SyringePumpController {
+    try await SyringePumpController(address: address, port: port, timeout: timeout)
+  }
+}
