@@ -21,94 +21,9 @@ struct CustomVerticalDivider: View {
 
 
 struct ManualSyringePumpView: View {
-    //MARK: State vars
-    @State var nextPortState: String = "Connect"
     
-    //used for toggle functionality. Pump must be explicitly sent start or stop
-    @State var startPumping1: Bool = true
-    @State var startPumping2: Bool = true
+    var controller: SyringePumpController
     
-    @State var id1: String = "10"
-    @State var id2: String = "10"
-    @State var amntDisp1: String = ""
-    @State var amntDisp2: String = ""
-
-    
-    @State var units: flowRateUnits = .nL_min
-    @State var units2: flowRateUnits2 = .nL_min
-    
-    @State var pumpNum: pumpNumber = .p0
-    
-    @State var flowRate: String = "20"
-    @State var flowRate2: String = "20"
-    
-    @State var pump: String = "00"
-    @State var dualStart: Bool = false
-    @State var subString: String = ""
-    
-    //MARK: ENUMS
-    enum pumpNumber: String, CaseIterable, Identifiable {
-        var id: Self { self }
-        
-        case p0 = "Pump 1"
-        case p1 = "Pump 2"
-        
-        var queryString: String {
-            switch self {
-            case .p0: return "00"
-            case .p1: return "01"
-            }
-        }
-    }
-
-    enum flowRateUnits: String, CaseIterable, Identifiable {
-        var id: Self { self }
-        
-        case mm_hr = "ml / hr"
-        case uL_hr = "µl / hr"
-        case nL_hr = "nl / hr"
-        case mm_min = "ml / min"
-        case uL_min = "µl / min"
-        case nL_min = "nl / min"
-        
-        var queryString: String {
-            switch self {
-            case .mm_hr: return "MH"
-            case .uL_hr: return "UH"
-            case .nL_hr: return "NH"
-            case .mm_min: return "MM"
-            case .uL_min: return "UM"
-            case .nL_min: return "NM"
-            }
-        }
-    }
-    enum flowRateUnits2: String, CaseIterable, Identifiable {
-        var id: Self { self }
-        
-        case mm_hr = "ml / hr"
-        case uL_hr = "µl / hr"
-        case nL_hr = "nl / hr"
-        case mm_min = "ml / min"
-        case uL_min = "µl / min"
-        case nL_min = "nl / min"
-        
-        var queryString2: String {
-            switch self {
-            case .mm_hr: return "MH"
-            case .uL_hr: return "UH"
-            case .nL_hr: return "NH"
-            case .mm_min: return "MM"
-            case .uL_min: return "UM"
-            case .nL_min: return "NM"
-            }
-        }
-    }
-
-    @EnvironmentObject var printerController: PrinterController
-
-    //@ObservedObject var controller: NewManualSyringePumpController
-    @State private var enable1: Bool = false
-    @State private var enable2: Bool = false
 
     var body: some View {    //MARK: State vars
 
@@ -345,3 +260,90 @@ struct ManualSyringePumpView: View {
 //        NewManualSyringePumpView(controller: NewManualSyringePumpController())
 //    }
 //}
+
+
+// MARK: - OLD
+/**
+ //MARK: State vars
+ @State var nextPortState: String = "Connect"
+ 
+ //used for toggle functionality. Pump must be explicitly sent start or stop
+ @State var startPumping1: Bool = true
+ @State var startPumping2: Bool = true
+ 
+ @State var id1: String = "10"
+ @State var id2: String = "10"
+ @State var amntDisp1: String = ""
+ @State var amntDisp2: String = ""
+
+ 
+ @State var units: flowRateUnits = .nL_min
+ @State var units2: flowRateUnits2 = .nL_min
+ 
+ @State var pumpNum: pumpNumber = .p0
+ 
+ @State var flowRate: String = "20"
+ @State var flowRate2: String = "20"
+ 
+ @State var pump: String = "00"
+ @State var dualStart: Bool = false
+ @State var subString: String = ""
+ 
+ //MARK: ENUMS
+ enum pumpNumber: String, CaseIterable, Identifiable {
+     var id: Self { self }
+     
+     case p0 = "Pump 1"
+     case p1 = "Pump 2"
+     
+     var queryString: String {
+         switch self {
+         case .p0: return "00"
+         case .p1: return "01"
+         }
+     }
+ }
+
+ enum flowRateUnits: String, CaseIterable, Identifiable {
+     var id: Self { self }
+     
+     case mm_hr = "ml / hr"
+     case uL_hr = "µl / hr"
+     case nL_hr = "nl / hr"
+     case mm_min = "ml / min"
+     case uL_min = "µl / min"
+     case nL_min = "nl / min"
+     
+     var queryString: String {
+         switch self {
+         case .mm_hr: return "MH"
+         case .uL_hr: return "UH"
+         case .nL_hr: return "NH"
+         case .mm_min: return "MM"
+         case .uL_min: return "UM"
+         case .nL_min: return "NM"
+         }
+     }
+ }
+ enum flowRateUnits2: String, CaseIterable, Identifiable {
+     var id: Self { self }
+     
+     case mm_hr = "ml / hr"
+     case uL_hr = "µl / hr"
+     case nL_hr = "nl / hr"
+     case mm_min = "ml / min"
+     case uL_min = "µl / min"
+     case nL_min = "nl / min"
+     
+     var queryString2: String {
+         switch self {
+         case .mm_hr: return "MH"
+         case .uL_hr: return "UH"
+         case .nL_hr: return "NH"
+         case .mm_min: return "MM"
+         case .uL_min: return "UM"
+         case .nL_min: return "NM"
+         }
+     }
+ }
+ */

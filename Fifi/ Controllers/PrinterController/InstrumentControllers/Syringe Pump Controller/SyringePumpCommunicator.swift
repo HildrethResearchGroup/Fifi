@@ -102,25 +102,23 @@ extension SyringePumpCommunicator {
     }
 }
 
-// MARK: Writing
 
+
+// MARK: - Writing
 extension SyringePumpCommunicator {
     /// Sends a string to the instrument. This should be a function such as `"ElapsedTimeGet(double *)"`.
     /// - Parameter string: The string to sent the instrument.
     func write(data: Data) throws {
-
             do{
                 try socket.write(from: data)
-
             } catch {
                 throw Error.failedWriteOperation
             }
-
     }
 }
 
-// MARK: Error
 
+// MARK: - Error
 //update these errors so they correspond with the errors from the pump
 extension SyringePumpCommunicator {
     /// An error associated with an XPSQ8Communicator.
@@ -140,30 +138,24 @@ extension SyringePumpCommunicator {
     }
 }
 
-// MARK: Error Descriptions
+
+// MARK: - Error Descriptions
 extension SyringePumpCommunicator.Error {
     var localizedDescription: String {
         switch self {
-        case .couldNotConnect:
-            return "Could not connect."
-        case .couldNotCreateSocket:
-            return "Could not create socket."
-        case .couldNotSetTimeout:
-            return "Could not set timeout."
-        case .couldNotEnableBlocking:
-            return "Could not enable blocking."
-        case .failedWriteOperation:
-            return "Failed write operation."
-        case .failedReadOperation:
-            return "Failed read operation."
-        case .couldNotDecode:
-            return "Could not decode."
+        case .couldNotConnect: return "Could not connect."
+        case .couldNotCreateSocket: return "Could not create socket."
+        case .couldNotSetTimeout: return "Could not set timeout."
+        case .couldNotEnableBlocking: return "Could not enable blocking."
+        case .failedWriteOperation: return "Failed write operation."
+        case .failedReadOperation:  return "Failed read operation."
+        case .couldNotDecode:   return "Could not decode."
         }
     }
 }
 
 
-extension SyringePumpCommunicator{
+extension SyringePumpCommunicator {
     
     // This function sends a query command to the pump, reads the socket to get the response from the pump, and parses this string to find the specific substring containing the amount dispensed.
     // data is an unused parameter from an older version of the function
