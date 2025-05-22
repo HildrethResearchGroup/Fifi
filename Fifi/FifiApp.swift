@@ -10,6 +10,8 @@ import SwiftUI
 
 @main
 struct FifiApp: App {
+    @State var appController: AppController = AppController()
+    
   init() {
     AnyPrinterOperation.DynamicDispatch.shared
       .register(

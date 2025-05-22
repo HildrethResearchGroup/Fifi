@@ -59,6 +59,8 @@
 		C07387A92DD80FA300F24D77 /* ManualSyringePumpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07387A82DD80FA300F24D77 /* ManualSyringePumpViewController.swift */; };
 		C09CC3B42DDE60970098DDAE /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09CC3B32DDE60970098DDAE /* AppViewController.swift */; };
 		C09CC3B62DDE6DF10098DDAE /* Pump.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09CC3B52DDE6DF10098DDAE /* Pump.swift */; };
+		C09CC3D82DDEBCF70098DDAE /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09CC3D72DDEBCF70098DDAE /* SettingsController.swift */; };
+		C09CC3DA2DDEC5380098DDAE /* InstrumentControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09CC3D92DDEC5380098DDAE /* InstrumentControllerProtocol.swift */; };
 		C0AE6ADE2C08F20B0099C540 /* MultimeterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AB52C08F20B0099C540 /* MultimeterController.swift */; };
 		C0AE6ADF2C08F20B0099C540 /* MultimeterController+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AB62C08F20B0099C540 /* MultimeterController+General.swift */; };
 		C0AE6AE02C08F20B0099C540 /* WaveformController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE6AB72C08F20B0099C540 /* WaveformController.swift */; };
@@ -155,6 +157,8 @@
 		C07387A82DD80FA300F24D77 /* ManualSyringePumpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualSyringePumpViewController.swift; sourceTree = "<group>"; };
 		C09CC3B32DDE60970098DDAE /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		C09CC3B52DDE6DF10098DDAE /* Pump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pump.swift; sourceTree = "<group>"; };
+		C09CC3D72DDEBCF70098DDAE /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		C09CC3D92DDEC5380098DDAE /* InstrumentControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentControllerProtocol.swift; sourceTree = "<group>"; };
 		C0AE6AB52C08F20B0099C540 /* MultimeterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultimeterController.swift; sourceTree = "<group>"; };
 		C0AE6AB62C08F20B0099C540 /* MultimeterController+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MultimeterController+General.swift"; sourceTree = "<group>"; };
 		C0AE6AB72C08F20B0099C540 /* WaveformController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformController.swift; sourceTree = "<group>"; };
@@ -332,9 +336,17 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		C09CC3D62DDEBCE70098DDAE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		C0AE6AB32C08F1FE0099C540 /*  Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C09CC3D62DDEBCE70098DDAE /* Settings */,
 				C0EEC94C2DD55BED0061F7E2 /* Application Controller */,
 				C0AE6ADC2C08F20B0099C540 /* PrinterController */,
 			);
@@ -348,6 +360,7 @@
 				C0D24F1D2DD988F800228949 /* Waveform Controller */,
 				C0D24F1C2DD988EA00228949 /* Multimeter Controller */,
 				C0D24F1B2DD988D400228949 /* Syringe Pump Controller */,
+				C09CC3D92DDEC5380098DDAE /* InstrumentControllerProtocol.swift */,
 			);
 			path = InstrumentControllers;
 			sourceTree = "<group>";
@@ -497,6 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				C0EEC94D2DD55C000061F7E2 /* AppController.swift */,
+				C09CC3D72DDEBCF70098DDAE /* SettingsController.swift */,
 			);
 			path = "Application Controller";
 			sourceTree = "<group>";
@@ -596,6 +610,7 @@
 				5A5B23F726A8C1230079D7F9 /* PreferencesView.swift in Sources */,
 				C0AE6AFF2C08F20B0099C540 /* PrinterQueue.swift in Sources */,
 				5A2EF44326F8FEFD00CFF342 /* WaveformSettingsOperationView.swift in Sources */,
+				C09CC3D82DDEBCF70098DDAE /* SettingsController.swift in Sources */,
 				C0AE6AE32C08F20B0099C540 /* AlertOperation.swift in Sources */,
 				C0D24F222DD9895D00228949 /* WaveformConfiguration.swift in Sources */,
 				C0AE6AFA2C08F20B0099C540 /* PrinterQueueState.swift in Sources */,
@@ -656,6 +671,7 @@
 				C0AE6AFB2C08F20B0099C540 /* WaveformState.swift in Sources */,
 				C0AE6AE02C08F20B0099C540 /* WaveformController.swift in Sources */,
 				5A4D3BD526E92C5500664B46 /* VoltageToggleOperationView.swift in Sources */,
+				C09CC3DA2DDEC5380098DDAE /* InstrumentControllerProtocol.swift in Sources */,
 				C07387A92DD80FA300F24D77 /* ManualSyringePumpViewController.swift in Sources */,
 				C06E54B4283EBBD500A36145 /* RecordingState.swift in Sources */,
 				236FC3CC2C0E726A006BA845 /* SyringePumpSettingsOperationView.swift in Sources */,

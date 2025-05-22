@@ -32,6 +32,6 @@ public struct syringePumpConfiguration: Sendable {
   }
 
   func makeInstrument() async throws -> SyringePumpController {
-    try await SyringePumpController(address: address, port: port, timeout: timeout)
+    try await SyringePumpController()
   }
 }

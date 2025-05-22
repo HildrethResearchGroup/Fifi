@@ -14,6 +14,14 @@ final class ManualSyringePumpViewController {
     var pump1: Pump
     var pump2: Pump
     
+    var dualControl = false {
+        didSet {
+            if oldValue != dualControl {
+                controller.dualControl = dualControl
+            }
+        }
+    }
+    
     init(controller: SyringePumpController) {
         self.controller = controller
         
@@ -24,6 +32,8 @@ final class ManualSyringePumpViewController {
     
     
 }
+
+
 
 
 // MARK: - State and Pump Numbers

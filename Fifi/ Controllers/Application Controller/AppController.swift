@@ -18,17 +18,10 @@ final class AppController {
         Task {
             let localPrinterController = await PrinterController()
             self.printerController = localPrinterController
-            
             self.appViewController = AppViewController(printerController: localPrinterController)
-            
-            
         }
         
         
         
     }
-    
-    
-    
-    
 }
